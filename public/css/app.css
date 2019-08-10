@@ -10829,6 +10829,10 @@ select {
   width: 100%;
 }
 
+.width-50 {
+  width: 50%;
+}
+
 .form-row {
   margin: 0 0 0 0;
 }
@@ -10883,6 +10887,24 @@ label {
 .essence {
   flex: 0 0 20%;
   max-width: 20%;
+}
+
+.weapons {
+  padding: 0;
+  max-width: 100%;
+}
+
+.healthBox {
+  width: 3.33%;
+}
+
+.healthRow {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.xxsmall {
+  font-size: xx-small;
 }
 
 .navbar-laravel {
