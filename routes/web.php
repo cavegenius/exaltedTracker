@@ -12,9 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('character');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/character', 'CharacterController@index')->name('character');
+
+// AJAX Routes
+Route::post('/character/characterDetails', 'CharacterController@characterDetails');

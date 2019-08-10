@@ -10907,6 +10907,10 @@ label {
   font-size: xx-small;
 }
 
+.abilities .form-row {
+  margin-top: 3px;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

@@ -135,7 +135,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-4 border-right">
+        <div class="col-md-4 border-right abilities">
             <h2>ABILITIES</h2>
             <div class="form-row">
                 <div class="col-1">{{Form::checkbox('archeryFavored', 'true', false, ['class' => 'checkbox'])}}</div>
