@@ -15,8 +15,7 @@ class CreateAurasTable extends Migration
     {
         Schema::create('auras', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements('id');
-            $table->integer('characterId')->unsigned();
+            $table->bigInteger('characterId')->unsigned();
             $table->foreign('characterId')->references('id')->on('characters');
             $table->enum('type', ['air', 'earth', 'fire', 'water', 'wood']);
         });

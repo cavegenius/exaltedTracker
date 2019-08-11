@@ -15,7 +15,7 @@ class CreateDragonExperiencesTable extends Migration
     {
         Schema::create('dragon_experiences', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('characterId')->unsigned();
+            $table->bigInteger('characterId')->unsigned();
             $table->foreign('characterId')->references('id')->on('characters');
             $table->integer('current');
             $table->integer('total');

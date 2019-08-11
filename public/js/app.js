@@ -49373,6 +49373,11 @@ $(document).ready(function () {
     success: function success(response) {
       // What to do if we succeed
       console.log(response);
+
+      if (response == 'No Character') {
+        $('.alert').append('You have not created your character yet. You will need to fill out the character sheet below');
+        $('.alert').removeClass('hide-on-load');
+      }
     },
     error: function error(jqXHR, textStatus, errorThrown) {
       // What to do if we fail

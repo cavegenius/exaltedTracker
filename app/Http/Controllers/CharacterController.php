@@ -27,13 +27,22 @@ class CharacterController extends Controller
             return redirect('login');
         }
 
-        //$user = Auth::id();
-        //$character = Character::index($user);
-        //return view('character')->with('character', $character);
+        
         return view('character');
     }
 
     public function characterDetails() {
-        return ['one','two'];
+        $return = [];
+        $user = Auth::id();
+        $model = new Character;
+        $character = $model->where('userId', $user);
+        if($character->count()) {
+            $return[] = $character;
+            $return[] = 'hello';
+        } else {
+            $return[] = 'No Character';
+        }
+        return $return;
+        //return view('character')->with('character', $character);
     }
 }

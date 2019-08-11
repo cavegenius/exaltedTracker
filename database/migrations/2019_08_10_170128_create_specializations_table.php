@@ -15,7 +15,7 @@ class CreateSpecializationsTable extends Migration
     {
         Schema::create('specializations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('characterId')->unsigned();
+            $table->bigInteger('characterId')->unsigned();
             $table->foreign('characterId')->references('id')->on('characters');
             $table->string('specialization', 500);
         });

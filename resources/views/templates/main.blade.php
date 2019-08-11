@@ -35,6 +35,7 @@
         </nav>
 
         <main role="main" class="col-md-8 ml-sm-auto px-4">
+            <div class="alert alert-success hide-on-load"></div>
           @yield('content')
         </main>
 

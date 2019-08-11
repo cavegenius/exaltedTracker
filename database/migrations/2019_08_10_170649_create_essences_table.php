@@ -15,8 +15,7 @@ class CreateEssencesTable extends Migration
     {
         Schema::create('essences', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
-            $table->integer('characterId')->unsigned();
+            $table->bigInteger('characterId')->unsigned();
             $table->foreign('characterId')->references('id')->on('characters');
             $table->tinyInteger('level');
             $table->tinyInteger('personalAvailable');

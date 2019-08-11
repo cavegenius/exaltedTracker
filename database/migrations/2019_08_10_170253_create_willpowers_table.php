@@ -15,7 +15,7 @@ class CreateWillpowersTable extends Migration
     {
         Schema::create('willpowers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('characterId')->unsigned();
+            $table->bigInteger('characterId')->unsigned();
             $table->foreign('characterId')->references('id')->on('characters');
             $table->tinyInteger('total');
             $table->tinyInteger('used');

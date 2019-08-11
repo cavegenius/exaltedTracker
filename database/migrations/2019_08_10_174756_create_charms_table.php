@@ -15,7 +15,7 @@ class CreateCharmsTable extends Migration
     {
         Schema::create('charms', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('characterId')->unsigned();
+            $table->bigInteger('characterId')->unsigned();
             $table->foreign('characterId')->references('id')->on('characters');
             $table->string('name', 150);
             $table->string('type', 50);

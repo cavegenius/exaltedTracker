@@ -15,7 +15,7 @@ class CreateIntimaciesTable extends Migration
     {
         Schema::create('intimacies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('characterId')->unsigned();
+            $table->bigInteger('characterId')->unsigned();
             $table->foreign('characterId')->references('id')->on('characters');
             $table->string('intimacy', 150);
             $table->string('intensity', 50);

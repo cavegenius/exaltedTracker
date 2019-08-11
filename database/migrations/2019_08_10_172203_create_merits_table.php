@@ -15,7 +15,7 @@ class CreateMeritsTable extends Migration
     {
         Schema::create('merits', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('characterId')->unsigned();
+            $table->bigInteger('characterId')->unsigned();
             $table->foreign('characterId')->references('id')->on('characters');
             $table->string('name', 45);
             $table->tinyInteger('value');

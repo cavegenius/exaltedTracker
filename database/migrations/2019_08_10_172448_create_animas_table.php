@@ -15,7 +15,7 @@ class CreateAnimasTable extends Migration
     {
         Schema::create('animas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('characterId')->unsigned();
+            $table->bigInteger('characterId')->unsigned();
             $table->foreign('characterId')->references('id')->on('characters');
             $table->enum('level', ['dim', 'glowing', 'burning', 'bonfire']);
         });

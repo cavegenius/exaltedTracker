@@ -589,67 +589,83 @@
                     <h2>MERITS</h2>
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit1', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit1v1', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit1v2', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit1v3', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit1v4', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit1v5', 'true', false, ['class' => 'checkbox-round'])}}</div>
+                        <div class="col-5 text-right">
+                            {{Form::checkbox('merit1v1', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit1v2', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit1v3', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit1v4', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit1v5', 'true', false, ['class' => 'checkbox-round'])}}
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit2', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit2v1', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit2v2', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit2v3', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit2v4', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit2v5', 'true', false, ['class' => 'checkbox-round'])}}</div>
+                        <div class="col-5 text-right">
+                            {{Form::checkbox('merit2v1', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit2v2', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit2v3', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit2v4', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit2v5', 'true', false, ['class' => 'checkbox-round'])}}
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit3', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit3v1', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit3v2', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit3v3', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit3v4', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit3v5', 'true', false, ['class' => 'checkbox-round'])}}</div>
+                        <div class="col-5 text-right">
+                            {{Form::checkbox('merit3v1', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit3v2', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit3v3', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit3v4', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit3v5', 'true', false, ['class' => 'checkbox-round'])}}
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit4', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit4v1', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit4v2', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit4v3', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit4v4', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit4v5', 'true', false, ['class' => 'checkbox-round'])}}</div>
+                        <div class="col-5 text-right">
+                            {{Form::checkbox('merit4v1', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit4v2', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit4v3', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit4v4', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit4v5', 'true', false, ['class' => 'checkbox-round'])}}
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit5', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit5v1', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit5v2', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit5v3', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit5v4', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit5v5', 'true', false, ['class' => 'checkbox-round'])}}</div>
+                        <div class="col-5 text-right">
+                            {{Form::checkbox('merit5v1', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit5v2', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit5v3', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit5v4', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit5v5', 'true', false, ['class' => 'checkbox-round'])}}
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit6', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit6v1', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit6v2', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit6v3', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit6v4', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit6v5', 'true', false, ['class' => 'checkbox-round'])}}</div>
+                        <div class="col-5 text-right">
+                            {{Form::checkbox('merit6v1', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit6v2', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit6v3', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit6v4', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit6v5', 'true', false, ['class' => 'checkbox-round'])}}
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit7', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit7v1', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit7v2', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit7v3', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit7v4', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit7v5', 'true', false, ['class' => 'checkbox-round'])}}</div>
+                        <div class="col-5 text-right">
+                            {{Form::checkbox('merit7v1', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit7v2', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit7v3', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit7v4', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit7v5', 'true', false, ['class' => 'checkbox-round'])}}
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit8', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit8v1', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit8v2', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit8v3', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit8v4', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit8v5', 'true', false, ['class' => 'checkbox-round'])}}</div>
+                        <div class="col-5 text-right">
+                            {{Form::checkbox('merit8v1', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit8v2', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit8v3', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit8v4', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit8v5', 'true', false, ['class' => 'checkbox-round'])}}
+                        </div>
                     </div>
                     <h2>ANIMA LEVEL</h2>
                     <div class="form-row">
@@ -875,123 +891,123 @@
     <div class="row healthRow">
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('healthBox1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => '0'])}}
+            {{Form::text('healthText1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="xxsmall">Join Battle: Wits + Awareness (plus 3 successes) • Withering attack pool: Dexterity + (Combat Ability) + weapon’s accuracy • Decisive attack pool: Dexterity + (Combat Ability) • Defense: Higher of Parry or Evasion •
 Parry: ([Dexterity + (Combat Ability] / 2, round up) + weapon’s defense • Evasion: ([Dexterity + Dodge] / 2, round up) - armor’s mobility penalty • Rush: Dexterity + Athletics • Disengage: Dexterity + Dodge •
@@ -1008,53 +1024,65 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="characterDetails col-md-6">
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit9', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit9v1', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit9v2', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit9v3', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit9v4', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit9v5', 'true', false, ['class' => 'checkbox-round'])}}</div>
+                        <div class="col-5 text-right">
+                            {{Form::checkbox('merit9v1', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit9v2', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit9v3', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit9v4', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit9v5', 'true', false, ['class' => 'checkbox-round'])}}
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit10', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit10v1', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit10v2', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit10v3', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit10v4', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit10v5', 'true', false, ['class' => 'checkbox-round'])}}</div>
+                        <div class="col-5 text-right">
+                            {{Form::checkbox('merit10v1', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit10v2', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit10v3', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit10v4', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit10v5', 'true', false, ['class' => 'checkbox-round'])}}
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit10', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit10v1', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit10v2', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit10v3', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit10v4', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit10v5', 'true', false, ['class' => 'checkbox-round'])}}</div>
+                        <div class="col-5 text-right">
+                            {{Form::checkbox('merit10v1', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit10v2', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit10v3', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit10v4', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit10v5', 'true', false, ['class' => 'checkbox-round'])}}
+                        </div>
                     </div>
                 </div>
                 <div class="characterDetails col-md-6">
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit11', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit11v1', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit11v2', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit11v3', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit11v4', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit11v5', 'true', false, ['class' => 'checkbox-round'])}}</div>
+                        <div class="col-5 text-right">
+                            {{Form::checkbox('merit11v1', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit11v2', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit11v3', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit11v4', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit11v5', 'true', false, ['class' => 'checkbox-round'])}}
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit12', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit12v1', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit12v2', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit12v3', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit12v4', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit12v5', 'true', false, ['class' => 'checkbox-round'])}}</div>
+                        <div class="col-5 text-right">
+                            {{Form::checkbox('merit12v1', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit12v2', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit12v3', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit12v4', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit12v5', 'true', false, ['class' => 'checkbox-round'])}}
+                        </div>
                     </div>
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit13', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit13v1', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit13v2', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit13v3', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit13v4', 'true', false, ['class' => 'checkbox-round'])}}</div>
-                        <div class="col-1">{{Form::checkbox('merit13v5', 'true', false, ['class' => 'checkbox-round'])}}</div>
+                        <div class="col-5 text-right">
+                            {{Form::checkbox('merit13v1', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit13v2', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit13v3', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit13v4', 'true', false, ['class' => 'checkbox-round'])}}
+                            {{Form::checkbox('merit13v5', 'true', false, ['class' => 'checkbox-round'])}}
+                        </div>
                     </div>
                 </div>
             </div>
