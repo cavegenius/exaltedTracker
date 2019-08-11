@@ -1,5 +1,6 @@
 <div class="characterSheet">
     {!! Form::open(['url' => 'character/submit']) !!}
+    {{ csrf_field() }}
     <div class="row">
         <div class="col-md-4">
             <img class="width-100" src="img/exaltedLogo.png" />
@@ -1183,7 +1184,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
             </div>
         </div>
     </div>
-    <h2>INTIMACIES</h2>
+    <h2>CHARMS</h2>
     <div class="row">
         <div class="col-12">
             <div class="form-row">

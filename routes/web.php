@@ -21,3 +21,5 @@ Route::get('/character', 'CharacterController@index')->name('character');
 
 // AJAX Routes
 Route::post('/character/characterDetails', 'CharacterController@characterDetails');
+
+Route::post('/character/submit', 'CharacterController@store');
