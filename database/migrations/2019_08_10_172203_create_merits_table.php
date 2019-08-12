@@ -18,7 +18,7 @@ class CreateMeritsTable extends Migration
             $table->bigInteger('characterId')->unsigned();
             $table->foreign('characterId')->references('id')->on('characters');
             $table->string('name', 45);
-            $table->tinyInteger('value');
+            $table->tinyInteger('value')->default(0);
         });
     }
 

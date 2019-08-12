@@ -17,15 +17,15 @@ class CreateAttributesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('characterId')->unsigned();
             $table->foreign('characterId')->references('id')->on('characters');
-            $table->tinyInteger('strength');
-            $table->tinyInteger('dexterity');
-            $table->tinyInteger('stamina');
-            $table->tinyInteger('charisma');
-            $table->tinyInteger('manipulation');
-            $table->tinyInteger('appearance');
-            $table->tinyInteger('perception');
-            $table->tinyInteger('intelligence');
-            $table->tinyInteger('wits');
+            $table->tinyInteger('strength')->default(0);
+            $table->tinyInteger('dexterity')->default(0);
+            $table->tinyInteger('stamina')->default(0);
+            $table->tinyInteger('charisma')->default(0);
+            $table->tinyInteger('manipulation')->default(0);
+            $table->tinyInteger('appearance')->default(0);
+            $table->tinyInteger('perception')->default(0);
+            $table->tinyInteger('intelligence')->default(0);
+            $table->tinyInteger('wits')->default(0);
         });
     }
 

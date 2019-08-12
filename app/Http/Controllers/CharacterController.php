@@ -72,20 +72,23 @@ class CharacterController extends Controller
             return redirect('login');
         }
         
-        $this->validate($request, [
-            'name' => 'required',
-            'player' => 'required',
-            'aspect' => 'required',
-            'concept' => 'required',
-            'anima' => 'required',
-            'origin' => 'required'
-        ]);
+        /*$this->validate($request, [
+            'character-name' => 'required',
+            'character-player' => 'required',
+            'character-aspect' => 'required',
+            'character-concept' => 'required',
+            'character-anima' => 'required',
+            'character-origin' => 'required'
+        ]);*/
         
         // Format the data to send to the save or edit functions
         // CURRENT STOPPING POINT NEED TO FINISH FORMATTING DATA IF I WANT TO GROUP THEM EVEN FURTHER
         // IF NOT THEN MOVE ON TO SAVING THE DATA
         $results = $this->formatCharacterData($request->post());
-
+echo '<pre>';
+print_r($results);
+echo '</pre>';
+die;
         $user = Auth::id();
         $model = new Character;
         $character = $model->where('userId', $user);
@@ -102,9 +105,11 @@ class CharacterController extends Controller
 
     private function formatCharacterData( $data ) {
         $results = [];
+        unset($data['_token']);
         foreach ( $data as $key => $value ){
-            if( !empty($value) ) {
-                $results[$key] = $value;
+            if( !empty($value ) ) {
+                $keys = explode('-', $key);
+                $results[$keys[0]][$keys[1]] = $value;
             }
         }
 
@@ -117,12 +122,12 @@ class CharacterController extends Controller
 
         // Save the main Character Details first
         $character->userId = $user;
-        $character->name = $data('name');
-        $character->player = $data('player');
-        $character->aspect = $data('aspect');
-        $character->concept = $data('concept');
-        $character->anima = $data('anima');
-        $character->origin = $data('origin');
+        $character->name = $data['character']['name'];
+        $character->player = $data['character']['player'];
+        $character->aspect = $data['character']['aspect'];
+        $character->concept = $data['character']['concept'];
+        $character->anima = $data['character']['anima'];
+        $character->origin = $data['character']['origin'];
         //$character->save();
 
         // Now we start using the other controllers to save the rest of the information on bit at a time.

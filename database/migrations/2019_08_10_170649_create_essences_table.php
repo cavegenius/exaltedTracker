@@ -17,12 +17,12 @@ class CreateEssencesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('characterId')->unsigned();
             $table->foreign('characterId')->references('id')->on('characters');
-            $table->tinyInteger('level');
-            $table->tinyInteger('personalAvailable');
-            $table->tinyInteger('personalTotal');
-            $table->tinyInteger('peripheralAvailable');
-            $table->tinyInteger('peripheralTotal');
-            $table->tinyInteger('committed');
+            $table->tinyInteger('level')->default(0);
+            $table->tinyInteger('personalAvailable')->default(0);
+            $table->tinyInteger('personalTotal')->default(0);
+            $table->tinyInteger('peripheralAvailable')->default(0);
+            $table->tinyInteger('peripheralTotal')->default(0);
+            $table->tinyInteger('committed')->default(0);
         });
     }
 

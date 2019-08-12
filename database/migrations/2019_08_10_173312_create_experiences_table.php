@@ -17,8 +17,8 @@ class CreateExperiencesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('characterId')->unsigned();
             $table->foreign('characterId')->references('id')->on('characters');
-            $table->integer('current');
-            $table->integer('total');
+            $table->integer('current')->default(0);
+            $table->integer('total')->default(0);
         });
     }
 
