@@ -72,28 +72,25 @@ class CharacterController extends Controller
             return redirect('login');
         }
         
-        /*$this->validate($request, [
+        $this->validate($request, [
             'character-name' => 'required',
             'character-player' => 'required',
             'character-aspect' => 'required',
             'character-concept' => 'required',
             'character-anima' => 'required',
             'character-origin' => 'required'
-        ]);*/
+        ]);
         
         // Format the data to send to the save or edit functions
-        // CURRENT STOPPING POINT NEED TO FINISH FORMATTING DATA IF I WANT TO GROUP THEM EVEN FURTHER
-        // IF NOT THEN MOVE ON TO SAVING THE DATA
         $results = $this->formatCharacterData($request->post());
-echo '<pre>';
-print_r($results);
-echo '</pre>';
-die;
+//echo '<pre>';
+//var_dump($results);
+//echo '</pre>';
+//die;
+        // If the character does not exist Save as a new character otherwise edit the existing.
         $user = Auth::id();
         $model = new Character;
         $character = $model->where('userId', $user);
-
-        // If the character does not exist Save as a new character otherwise edit the existing.
         if(!$character->count()) {
             $this->saveNewCharacter($request);
         } else {
@@ -118,19 +115,23 @@ die;
 
     private function saveNewCharacter( $data ) {
         $user = Auth::id();
-        $character = new Character;
 
         // Save the main Character Details first
-        $character->userId = $user;
-        $character->name = $data['character']['name'];
-        $character->player = $data['character']['player'];
-        $character->aspect = $data['character']['aspect'];
-        $character->concept = $data['character']['concept'];
-        $character->anima = $data['character']['anima'];
-        $character->origin = $data['character']['origin'];
-        //$character->save();
+        $this->saveNewCharacterData( $data['character'], $user );
 
         // Now we start using the other controllers to save the rest of the information on bit at a time.
+    }
+
+    private function saveNewCharacterData( $data, $user ) {
+        $character = new Character;
+        $character->userId = $user;
+        $character->name = $data['name'];
+        $character->player = $data['player'];
+        $character->aspect = $data['aspect'];
+        $character->concept = $data['concept'];
+        $character->anima = $data['anima'];
+        $character->origin = $data['origin'];
+        $character->save();
     }
 
     private function editExistingCharacter( $data ) {
