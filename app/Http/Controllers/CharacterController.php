@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Character;
 use App\Http\Controllers\AttributeController;
+use App\Http\Controllers\AbilityController;
 
 class CharacterController extends Controller
 {
@@ -145,6 +146,8 @@ class CharacterController extends Controller
         // Now we start using the other controllers to save the rest of the information on bit at a time.
         //Attributes
         AttributeController::saveNewAttributeData($data['attributes'], $characterId);
+        // Abilities
+        AbilityController::saveNewAbilityData($data['abilities'], $characterId);
     }
 
     /**
