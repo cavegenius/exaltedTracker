@@ -18,7 +18,7 @@ class CreateWillpowersTable extends Migration
             $table->bigInteger('characterId')->unsigned();
             $table->foreign('characterId')->references('id')->on('characters');
             $table->tinyInteger('total')->default(0);
-            $table->tinyInteger('available')->default(0);
+            $table->tinyInteger('used')->default(0);
         });
     }
 

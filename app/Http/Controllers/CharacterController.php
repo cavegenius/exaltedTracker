@@ -8,7 +8,6 @@ use App\Character;
 use App\Http\Controllers\AttributeController;
 use App\Http\Controllers\AbilityController;
 use App\Http\Controllers\SpecializationController;
-use App\Http\Controllers\WillpowerController;
 
 class CharacterController extends Controller
 {
@@ -96,10 +95,10 @@ class CharacterController extends Controller
         
         // Format the data to send to the save or edit functions
         $results = $this->formatCharacterData($request->post());
-        //echo '<pre>';
-        //var_dump($results);
-        //echo '</pre>';
-        //die;
+//echo '<pre>';
+//var_dump($results);
+//echo '</pre>';
+//die;
         // If the character does not exist Save as a new character otherwise edit the existing.
         $user = Auth::id();
         $model = new Character;
@@ -146,14 +145,12 @@ class CharacterController extends Controller
         $characterId = $this->saveNewCharacterData( $data['character'], $user );
 
         // Now we start using the other controllers to save the rest of the information on bit at a time.
-        // Attributes
+        //Attributes
         AttributeController::saveNewAttributeData($data['attributes'], $characterId);
         // Abilities
         AbilityController::saveNewAbilityData($data['abilities'], $characterId);
         // Specializations
         SpecializationController::saveNewSpecializationData($data['specialization'], $characterId);
-        // Willpower
-        WillpowerController::saveNewWillpowerData($data['willpower'], $characterId);
     }
 
     /**
