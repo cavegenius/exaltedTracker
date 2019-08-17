@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Character;
+use App\Http\Controllers\AttributeController;
 
 class CharacterController extends Controller
 {
@@ -31,6 +32,10 @@ class CharacterController extends Controller
         return view('character');
     }
 
+    /**
+     * Returns JSON formatted data about a character
+     * 
+     */
     public function characterDetails() {
         $return = [];
         $user = Auth::id();
@@ -67,11 +72,16 @@ class CharacterController extends Controller
         return $return;
     }
 
+    /**
+     * Processes the form request to save the character sheet.
+     * 
+     */
     public function store(Request $request) {
         if (!Auth::check()) {
             return redirect('login');
         }
         
+        // Set Validation rules.
         $this->validate($request, [
             'character-name' => 'required',
             'character-player' => 'required',
@@ -90,18 +100,27 @@ class CharacterController extends Controller
         // If the character does not exist Save as a new character otherwise edit the existing.
         $user = Auth::id();
         $model = new Character;
+        
+        //Check for existing character
         $character = $model->where('userId', $user);
         if(!$character->count()) {
-            $this->saveNewCharacter($request);
+            // using a seperate function to save because of how many types of data will be saved
+            $this->saveNewCharacter($results);
         } else {
-            $this->editExistingCharacter($request);
+            $this->editExistingCharacter($results);
         }
 
+        // Once saved return to the character screen
         //return redirect('/character')->with('status', 'Saved');
     }
 
+    /**
+     * Formats the character data in to an easy to manage array with identifiable keys.
+     * 
+     */
     private function formatCharacterData( $data ) {
         $results = [];
+        // Need to remove the CSRF Token
         unset($data['_token']);
         foreach ( $data as $key => $value ){
             if( !empty($value ) ) {
@@ -113,15 +132,25 @@ class CharacterController extends Controller
         return $results;
     }
 
+    /**
+     *  Performs the save for all types of data for a character sheet
+     * 
+     */
     private function saveNewCharacter( $data ) {
         $user = Auth::id();
 
         // Save the main Character Details first
-        $this->saveNewCharacterData( $data['character'], $user );
+        $characterId = $this->saveNewCharacterData( $data['character'], $user );
 
         // Now we start using the other controllers to save the rest of the information on bit at a time.
+        //Attributes
+        AttributeController::saveNewAttributeData($data['attributes'], $characterId);
     }
 
+    /**
+     * Performs the save for just the section of character details
+     * 
+     */
     private function saveNewCharacterData( $data, $user ) {
         $character = new Character;
         $character->userId = $user;
@@ -132,6 +161,8 @@ class CharacterController extends Controller
         $character->anima = $data['anima'];
         $character->origin = $data['origin'];
         $character->save();
+
+        return $character->id;
     }
 
     private function editExistingCharacter( $data ) {

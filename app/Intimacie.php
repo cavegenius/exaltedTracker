@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Intimacie extends Model
 {
-    //
+    public $timestamps = false;
 }
