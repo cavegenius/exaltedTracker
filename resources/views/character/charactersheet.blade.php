@@ -710,7 +710,7 @@
                     <div class="col-5"><h6>{{Form::label('weapon-tags', 'Tags:')}}</h6></div>
                 </div>
                 <div class="form-row">
-                    <div class="col-3">{{Form::text('weapo-name1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                    <div class="col-3">{{Form::text('weapon-name1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                     <div class="col-1">{{Form::text('weapon-wit1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                     <div class="col-1">{{Form::text('weapon-dmg1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                     <div class="col-1">{{Form::text('weapon-dec1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>

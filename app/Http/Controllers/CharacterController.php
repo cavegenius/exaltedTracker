@@ -10,6 +10,7 @@ use App\Http\Controllers\AbilityController;
 use App\Http\Controllers\SpecializationController;
 use App\Http\Controllers\WillpowerController;
 use App\Http\Controllers\EssenceController;
+use App\Http\Controllers\MeritController;
 
 class CharacterController extends Controller
 {
@@ -157,6 +158,8 @@ class CharacterController extends Controller
         WillpowerController::saveNewWillpowerData($data['willpower'], $characterId);
         // Essence
         EssenceController::saveNewEssenceData($data['essence'], $characterId);
+        // Merits
+        MeritController::saveNewMeritData($data['merit'], $characterId);
     }
 
     /**
