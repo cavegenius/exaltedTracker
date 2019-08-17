@@ -567,14 +567,14 @@
                         <div class="form-row">
                             <div class="col-12">
                                 {{Form::label('essence-personal', 'Personal')}}&nbsp;&nbsp;&nbsp;
-                                {{Form::text('essence-personalAvailabe', '', ['class' => '', 'size'=> 5, 'placeholder' => ''])}} | 
+                                {{Form::text('essence-personalAvailable', '', ['class' => '', 'size'=> 5, 'placeholder' => ''])}} | 
                                 {{Form::text('essence-personalTotal', '', ['class' => '', 'size'=> 5, 'placeholder' => ''])}}
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-12">
                                 {{Form::label('essence-peripheral', 'Peripheral')}}
-                                {{Form::text('essence-peripheralAvailabe', '', ['class' => '', 'size'=> 5, 'placeholder' => ''])}} | 
+                                {{Form::text('essence-peripheralAvailable', '', ['class' => '', 'size'=> 5, 'placeholder' => ''])}} | 
                                 {{Form::text('essence-peripheralTotal', '', ['class' => '', 'size'=> 5, 'placeholder' => ''])}}
                             </div>
                         </div>
