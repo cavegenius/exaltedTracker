@@ -8,7 +8,7 @@ use App\Merit;
 class MeritController extends Controller
 {
     /**
-     * Saves the essence for a new character
+     * Saves the Merit for a new character
      */
     public static function saveNewMeritData( $merits, $character ) {
         $saveData = array();

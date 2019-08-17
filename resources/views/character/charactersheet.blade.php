@@ -670,10 +670,10 @@
                     </div>
                     <h2>ANIMA LEVEL</h2>
                     <div class="form-row">
-                            <div class="col-3 text-center">{{Form::label('dim', 'Dim')}}<br>{{Form::checkbox('anima-dim', 'true', false, ['class' => 'checkbox'])}}</div>
-                            <div class="col-3 text-center">{{Form::label('glowing', 'Glowing')}}<br>{{Form::checkbox('anima-glowing', 'true', false, ['class' => 'checkbox'])}}</div>
-                            <div class="col-3 text-center">{{Form::label('burning', 'Burning')}}<br>{{Form::checkbox('anima-burning', 'true', false, ['class' => 'checkbox'])}}</div>
-                            <div class="col-3 text-center">{{Form::label('bonfire', 'Bonfire/Iconic')}}<br>{{Form::checkbox('anima-bonfire', 'true', false, ['class' => 'checkbox'])}}</div>
+                            <div class="col-3 text-center">{{Form::label('dim', 'Dim')}}<br>{{Form::radio('anima-anima', 'dim', false, ['class' => 'checkbox'])}}</div>
+                            <div class="col-3 text-center">{{Form::label('glowing', 'Glowing')}}<br>{{Form::radio('anima-anima', 'glowing', false, ['class' => 'checkbox'])}}</div>
+                            <div class="col-3 text-center">{{Form::label('burning', 'Burning')}}<br>{{Form::radio('anima-anima', 'burning', false, ['class' => 'checkbox'])}}</div>
+                            <div class="col-3 text-center">{{Form::label('bonfire', 'Bonfire/Iconic')}}<br>{{Form::radio('anima-anima', 'bonfire', false, ['class' => 'checkbox'])}}</div>
                     </div>
                     <h2>ELEMENTAL AURA</h2>
                     <div class="form-row">

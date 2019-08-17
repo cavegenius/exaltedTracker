@@ -11,6 +11,7 @@ use App\Http\Controllers\SpecializationController;
 use App\Http\Controllers\WillpowerController;
 use App\Http\Controllers\EssenceController;
 use App\Http\Controllers\MeritController;
+use App\Http\Controllers\AnimaController;
 
 class CharacterController extends Controller
 {
@@ -160,6 +161,8 @@ class CharacterController extends Controller
         EssenceController::saveNewEssenceData($data['essence'], $characterId);
         // Merits
         MeritController::saveNewMeritData($data['merit'], $characterId);
+        // Anima
+        AnimaController::saveNewAnimaData($data['anima'], $characterId);
     }
 
     /**
