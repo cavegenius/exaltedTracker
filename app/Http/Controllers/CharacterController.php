@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Character;
 use App\Http\Controllers\AttributeController;
 use App\Http\Controllers\AbilityController;
+use App\Http\Controllers\SpecializationController;
 
 class CharacterController extends Controller
 {
@@ -148,6 +149,8 @@ class CharacterController extends Controller
         AttributeController::saveNewAttributeData($data['attributes'], $characterId);
         // Abilities
         AbilityController::saveNewAbilityData($data['abilities'], $characterId);
+        // Specializations
+        SpecializationController::saveNewSpecializationData($data['specialization'], $characterId);
     }
 
     /**
