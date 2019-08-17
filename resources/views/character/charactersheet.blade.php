@@ -677,11 +677,11 @@
                     </div>
                     <h2>ELEMENTAL AURA</h2>
                     <div class="form-row">
-                        <div class="col-3 text-center">{{Form::label('earth', 'Earth')}}<br>{{Form::checkbox('aura-earth', 'true', false, ['class' => 'checkbox'])}}</div>
-                        <div class="col-2 text-center">{{Form::label('air', 'Air')}}<br>{{Form::checkbox('aura-air', 'true', false, ['class' => 'checkbox'])}}</div>
-                        <div class="col-2 text-center">{{Form::label('fire', 'Fire')}}<br>{{Form::checkbox('aura-fire', 'true', false, ['class' => 'checkbox'])}}</div>
-                        <div class="col-3 text-center">{{Form::label('water', 'Water')}}<br>{{Form::checkbox('aura-water', 'true', false, ['class' => 'checkbox'])}}</div>
-                        <div class="col-2 text-center">{{Form::label('wood', 'Wood')}}<br>{{Form::checkbox('aura-wood', 'true', false, ['class' => 'checkbox'])}}</div>
+                        <div class="col-3 text-center">{{Form::label('earth', 'Earth')}}<br>{{Form::radio('aura-aura', 'earth', false, ['class' => 'checkbox'])}}</div>
+                        <div class="col-2 text-center">{{Form::label('air', 'Air')}}<br>{{Form::radio('aura-aura', 'air', false, ['class' => 'checkbox'])}}</div>
+                        <div class="col-2 text-center">{{Form::label('fire', 'Fire')}}<br>{{Form::radio('aura-aura', 'fire', false, ['class' => 'checkbox'])}}</div>
+                        <div class="col-3 text-center">{{Form::label('water', 'Water')}}<br>{{Form::radio('aura-aura', 'water', false, ['class' => 'checkbox'])}}</div>
+                        <div class="col-2 text-center">{{Form::label('wood', 'Wood')}}<br>{{Form::radio('aura-aura', 'wood', false, ['class' => 'checkbox'])}}</div>
                     </div>
                     <h2>EXPERIENCE</h2>
                     <div class="form-row">
@@ -692,10 +692,10 @@
                     </div>
                     <h2>DRAGON EXPERIENCE</h2>
                     <div class="form-row">
-                        <div class="col-2"><h6>{{Form::label('experience-dragonCurrent', 'Current:')}}</h6></div>
-                        <div class="col-4">{{Form::text('experience-dragonCurrent', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                        <div class="col-2"><h6>{{Form::label('experience-dragonTotal', 'Total:')}}</h6></div>
-                        <div class="col-4">{{Form::text('experience-dragonTotal', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                        <div class="col-2"><h6>{{Form::label('dragonExperience-current', 'Current:')}}</h6></div>
+                        <div class="col-4">{{Form::text('dragonExperience-current', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                        <div class="col-2"><h6>{{Form::label('dragonExperience-total', 'Total:')}}</h6></div>
+                        <div class="col-4">{{Form::text('dragonExperience-total', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                     </div>
                 </div>
             </div>

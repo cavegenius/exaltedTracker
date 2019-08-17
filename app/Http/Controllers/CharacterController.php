@@ -12,6 +12,16 @@ use App\Http\Controllers\WillpowerController;
 use App\Http\Controllers\EssenceController;
 use App\Http\Controllers\MeritController;
 use App\Http\Controllers\AnimaController;
+use App\Http\Controllers\AuraController;
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\DragonExperienceController;
+use App\Http\Controllers\WeaponController;
+use App\Http\Controllers\ArmorController;
+use App\Http\Controllers\DefenseController;
+use App\Http\Controllers\HealthController;
+use App\Http\Controllers\IntimacieController;
+use App\Http\Controllers\CharmController;
+use App\Http\Controllers\InventoryController;
 
 class CharacterController extends Controller
 {
@@ -163,6 +173,26 @@ class CharacterController extends Controller
         MeritController::saveNewMeritData($data['merit'], $characterId);
         // Anima
         AnimaController::saveNewAnimaData($data['anima'], $characterId);
+        // Aura
+        AuraController::saveNewAuraData($data['aura'], $characterId);
+        // Experience
+        ExperienceController::saveNewExperienceData($data['experience'], $characterId);
+        // DragonExperience
+        //DragonExperienceController::saveNewDragonExperienceControllerData($data['dragonExperience'], $characterId);
+        // Weapon
+        //WeaponController::saveNewWeaponData($data['weapon'], $characterId);
+        // Armor
+        //ArmorController::saveNewArmorData($data['armor'], $characterId);
+        // Defense
+        //DefenseController::saveNewDefenseData($data['defense'], $characterId);
+        // Health
+        //HealthController::saveNewHealthData($data['health'], $characterId);
+        // Intimacies
+        //IntimacieController::saveNewIntimacieData($data['intimacy'], $characterId);
+        // Charms
+        //CharmController::saveNewCharmData($data['charm'], $characterId);
+        // Inventory
+        //InventoryController::saveNewInventoryData($data['inventory'], $characterId);
     }
 
     /**
