@@ -182,9 +182,9 @@ class CharacterController extends Controller
         // Weapon
         WeaponController::saveNewWeaponData($data['weapon'], $characterId);
         // Armor
-        //ArmorController::saveNewArmorData($data['armor'], $characterId);
+        ArmorController::saveNewArmorData($data['armor'], $characterId);
         // Defense
-        //DefenseController::saveNewDefenseData($data['defense'], $characterId);
+        DefenseController::saveNewDefenseData($data['defense'], $characterId);
         // Health
         //HealthController::saveNewHealthData($data['health'], $characterId);
         // Intimacies

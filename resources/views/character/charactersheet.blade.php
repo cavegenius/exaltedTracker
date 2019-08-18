@@ -846,7 +846,7 @@
                 <div class="col-1">{{Form::text('armor-soak2', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('armor-hard2', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('armor-mp2', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                <div class="col-5">{{Form::text('armor-Tags2', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-5">{{Form::text('armor-tags2', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="row">
                 <div class="col-2">{{Form::label('defense-naturalSoak', 'Natural Soak:')}}</div>
