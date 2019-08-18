@@ -892,83 +892,83 @@
     <div class="row healthRow">
         <div class="healthBox">
             {{Form::checkbox('health-box1', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text1', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text1', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box2', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text2','', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text2','', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box3', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text3', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text3', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box4', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text4', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text4', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box5', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text5', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text5', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box6', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text6', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text6', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box7', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text7', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text7', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box8', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text8', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text8', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box9', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text9', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text9', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box11', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text11', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text11', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box12', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text12', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text12', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box13', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text13', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text13', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box14', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text14', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text14', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box15', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text15', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text15', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box16', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text16', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text16', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box17', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text17', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text17', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box18', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text18', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text18', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box19', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text19', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text19', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box20', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text20', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text20', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box21', 'true', false, ['class' => 'checkbox width-100'])}}
-            {{Form::text('health-Text21', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            {{Form::text('health-text21', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box22', 'true', false, ['class' => 'checkbox width-100'])}}

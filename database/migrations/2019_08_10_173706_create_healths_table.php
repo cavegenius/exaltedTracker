@@ -19,6 +19,7 @@ class CreateHealthsTable extends Migration
             $table->foreign('characterId')->references('id')->on('characters');
             $table->tinyInteger('position');
             $table->string('value', 10);
+            $table->boolean('activated')->default(0);
         });
     }
 

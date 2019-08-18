@@ -186,13 +186,13 @@ class CharacterController extends Controller
         // Defense
         DefenseController::saveNewDefenseData($data['defense'], $characterId);
         // Health
-        //HealthController::saveNewHealthData($data['health'], $characterId);
+        HealthController::saveNewHealthData($data['health'], $characterId);
         // Intimacies
-        //IntimacieController::saveNewIntimacieData($data['intimacy'], $characterId);
+        IntimacieController::saveNewIntimacieData($data['intimacy'], $characterId);
         // Charms
-        //CharmController::saveNewCharmData($data['charm'], $characterId);
+        CharmController::saveNewCharmData($data['charm'], $characterId);
         // Inventory
-        //InventoryController::saveNewInventoryData($data['inventory'], $characterId);
+        InventoryController::saveNewInventoryData($data['inventory'], $characterId);
     }
 
     /**

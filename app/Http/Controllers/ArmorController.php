@@ -8,7 +8,7 @@ use App\Armor;
 class ArmorController extends Controller
 {
     /**
-     * Saves the Weapon for a new character
+     * Saves the Armor for a new character
      */
     public static function saveNewArmorData( $armors, $character ) {
         $saveData = array();

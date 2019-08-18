@@ -8,7 +8,7 @@ use App\Defense;
 class DefenseController extends Controller
 {
     /**
-     * Saves the Weapon for a new character
+     * Saves the Defenses for a new character
      */
     public static function saveNewDefenseData( $defense, $character ) {
         $defenseModel = new Defense;
