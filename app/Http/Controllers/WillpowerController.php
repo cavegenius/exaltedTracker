@@ -17,7 +17,8 @@ class WillpowerController extends Controller
             if ( is_numeric($key) ) {
                 $total = ($key > $total) ? $key : $total;
             } else {
-                $number = substr($key, -1);
+                preg_match('/\d+/', $key, $numMatch);
+                $number = $numMatch[0];
                 $available = $number>$available ? $number : $available;
             }
         }

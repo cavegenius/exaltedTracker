@@ -109,10 +109,7 @@ class CharacterController extends Controller
         
         // Format the data to send to the save or edit functions
         $results = $this->formatCharacterData($request->post());
-        //echo '<pre>';
-        //var_dump($results);
-        //echo '</pre>';
-        //die;
+
         // If the character does not exist Save as a new character otherwise edit the existing.
         $user = Auth::id();
         $model = new Character;
@@ -127,7 +124,7 @@ class CharacterController extends Controller
         }
 
         // Once saved return to the character screen
-        //return redirect('/character')->with('status', 'Saved');
+        return redirect('/character')->with('status', 'Saved');
     }
 
     /**
@@ -139,7 +136,7 @@ class CharacterController extends Controller
         // Need to remove the CSRF Token
         unset($data['_token']);
         foreach ( $data as $key => $value ){
-            if( !empty($value ) ) {
+            if( $value != "" ) {
                 $keys = explode('-', $key);
                 $results[$keys[0]][$keys[1]] = $value;
             }

@@ -13,8 +13,10 @@ class IntimacieController extends Controller
     public static function saveNewIntimacieData( $inimacies, $character ) {
         $saveData = array();
         foreach( $inimacies as $key => $value ) {
-            $number = substr($key, -1);
-            $string = substr($key, 0, -1);
+            preg_match('/[^\d]+/', $key, $textMatch);
+            preg_match('/\d+/', $key, $numMatch);
+            $number = $numMatch[0];
+            $string = $textMatch[0];
             $saveData[$number][$string] = $value;
         }
 

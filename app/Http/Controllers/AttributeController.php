@@ -13,8 +13,10 @@ class AttributeController extends Controller
     public static function saveNewAttributeData( $attributes, $character ) {
         $saveData = array();
         foreach( $attributes as $attribute => $value ) {
-            $number = substr($attribute, -1);
-            $string = substr($attribute, 0, -1);
+            preg_match('/[^\d]+/', $attribute, $textMatch);
+            preg_match('/\d+/', $attribute, $numMatch);
+            $number = $numMatch[0];
+            $string = $textMatch[0];
             $saveData[$string] = $number;
         }
 

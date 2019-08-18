@@ -13,8 +13,10 @@ class AbilityController extends Controller
     public static function saveNewAbilityData( $abilities, $character ) {
         $saveData = array();
         foreach( $abilities as $ability => $value ) {
-            $number = substr($ability, -1);
-            $string = substr($ability, 0, -1);
+            preg_match('/[^\d]+/', $ability, $textMatch);
+            preg_match('/\d+/', $ability, $numMatch);
+            $number = $numMatch[0];
+            $string = $textMatch[0];
             $saveData[$string] = $number;
         }
 
