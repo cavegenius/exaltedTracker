@@ -28,9 +28,9 @@ $(document).ready( function() {
         let type = $( this ).data('type');
         let value = $( this ).data('value');
         $( '.checkbox-round[data-type=\''+type+'\']').each(function() {
-            if( $( this ).data( 'value' ) <= value ) {
+            if( $( this ).data( 'value' ) < value ) {
                 $( this ).prop('checked', true);
-            } else if( $( this ).data( 'value' ) >= value ) {
+            } else if( $( this ).data( 'value' ) > value ) {
                 $( this ).prop('checked', false);
             }
         });
@@ -40,9 +40,9 @@ $(document).ready( function() {
         let type = $( this ).data('type');
         let value = $( this ).data('value');
         $( '.checkbox[data-type=\''+type+'\']').each(function() {
-            if( $( this ).data( 'value' ) <= value ) {
+            if( $( this ).data( 'value' ) < value ) {
                 $( this ).prop('checked', true);
-            } else if( $( this ).data( 'value' ) >= value ) {
+            } else if( $( this ).data( 'value' ) > value ) {
                 $( this ).prop('checked', false);
             }
         });
