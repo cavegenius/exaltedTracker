@@ -178,9 +178,9 @@ class CharacterController extends Controller
         // Experience
         ExperienceController::saveNewExperienceData($data['experience'], $characterId);
         // DragonExperience
-        DragonExperienceController::saveNewDragonExperienceControllerData($data['dragonExperience'], $characterId);
+        DragonExperienceController::saveNewDragonExperienceData($data['dragonExperience'], $characterId);
         // Weapon
-        //WeaponController::saveNewWeaponData($data['weapon'], $characterId);
+        WeaponController::saveNewWeaponData($data['weapon'], $characterId);
         // Armor
         //ArmorController::saveNewArmorData($data['armor'], $characterId);
         // Defense
