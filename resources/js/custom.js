@@ -7,14 +7,17 @@ $(document).ready( function() {
         }
     });
 
+    // Load the character details
     $.ajax({
         method: 'POST', // Type of response and matches what we said in the route
         url: '/character/characterDetails', // This is the url we gave in the route
         success: function(response){ // What to do if we succeed
-            //console.log(response);
             if( response == 'No Character') {
                 $('.alert').append('You have not created your character yet. You will need to fill out the character sheet below');
                 $('.alert').removeClass('hide-on-load');
+            } else {
+                populateCharacterDetails( response.character);
+                populateAttributeDetails( response.attributes );
             }
         },
         error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
@@ -47,4 +50,18 @@ $(document).ready( function() {
             }
         });
     });
+
+    function populateCharacterDetails( character ) {
+        $.each(character, function(key,value) {
+            $( 'input[name=\'character-'+key+'\'').val(value);
+        });
+    }
+
+    function populateAttributeDetails( attributes ) {
+        $.each(attributes, function(key,value) {
+            console.log(key);
+            console.log(value);
+            $( 'input[name=\'attributes-'+key+value+'\'').click();
+        });
+    }
 });

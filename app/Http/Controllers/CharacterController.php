@@ -32,6 +32,7 @@ class CharacterController extends Controller
      */
     public function __construct() {
         $this->middleware('auth');
+        $this->model = new Character;
     }
 
     /**
@@ -55,19 +56,17 @@ class CharacterController extends Controller
     public function characterDetails() {
         $return = [];
         $user = Auth::id();
-        $model = new Character;
-        $character = $model->where('userId', $user);
 
+        $character = $this->model->getCharacter($user);
         // If the character does not exist stop here and return
-        if(!$character->count()) {
+        if(!$character->id) {
            return ['No Character'];
         }
+        $controller = new AttributeController;
+        $attributes = $controller->getAttributes($character->id);
 
-        $return[] = $character;
-        $return[] = 'hello';
-
-        $return['character']       = '';
-        $return['attributes']      = '';
+        $return['character']       = $character;
+        $return['attributes']      = $attributes;
         $return['abilities']       = '';
         $return['specializations'] = '';
         $return['willpower']       = '';

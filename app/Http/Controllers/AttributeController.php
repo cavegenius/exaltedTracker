@@ -7,6 +7,10 @@ use App\Attribute;
 
 class AttributeController extends Controller
 {
+    public function __construct() {
+        $this->model = new Attribute;
+    }
+    
     /**
      * Saves the attributes for a new character
      */
@@ -31,5 +35,12 @@ class AttributeController extends Controller
         } else {
             return false;
         }
+    }
+
+    public function getAttributes( $character ) {
+        $model = new Attribute;
+        $attributes = $model->getAttributesDetails( $character );
+
+        return $attributes;
     }
 }
