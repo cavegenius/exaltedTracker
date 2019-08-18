@@ -49384,6 +49384,29 @@ $(document).ready(function () {
       console.log(JSON.stringify(jqXHR));
       console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
     }
+  }); // Any time a round checkbox option is clicked we want to also selected any that come before it and de-select any that come after it.
+
+  $('.checkbox-round').click(function () {
+    var type = $(this).data('type');
+    var value = $(this).data('value');
+    $('.checkbox-round[data-type=\'' + type + '\']').each(function () {
+      if ($(this).data('value') <= value) {
+        $(this).prop('checked', true);
+      } else if ($(this).data('value') >= value) {
+        $(this).prop('checked', false);
+      }
+    });
+  });
+  $('.checkbox').click(function () {
+    var type = $(this).data('type');
+    var value = $(this).data('value');
+    $('.checkbox[data-type=\'' + type + '\']').each(function () {
+      if ($(this).data('value') <= value) {
+        $(this).prop('checked', true);
+      } else if ($(this).data('value') >= value) {
+        $(this).prop('checked', false);
+      }
+    });
   });
 });
 
