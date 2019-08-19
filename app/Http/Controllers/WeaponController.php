@@ -34,4 +34,10 @@ class WeaponController extends Controller
 
         return true;
     }
+
+    public function retrieve( $character ) {
+        $model = new Weapon;
+        $weapon = $model->where('characterId', $character)->get();
+        return $weapon;
+    }
 }

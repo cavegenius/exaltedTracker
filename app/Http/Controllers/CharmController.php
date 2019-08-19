@@ -35,4 +35,11 @@ class CharmController extends Controller
 
         return true;
     }
+
+    public function retrieve( $character ) {
+        $model = new Charm;
+        //$attributes = $model->getAttributesDetails( $character );
+        $charm = $model->where('characterId', $character)->get();
+        return $charm;
+    }
 }

@@ -17,7 +17,7 @@ $(document).ready( function() {
                 $('.alert').removeClass('hide-on-load');
             } else {
                 populateCharacterDetails( response.character);
-                populateAttributeDetails( response.attributes );
+                populateAttributeDetails( response.attribute );
             }
         },
         error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail

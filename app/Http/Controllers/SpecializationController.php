@@ -19,4 +19,10 @@ class SpecializationController extends Controller
         }
         return true;
     }
+
+    public function retrieve( $character ) {
+        $model = new Specialization;
+        $specialization = $model->where('characterId', $character)->get();
+        return $specialization;
+    }
 }

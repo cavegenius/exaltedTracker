@@ -36,4 +36,10 @@ class AbilityController extends Controller
             return false;
         }
     }
+
+    public function retrieve( $character ) {
+        $model = new Ability;
+        $abilities = $model->where('characterId', $character)->get();
+        return $abilities;
+    }
 }

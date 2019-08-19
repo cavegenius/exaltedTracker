@@ -29,4 +29,10 @@ class DefenseController extends Controller
             return false;
         }
     }
+
+    public function retrieve( $character ) {
+        $model = new Defense;
+        $defense = $model->where('characterId', $character)->get();
+        return $defense;
+    }
 }

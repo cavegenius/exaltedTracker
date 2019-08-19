@@ -17,4 +17,10 @@ class DragonExperienceController extends Controller
         $dragonExperienceModel->total = $dragonExperience['total'];
         $dragonExperienceModel->save();
     }
+
+    public function retrieve( $character ) {
+        $model = new DragonExperience;
+        $dragonExperience = $model->where('characterId', $character)->get();
+        return $dragonExperience;
+    }
 }

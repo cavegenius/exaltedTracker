@@ -29,4 +29,10 @@ class WillpowerController extends Controller
         $willpower->available = $available;
         $willpower->save();
     }
+
+    public function retrieve( $character ) {
+        $model = new Willpower;
+        $willpower = $model->where('characterId', $character)->get();
+        return $willpower;
+    }
 }

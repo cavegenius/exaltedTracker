@@ -33,4 +33,10 @@ class HealthController extends Controller
 
         return true;
     }
+
+    public function retrieve( $character ) {
+        $model = new Health;
+        $health = $model->where('characterId', $character)->get();
+        return $health;
+    }
 }

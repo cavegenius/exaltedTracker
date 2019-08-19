@@ -19,4 +19,10 @@ class InventoryController extends Controller
         }
         return true;
     }
+
+    public function retrieve( $character ) {
+        $model = new Inventory;
+        $inventory = $model->where('characterId', $character)->get();
+        return $inventory;
+    }
 }

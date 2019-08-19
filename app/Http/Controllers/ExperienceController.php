@@ -17,4 +17,10 @@ class ExperienceController extends Controller
         $experienceModel->total = $experience['total'];
         $experienceModel->save();
     }
+
+    public function retrieve( $character ) {
+        $model = new Experience;
+        $experience = $model->where('characterId', $character)->get();
+        return $experience;
+    }
 }

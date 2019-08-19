@@ -25,4 +25,10 @@ class EssenceController extends Controller
         $essenceModel->save();
         return true;
     }
+
+    public function retrieve( $character ) {
+        $model = new Essence;
+        $essence = $model->where('characterId', $character)->get();
+        return $essence;
+    }
 }

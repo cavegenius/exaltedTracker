@@ -37,10 +37,9 @@ class AttributeController extends Controller
         }
     }
 
-    public function getAttributes( $character ) {
+    public function retrieve( $character ) {
         $model = new Attribute;
-        $attributes = $model->getAttributesDetails( $character );
-
+        $attributes = $model->where('characterId', $character)->get();
         return $attributes;
     }
 }

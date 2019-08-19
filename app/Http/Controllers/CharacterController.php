@@ -56,33 +56,23 @@ class CharacterController extends Controller
     public function characterDetails() {
         $return = [];
         $user = Auth::id();
+        $types = ['attribute', 'ability', 'specialization', 'willpower', 'essence', 'merit', 'anima', 'aura', 'experience', 'dragonExperience', 'weapon', 'defense', 'health', 'armor', 'intimacie', 'charm', 'inventory'];
 
         $character = $this->model->getCharacter($user);
         // If the character does not exist stop here and return
         if(!$character->id) {
            return ['No Character'];
         }
-        $controller = new AttributeController;
-        $attributes = $controller->getAttributes($character->id);
 
         $return['character']       = $character;
-        $return['attributes']      = $attributes;
-        $return['abilities']       = '';
-        $return['specializations'] = '';
-        $return['willpower']       = '';
-        $return['essence']         = '';
-        $return['merits']          = '';
-        $return['anima']           = '';
-        $return['aura']            = '';
-        $return['experience']      = '';
-        $return['dbExperience']    = '';
-        $return['weapons']         = '';
-        $return['defense']         = '';
-        $return['health']          = '';
-        $return['armor']           = '';
-        $return['intimacies']      = '';
-        $return['charms']          = '';
-        $return['inventory']       = '';
+
+        // Loop through the different character information sections
+        foreach( $types as $type) {
+            $controllerName = 'App\\Http\\Controllers\\'.ucfirst($type).'Controller';
+            $controller = new $controllerName();
+            $result = $controller->retrieve($character->id);
+            $return[$type]      = $result;
+        }
 
         return $return;
     }

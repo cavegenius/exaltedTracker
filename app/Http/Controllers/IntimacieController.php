@@ -30,4 +30,10 @@ class IntimacieController extends Controller
 
         return true;
     }
+
+    public function retrieve( $character ) {
+        $model = new Intimacie;
+        $intimacie = $model->where('characterId', $character)->get();
+        return $intimacie;
+    }
 }

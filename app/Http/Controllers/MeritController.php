@@ -29,4 +29,10 @@ class MeritController extends Controller
         }
         return true;
     }
+
+    public function retrieve( $character ) {
+        $model = new Merit;
+        $merit = $model->where('characterId', $character)->get();
+        return $merit;
+    }
 }

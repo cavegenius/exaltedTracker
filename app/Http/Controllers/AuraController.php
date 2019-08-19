@@ -16,4 +16,11 @@ class AuraController extends Controller
         $auraModel->type = $aura['aura'];
         $auraModel->save();
     }
+
+    public function retrieve( $character ) {
+        $model = new Aura;
+        //$attributes = $model->getAttributesDetails( $character );
+        $aura = $model->where('characterId', $character)->get();
+        return $aura;
+    }
 }

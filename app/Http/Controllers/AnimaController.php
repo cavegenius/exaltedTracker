@@ -16,4 +16,10 @@ class AnimaController extends Controller
         $animaModel->level = $anima['anima'];
         $animaModel->save();
     }
+
+    public function retrieve( $character ) {
+        $model = new Anima;
+        $anima = $model->where('characterId', $character)->get();
+        return $anima;
+    }
 }

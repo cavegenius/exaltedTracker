@@ -33,4 +33,11 @@ class ArmorController extends Controller
 
         return true;
     }
+
+    public function retrieve( $character ) {
+        $model = new Armor;
+        //$attributes = $model->getAttributesDetails( $character );
+        $armor = $model->where('characterId', $character)->get();
+        return $armor;
+    }
 }
