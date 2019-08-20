@@ -677,10 +677,11 @@
                     </div>
                     <h2>ELEMENTAL AURA</h2>
                     <div class="form-row">
-                        <div class="col-3 text-center">{{Form::label('earth', 'Earth')}}<br>{{Form::radio('aura-aura', 'earth', false, ['class' => 'checkbox'])}}</div>
+                        <div class="col-2 text-center">{{Form::label('none', 'None')}}<br>{{Form::radio('aura-aura', 'none', false, ['class' => 'checkbox'])}}</div>
+                        <div class="col-2 text-center">{{Form::label('earth', 'Earth')}}<br>{{Form::radio('aura-aura', 'earth', false, ['class' => 'checkbox'])}}</div>
                         <div class="col-2 text-center">{{Form::label('air', 'Air')}}<br>{{Form::radio('aura-aura', 'air', false, ['class' => 'checkbox'])}}</div>
                         <div class="col-2 text-center">{{Form::label('fire', 'Fire')}}<br>{{Form::radio('aura-aura', 'fire', false, ['class' => 'checkbox'])}}</div>
-                        <div class="col-3 text-center">{{Form::label('water', 'Water')}}<br>{{Form::radio('aura-aura', 'water', false, ['class' => 'checkbox'])}}</div>
+                        <div class="col-2 text-center">{{Form::label('water', 'Water')}}<br>{{Form::radio('aura-aura', 'water', false, ['class' => 'checkbox'])}}</div>
                         <div class="col-2 text-center">{{Form::label('wood', 'Wood')}}<br>{{Form::radio('aura-aura', 'wood', false, ['class' => 'checkbox'])}}</div>
                     </div>
                     <h2>EXPERIENCE</h2>
@@ -892,7 +893,9 @@
     <div class="row healthRow">
         <div class="healthBox">
             {{Form::checkbox('health-box1', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '1'])}}
-            {{Form::text('health-text1', '', ['class' => 'width-50', 'placeholder' => ''])}}
+            &nbsp;0
+            {{ Form::hidden('health-text1', '0') }}
+
         </div>
         <div class="healthBox">
             {{Form::checkbox('health-box2', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '2'])}}

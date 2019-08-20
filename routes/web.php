@@ -11,12 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('character');
-});
-
 Auth::routes();
-
+Route::get('/', 'CharacterController@index')->name('character');
 Route::get('/character', 'CharacterController@index')->name('character');
 
 // AJAX Routes

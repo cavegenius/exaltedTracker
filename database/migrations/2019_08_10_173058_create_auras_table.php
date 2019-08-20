@@ -17,7 +17,7 @@ class CreateAurasTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('characterId')->unsigned();
             $table->foreign('characterId')->references('id')->on('characters');
-            $table->enum('type', ['air', 'earth', 'fire', 'water', 'wood']);
+            $table->enum('type', ['none', 'air', 'earth', 'fire', 'water', 'wood']);
         });
     }
 
