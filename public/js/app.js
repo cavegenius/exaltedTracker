@@ -49358,8 +49358,6 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  var id = 12; // A random variable for this example
-
   $.ajaxSetup({
     headers: {
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -49378,7 +49376,23 @@ $(document).ready(function () {
         $('.alert').removeClass('hide-on-load');
       } else {
         populateCharacterDetails(response.character);
-        populateAttributeDetails(response.attributes);
+        populateAttributeDetails(response.attribute);
+        populateAbilityDetails(response.ability);
+        populateSpecializationDetails(response.specialization);
+        populateWillpowerDetails(response.willpower);
+        populateEssenceDetails(response.essence);
+        populateMeritDetails(response.merit);
+        populateAnimaDetails(response.anima);
+        populateAuraDetails(response.aura);
+        populateExperienceDetails(response.experience);
+        populateDragonExperienceDetails(response.dragonExperience);
+        populateWeaponDetails(response.weapon);
+        populateArmorDetails(response.armor);
+        populateDefenseDetails(response.defense);
+        populateHealthDetails(response.health);
+        populateIntimacyDetails(response.intimacie);
+        populateCharmDetails(response.charm);
+        populateInventoryDetails(response.inventory);
       }
     },
     error: function error(jqXHR, textStatus, errorThrown) {
@@ -49419,9 +49433,152 @@ $(document).ready(function () {
 
   function populateAttributeDetails(attributes) {
     $.each(attributes, function (key, value) {
-      console.log(key);
-      console.log(value);
-      $('input[name=\'attributes-' + key + value + '\'').click();
+      $.each(value, function (key, value) {
+        $('input[name=\'attributes-' + key + value + '\'').click();
+      });
+    });
+  }
+
+  function populateAbilityDetails(abilities) {
+    $.each(abilities, function (key, value) {
+      $.each(value, function (key, value) {
+        $('input[name=\'abilities-' + key + value + '\'').click();
+
+        if (key.includes('Favored') && value == 1) {
+          $('input[name=\'abilities-' + key + '\'').click();
+        }
+      });
+    });
+  }
+
+  function populateSpecializationDetails(specializations) {
+    $.each(specializations, function (key, value) {
+      var slot = key + 1;
+      $('input[name=\'specialization-' + slot + '\'').val(value.specialization);
+    });
+  }
+
+  function populateWillpowerDetails(willpowers) {
+    $.each(willpowers, function (key, value) {
+      $('input[name=\'willpower-' + value.total + '\'').click();
+      $('input[name=\'willpower-Available' + value.available + '\'').click();
+    });
+  }
+
+  function populateEssenceDetails(essence) {
+    $.each(essence, function (key, value) {
+      $.each(value, function (key, value) {
+        if (key == 'level') {
+          $('input[name=\'essence-' + value + '\'').click();
+        } else {
+          $('input[name=\'essence-' + key + '\'').val(value);
+        }
+      });
+    });
+  }
+
+  function populateMeritDetails(merits) {
+    $.each(merits, function (key, value) {
+      var slot = key + 1;
+      $('input[name=\'merit-' + slot + '\'').val(value.name);
+      $('input[name=\'merit-' + slot + 'v' + value.value + '\'').click();
+    });
+  }
+
+  function populateAnimaDetails(anima) {
+    $.each(anima, function (key, value) {
+      $('input[value=\'' + value.level + '\'').click();
+    });
+  }
+
+  function populateAuraDetails(aura) {
+    $.each(aura, function (key, value) {
+      $('input[value=\'' + value.type + '\'').click();
+    });
+  }
+
+  function populateExperienceDetails(experience) {
+    $.each(experience, function (key, value) {
+      $('input[name=\'experience-current\'').val(value.current);
+      $('input[name=\'experience-total\'').val(value.total);
+    });
+  }
+
+  function populateDragonExperienceDetails(dragonExperience) {
+    $.each(dragonExperience, function (key, value) {
+      $('input[name=\'dragonExperience-current\'').val(value.current);
+      $('input[name=\'dragonExperience-total\'').val(value.total);
+    });
+  }
+
+  function populateWeaponDetails(weapons) {
+    var i = 1;
+    $.each(weapons, function (key, value) {
+      $.each(value, function (key, value) {
+        $('input[name=\'weapon-' + key + i + '\'').val(value);
+      });
+      i++;
+    });
+  }
+
+  function populateArmorDetails(armor) {
+    var i = 1;
+    $.each(armor, function (key, value) {
+      $.each(value, function (key, value) {
+        $('input[name=\'armor-' + key + i + '\'').val(value);
+      });
+      i++;
+    });
+  }
+
+  function populateDefenseDetails(defense) {
+    $.each(defense, function (key, value) {
+      $.each(value, function (key, value) {
+        $('input[name=\'defense-' + key + '\'').val(value);
+      });
+      ;
+    });
+  }
+
+  function populateHealthDetails(health) {
+    $.each(health, function (key, value) {
+      if (value.activated == 1) {
+        console.log(value.position);
+        $('input[name=\'health-box' + value.position + '\'').click();
+      }
+
+      $('input[name=\'health-text' + value.position + '\'').val(value.value);
+    });
+  }
+
+  function populateIntimacyDetails(intimacies) {
+    var i = 1;
+    $.each(intimacies, function (key, value) {
+      $('input[name=\'intimacy-intimacy' + i + '\'').val(value.intimacy);
+      $('input[name=\'intimacy-intensity' + i + '\'').val(value.intensity);
+      i++;
+    });
+  }
+
+  function populateCharmDetails(charms) {
+    var i = 1;
+    $.each(charms, function (key, value) {
+      $('input[name=\'charm-name' + i + '\'').val(value.name);
+      $('input[name=\'charm-type' + i + '\'').val(value.type);
+      $('input[name=\'charm-duration' + i + '\'').val(value.duration);
+      $('input[name=\'charm-cost' + i + '\'').val(value.cost);
+      $('input[name=\'charm-element' + i + '\'').val(value.element);
+      $('input[name=\'charm-book' + i + '\'').val(value.book);
+      $('input[name=\'charm-effect' + i + '\'').val(value.effect);
+      i++;
+    });
+  }
+
+  function populateInventoryDetails(inventory) {
+    var i = 1;
+    $.each(inventory, function (key, value) {
+      $('input[name=\'inventory-' + i + '\'').val(value.item);
+      i++;
     });
   }
 });
