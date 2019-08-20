@@ -21,7 +21,11 @@ class IntimacieController extends Controller
         }
 
         foreach($saveData as $intimacy) {
-            $intimacyModel = Intimacie::firstOrNew(['characterId' => $character, 'intimacy' => $intimacy['intimacy']]);
+            if(array_key_exists('id', $intimacy)) {
+                $intimacyModel = Intimacie::firstOrNew(['id' => $intimacy['id']]);
+            } else {
+                $intimacyModel = new Intimacie;
+            }
             $intimacyModel->characterId = $character;
             $intimacyModel->intimacy  = $intimacy['intimacy'];
             $intimacyModel->intensity = $intimacy['intensity'];

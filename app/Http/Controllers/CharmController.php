@@ -12,6 +12,7 @@ class CharmController extends Controller
      */
     public function save( $charms, $character ) {
         $saveData = array();
+
         foreach( $charms as $key => $value ) {
             preg_match('/[^\d]+/', $key, $textMatch);
             preg_match('/\d+/', $key, $numMatch);
@@ -19,9 +20,13 @@ class CharmController extends Controller
             $string = $textMatch[0];
             $saveData[$number][$string] = $value;
         }
-
+        
         foreach($saveData as $charm) {
-            $charmModel = Charm::firstOrNew(['characterId' => $character, 'name' => $charm['name']]);
+            if(array_key_exists('id', $charm)) {
+                $charmModel = Charm::firstOrNew(['id' => $charm['id']]);
+            } else {
+                $charmModel = new Charm;
+            }
             $charmModel->characterId = $character;
             $charmModel->name  = $charm['name'];
             $charmModel->type = $charm['type'];

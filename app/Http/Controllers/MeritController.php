@@ -12,16 +12,23 @@ class MeritController extends Controller
      */
     public function save( $merits, $character ) {
         $saveData = array();
+
         foreach( $merits as $key => $value ) {
             if ( is_numeric($key) ) {
                 $saveData[$key]['name'] = $value;
+            } else if($key[0] == 'i') {
+                $saveData[$key[2]]['id'] = $value;
             } else {
                 $saveData[$key[0]]['value'] = substr($key, -1);
             }
         }
-
+        
         foreach($saveData as $merit) {
-            $meritModel = Merit::firstOrNew(['characterId' => $character, 'name' => $merit['name']]);
+            if(array_key_exists('id', $merit)) {
+                $meritModel = Merit::firstOrNew(['id' => $merit['id']]);
+            } else {
+                $meritModel = new Merit;
+            }
             $meritModel->characterId = $character;
             $meritModel->name = $merit['name'];
             $meritModel->value = $merit['value'];

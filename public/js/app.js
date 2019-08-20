@@ -49456,6 +49456,7 @@ $(document).ready(function () {
   function populateSpecializationDetails(specializations) {
     $.each(specializations, function (key, value) {
       var slot = key + 1;
+      $('input[name=\'specialization-' + slot + '\'').parent().prepend('<input type="hidden" name="specialization-id' + slot + '" value="' + value.id + '" />');
       $('input[name=\'specialization-' + slot + '\'').val(value.specialization);
     });
   }
@@ -49482,6 +49483,7 @@ $(document).ready(function () {
   function populateMeritDetails(merits) {
     $.each(merits, function (key, value) {
       var slot = key + 1;
+      $('input[name=\'merit-' + slot + '\'').parent().prepend('<input type="hidden" name="merit-id' + slot + '" value="' + value.id + '" />');
       $('input[name=\'merit-' + slot + '\'').val(value.name);
       $('input[name=\'merit-' + slot + 'v' + value.value + '\'').click();
     });
@@ -49517,6 +49519,10 @@ $(document).ready(function () {
     var i = 1;
     $.each(weapons, function (key, value) {
       $.each(value, function (key, value) {
+        if (key == 'id') {
+          $('input[name=\'weapon-name' + i + '\'').parent().prepend('<input type="hidden" name="weapon-' + key + i + '" value="' + value + '" />');
+        }
+
         $('input[name=\'weapon-' + key + i + '\'').val(value);
       });
       i++;
@@ -49527,6 +49533,10 @@ $(document).ready(function () {
     var i = 1;
     $.each(armor, function (key, value) {
       $.each(value, function (key, value) {
+        if (key == 'id') {
+          $('input[name=\'armor-name' + i + '\'').parent().prepend('<input type="hidden" name="armor-' + key + i + '" value="' + value + '" />');
+        }
+
         $('input[name=\'armor-' + key + i + '\'').val(value);
       });
       i++;
@@ -49544,6 +49554,10 @@ $(document).ready(function () {
 
   function populateHealthDetails(health) {
     $.each(health, function (key, value) {
+      if (key == 'id') {
+        $('input[name=\'health-box' + i + '\'').parent().prepend('<input type="hidden" name="health-' + key + i + '" value="' + value + '" />');
+      }
+
       if (value.activated == 1) {
         $('input[name=\'health-box' + value.position + '\'').click();
       }
@@ -49555,6 +49569,7 @@ $(document).ready(function () {
   function populateIntimacyDetails(intimacies) {
     var i = 1;
     $.each(intimacies, function (key, value) {
+      $('input[name=\'intimacy-intimacy' + i + '\'').parent().prepend('<input type="hidden" name="intimacy-id' + i + '" value="' + value.id + '" />');
       $('input[name=\'intimacy-intimacy' + i + '\'').val(value.intimacy);
       $('input[name=\'intimacy-intensity' + i + '\'').val(value.intensity);
       i++;
@@ -49564,6 +49579,7 @@ $(document).ready(function () {
   function populateCharmDetails(charms) {
     var i = 1;
     $.each(charms, function (key, value) {
+      $('input[name=\'charm-name' + i + '\'').parent().prepend('<input type="hidden" name="charm-id' + i + '" value="' + value.id + '" />');
       $('input[name=\'charm-name' + i + '\'').val(value.name);
       $('input[name=\'charm-type' + i + '\'').val(value.type);
       $('input[name=\'charm-duration' + i + '\'').val(value.duration);
@@ -49578,11 +49594,16 @@ $(document).ready(function () {
   function populateInventoryDetails(inventory) {
     var i = 1;
     $.each(inventory, function (key, value) {
+      $('input[name=\'inventory-' + i + '\'').parent().prepend('<input type="hidden" name="inventory-id' + i + '" value="' + value.id + '" />');
       $('input[name=\'inventory-' + i + '\'').val(value.item);
       i++;
     });
   }
 });
+
+if (window.performance && window.performance.navigation.type == window.performance.navigation.TYPE_BACK_FORWARD) {
+  window.location.reload();
+}
 
 /***/ }),
 

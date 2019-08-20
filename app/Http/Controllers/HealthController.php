@@ -23,7 +23,11 @@ class HealthController extends Controller
         }
 
         foreach($saveData as $key => $health) {
-            $healthModel = Health::firstOrNew(['characterId' => $character, 'position' => $key]);
+            if(array_key_exists('id', $health)) {
+                $healthModel = Health::firstOrNew(['id' => $health['id']]);
+            } else {
+                $healthModel = new Health;
+            }
             $healthModel->characterId = $character;
             $healthModel->position  = $key;
             $healthModel->value = $health['text'];

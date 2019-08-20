@@ -21,7 +21,11 @@ class ArmorController extends Controller
         }
 
         foreach($saveData as $armor) {
-            $armorModel = Armor::firstOrNew(['characterId' => $character, 'name' => $armor['name']]);
+            if(array_key_exists('id', $armor)) {
+                $armorModel = Armor::firstOrNew(['id' => $armor['id']]);
+            } else {
+                $armorModel = new Armor;
+            }
             $armorModel->characterId = $character;
             $armorModel->name  = $armor['name'];
             $armorModel->soak   = $armor['soak'];

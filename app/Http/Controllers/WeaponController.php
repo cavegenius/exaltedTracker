@@ -21,7 +21,11 @@ class WeaponController extends Controller
         }
 
         foreach($saveData as $weapon) {
-            $weaponModel = Weapon::firstOrNew(['characterId' => $character, 'name' => $weapon['name']]);
+            if(array_key_exists('id', $weapon)) {
+                $weaponModel = Weapon::firstOrNew(['id' => $weapon['id']]);
+            } else {
+                $weaponModel = new Weapon;
+            }
             $weaponModel->characterId = $character;
             $weaponModel->name  = $weapon['name'];
             $weaponModel->wit   = $weapon['wit'];
