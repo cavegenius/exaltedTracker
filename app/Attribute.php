@@ -8,4 +8,5 @@ use Illuminate\Support\Facades\DB;
 class Attribute extends Model
 {
     public $timestamps = false;
+    protected $fillable = ['characterId'];
 }

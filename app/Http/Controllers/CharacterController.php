@@ -162,8 +162,10 @@ class CharacterController extends Controller
         foreach( $types as $type => $name) {
             $controllerName = 'App\\Http\\Controllers\\'.ucfirst($type).'Controller';
             $controller = new $controllerName();
-            $result = $controller->save($data[$name], $characterId);
-            $return[$type]      = $result;
+            if(array_key_exists($name, $data)) {
+                $controller->save($data[$name], $characterId);
+            }
+            //$return[$type]      = $result;
         }
     }
 
