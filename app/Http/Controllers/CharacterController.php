@@ -106,7 +106,7 @@ class CharacterController extends Controller
         //Check for existing character
         $character = $model->where('userId', $user);
         
-        $this->saveNewCharacter($results);
+        $this->saveCharacter($results);
         
         // Once saved return to the character screen
         return redirect('/character')->with('status', 'Saved');
@@ -134,11 +134,11 @@ class CharacterController extends Controller
      *  Performs the save for all types of data for a character sheet
      * 
      */
-    private function saveNewCharacter( $data ) {
+    private function saveCharacter( $data ) {
         $user = Auth::id();
 
         // Save the main Character Details first
-        $characterId = $this->saveNewCharacterData( $data['character'], $user );
+        $characterId = $this->save( $data['character'], $user );
 
         // Now we start using the other controllers to save the rest of the information on bit at a time.
         $types = [ 'attribute' => 'attributes', 
@@ -171,7 +171,7 @@ class CharacterController extends Controller
      * Performs the save for just the section of character details
      * 
      */
-    private function saveNewCharacterData( $data, $user ) {
+    private function save( $data, $user ) {
         $character = Character::firstOrNew(['userId' => $user]);
         $character->userId = $user;
         $character->name = $data['name'];
