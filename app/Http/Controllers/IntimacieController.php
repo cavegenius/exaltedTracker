@@ -10,7 +10,7 @@ class IntimacieController extends Controller
     /**
      * Saves the Intimacy for a new character
      */
-    public static function saveNewIntimacieData( $inimacies, $character ) {
+    public function save( $inimacies, $character ) {
         $saveData = array();
         foreach( $inimacies as $key => $value ) {
             preg_match('/[^\d]+/', $key, $textMatch);
@@ -21,7 +21,7 @@ class IntimacieController extends Controller
         }
 
         foreach($saveData as $intimacy) {
-            $intimacyModel = new Intimacie;
+            $intimacyModel = Intimacie::firstOrNew(['characterId' => $character, 'intimacy' => $intimacy['intimacy']]);
             $intimacyModel->characterId = $character;
             $intimacyModel->intimacy  = $intimacy['intimacy'];
             $intimacyModel->intensity = $intimacy['intensity'];

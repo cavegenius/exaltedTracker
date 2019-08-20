@@ -10,8 +10,8 @@ class DefenseController extends Controller
     /**
      * Saves the Defenses for a new character
      */
-    public static function saveNewDefenseData( $defense, $character ) {
-        $defenseModel = new Defense;
+    public function save( $defense, $character ) {
+        $defenseModel = Defense::firstOrNew(['characterId' => $character]);
         $defenseModel->characterId = $character;
         $defenseModel->naturalSoak  = $defense['naturalSoak'];
         $defenseModel->finalSoak   = $defense['finalSoak'];

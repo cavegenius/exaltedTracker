@@ -14,24 +14,26 @@ $(document).ready( function() {
                 $('.alert').append('You have not created your character yet. You will need to fill out the character sheet below');
                 $('.alert').removeClass('hide-on-load');
             } else {
-                populateCharacterDetails( response.character);
-                populateAttributeDetails( response.attribute );
-                populateAbilityDetails( response.ability );
-                populateSpecializationDetails( response.specialization );
-                populateWillpowerDetails( response.willpower );
-                populateEssenceDetails( response.essence );
-                populateMeritDetails( response.merit );
-                populateAnimaDetails( response.anima );
-                populateAuraDetails( response.aura );
-                populateExperienceDetails( response.experience );
-                populateDragonExperienceDetails( response.dragonExperience );
-                populateWeaponDetails( response.weapon );
-                populateArmorDetails( response.armor );
-                populateDefenseDetails( response.defense );
-                populateHealthDetails( response.health );
-                populateIntimacyDetails( response.intimacie );
-                populateCharmDetails( response.charm );
-                populateInventoryDetails( response.inventory );
+                if( !$('#character-name').val() ){
+                    populateCharacterDetails( response.character);
+                    populateAttributeDetails( response.attribute );
+                    populateAbilityDetails( response.ability );
+                    populateSpecializationDetails( response.specialization );
+                    populateWillpowerDetails( response.willpower );
+                    populateEssenceDetails( response.essence );
+                    populateMeritDetails( response.merit );
+                    populateAnimaDetails( response.anima );
+                    populateAuraDetails( response.aura );
+                    populateExperienceDetails( response.experience );
+                    populateDragonExperienceDetails( response.dragonExperience );
+                    populateWeaponDetails( response.weapon );
+                    populateArmorDetails( response.armor );
+                    populateDefenseDetails( response.defense );
+                    populateHealthDetails( response.health );
+                    populateIntimacyDetails( response.intimacie );
+                    populateCharmDetails( response.charm );
+                    populateInventoryDetails( response.inventory );
+                }
             }
         },
         error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail

@@ -10,7 +10,7 @@ class CharmController extends Controller
     /**
      * Saves the Charm for a new character
      */
-    public static function saveNewCharmData( $charms, $character ) {
+    public function save( $charms, $character ) {
         $saveData = array();
         foreach( $charms as $key => $value ) {
             preg_match('/[^\d]+/', $key, $textMatch);
@@ -21,7 +21,7 @@ class CharmController extends Controller
         }
 
         foreach($saveData as $charm) {
-            $charmModel = new Charm;
+            $charmModel = Charm::firstOrNew(['characterId' => $character, 'name' => $charm['name']]);
             $charmModel->characterId = $character;
             $charmModel->name  = $charm['name'];
             $charmModel->type = $charm['type'];

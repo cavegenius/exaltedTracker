@@ -10,7 +10,7 @@ class ArmorController extends Controller
     /**
      * Saves the Armor for a new character
      */
-    public static function saveNewArmorData( $armors, $character ) {
+    public function save( $armors, $character ) {
         $saveData = array();
         foreach( $armors as $key => $value ) {
             preg_match('/[^\d]+/', $key, $textMatch);
@@ -21,7 +21,7 @@ class ArmorController extends Controller
         }
 
         foreach($saveData as $armor) {
-            $armorModel = new Armor;
+            $armorModel = Armor::firstOrNew(['characterId' => $character, 'name' => $armor['name']]);
             $armorModel->characterId = $character;
             $armorModel->name  = $armor['name'];
             $armorModel->soak   = $armor['soak'];

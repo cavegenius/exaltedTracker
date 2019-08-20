@@ -10,9 +10,9 @@ class SpecializationController extends Controller
     /**
      * Saves the specializations for a new character
      */
-    public static function saveNewSpecializationData( $specializations, $character ) {
+    public function save( $specializations, $character ) {
         foreach( $specializations as $specialization) {
-            $specializationModel = new Specialization;
+            $specializationModel = Specialization::firstOrNew(['characterId' => $character, 'specialization' => $specialization]);
             $specializationModel->characterId = $character;
             $specializationModel->specialization = $specialization;
             $specializationModel->save();

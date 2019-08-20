@@ -10,8 +10,8 @@ class AnimaController extends Controller
     /**
      * Saves the Anima for a new character
      */
-    public static function saveNewAnimaData( $anima, $character ) {
-        $animaModel = new Anima;
+    public function save( $anima, $character ) {
+        $animaModel = Anima::firstOrNew(['characterId' => $character]);
         $animaModel->characterId = $character;
         $animaModel->level = $anima['anima'];
         $animaModel->save();

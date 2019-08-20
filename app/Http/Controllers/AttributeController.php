@@ -14,7 +14,7 @@ class AttributeController extends Controller
     /**
      * Saves the attributes for a new character
      */
-    public static function saveNewAttributeData( $attributes, $character ) {
+    public function save( $attributes, $character ) {
         $saveData = array();
         foreach( $attributes as $attribute => $value ) {
             preg_match('/[^\d]+/', $attribute, $textMatch);
@@ -24,17 +24,16 @@ class AttributeController extends Controller
             $saveData[$string] = $number;
         }
 
-        $attribute = new Attribute;
+        
+        $attribute = Attribute::firstOrNew(['characterId' => $character]);
         $attribute->characterId = $character;
         foreach( $saveData as $key => $value ) {
             $attribute->$key = $value;
         }
         
-        if( $attribute->save() ) {
-            return true;
-        } else {
-            return false;
-        }
+        $attribute->save();
+        
+        return true;
     }
 
     public function retrieve( $character ) {

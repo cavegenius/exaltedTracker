@@ -49375,29 +49375,31 @@ $(document).ready(function () {
         $('.alert').append('You have not created your character yet. You will need to fill out the character sheet below');
         $('.alert').removeClass('hide-on-load');
       } else {
-        populateCharacterDetails(response.character);
-        populateAttributeDetails(response.attribute);
-        populateAbilityDetails(response.ability);
-        populateSpecializationDetails(response.specialization);
-        populateWillpowerDetails(response.willpower);
-        populateEssenceDetails(response.essence);
-        populateMeritDetails(response.merit);
-        populateAnimaDetails(response.anima);
-        populateAuraDetails(response.aura);
-        populateExperienceDetails(response.experience);
-        populateDragonExperienceDetails(response.dragonExperience);
-        populateWeaponDetails(response.weapon);
-        populateArmorDetails(response.armor);
-        populateDefenseDetails(response.defense);
-        populateHealthDetails(response.health);
-        populateIntimacyDetails(response.intimacie);
-        populateCharmDetails(response.charm);
-        populateInventoryDetails(response.inventory);
+        if (!$('#character-name').val()) {
+          populateCharacterDetails(response.character);
+          populateAttributeDetails(response.attribute);
+          populateAbilityDetails(response.ability);
+          populateSpecializationDetails(response.specialization);
+          populateWillpowerDetails(response.willpower);
+          populateEssenceDetails(response.essence);
+          populateMeritDetails(response.merit);
+          populateAnimaDetails(response.anima);
+          populateAuraDetails(response.aura);
+          populateExperienceDetails(response.experience);
+          populateDragonExperienceDetails(response.dragonExperience);
+          populateWeaponDetails(response.weapon);
+          populateArmorDetails(response.armor);
+          populateDefenseDetails(response.defense);
+          populateHealthDetails(response.health);
+          populateIntimacyDetails(response.intimacie);
+          populateCharmDetails(response.charm);
+          populateInventoryDetails(response.inventory);
+        }
       }
     },
     error: function error(jqXHR, textStatus, errorThrown) {
       // What to do if we fail
-      //console.log(JSON.stringify(jqXHR));
+      console.log(JSON.stringify(jqXHR));
       console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
     }
   }); // Any time a round checkbox option is clicked we want to also selected any that come before it and de-select any that come after it.
@@ -49543,7 +49545,6 @@ $(document).ready(function () {
   function populateHealthDetails(health) {
     $.each(health, function (key, value) {
       if (value.activated == 1) {
-        console.log(value.position);
         $('input[name=\'health-box' + value.position + '\'').click();
       }
 

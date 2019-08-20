@@ -10,7 +10,7 @@ class WeaponController extends Controller
     /**
      * Saves the Weapon for a new character
      */
-    public static function saveNewWeaponData( $weapons, $character ) {
+    public function save( $weapons, $character ) {
         $saveData = array();
         foreach( $weapons as $key => $value ) {
             preg_match('/[^\d]+/', $key, $textMatch);
@@ -21,7 +21,7 @@ class WeaponController extends Controller
         }
 
         foreach($saveData as $weapon) {
-            $weaponModel = new Weapon;
+            $weaponModel = Weapon::firstOrNew(['characterId' => $character, 'name' => $weapon['name']]);
             $weaponModel->characterId = $character;
             $weaponModel->name  = $weapon['name'];
             $weaponModel->wit   = $weapon['wit'];

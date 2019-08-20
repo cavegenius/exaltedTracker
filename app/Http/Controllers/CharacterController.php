@@ -102,16 +102,12 @@ class CharacterController extends Controller
         // If the character does not exist Save as a new character otherwise edit the existing.
         $user = Auth::id();
         $model = new Character;
-        
+
         //Check for existing character
         $character = $model->where('userId', $user);
-        if(!$character->count()) {
-            // using a seperate function to save because of how many types of data will be saved
-            $this->saveNewCharacter($results);
-        } else {
-            $this->editExistingCharacter($results);
-        }
-
+        
+        $this->saveNewCharacter($results);
+        
         // Once saved return to the character screen
         return redirect('/character')->with('status', 'Saved');
     }
@@ -145,40 +141,30 @@ class CharacterController extends Controller
         $characterId = $this->saveNewCharacterData( $data['character'], $user );
 
         // Now we start using the other controllers to save the rest of the information on bit at a time.
-        //Attributes
-        AttributeController::saveNewAttributeData($data['attributes'], $characterId);
-        // Abilities
-        AbilityController::saveNewAbilityData($data['abilities'], $characterId);
-        // Specializations
-        SpecializationController::saveNewSpecializationData($data['specialization'], $characterId);
-        // WillPower
-        WillpowerController::saveNewWillpowerData($data['willpower'], $characterId);
-        // Essence
-        EssenceController::saveNewEssenceData($data['essence'], $characterId);
-        // Merits
-        MeritController::saveNewMeritData($data['merit'], $characterId);
-        // Anima
-        AnimaController::saveNewAnimaData($data['anima'], $characterId);
-        // Aura
-        AuraController::saveNewAuraData($data['aura'], $characterId);
-        // Experience
-        ExperienceController::saveNewExperienceData($data['experience'], $characterId);
-        // DragonExperience
-        DragonExperienceController::saveNewDragonExperienceData($data['dragonExperience'], $characterId);
-        // Weapon
-        WeaponController::saveNewWeaponData($data['weapon'], $characterId);
-        // Armor
-        ArmorController::saveNewArmorData($data['armor'], $characterId);
-        // Defense
-        DefenseController::saveNewDefenseData($data['defense'], $characterId);
-        // Health
-        HealthController::saveNewHealthData($data['health'], $characterId);
-        // Intimacies
-        IntimacieController::saveNewIntimacieData($data['intimacy'], $characterId);
-        // Charms
-        CharmController::saveNewCharmData($data['charm'], $characterId);
-        // Inventory
-        InventoryController::saveNewInventoryData($data['inventory'], $characterId);
+        $types = [ 'attribute' => 'attributes', 
+                   'ability' => 'abilities',
+                   'specialization' => 'specialization',
+                   'willpower' => 'willpower',
+                   'essence' => 'essence',
+                   'merit' => 'merit',
+                   'anima' => 'anima',
+                   'aura' => 'aura',
+                   'experience' => 'experience',
+                   'dragonExperience' => 'dragonExperience',
+                   'weapon' => 'weapon',
+                   'defense' => 'defense',
+                   'health' => 'health',
+                   'armor' => 'armor',
+                   'intimacie' => 'intimacy',
+                   'charm' => 'charm',
+                   'inventory' => 'inventory'];
+                   
+        foreach( $types as $type => $name) {
+            $controllerName = 'App\\Http\\Controllers\\'.ucfirst($type).'Controller';
+            $controller = new $controllerName();
+            $result = $controller->save($data[$name], $characterId);
+            $return[$type]      = $result;
+        }
     }
 
     /**
@@ -186,7 +172,7 @@ class CharacterController extends Controller
      * 
      */
     private function saveNewCharacterData( $data, $user ) {
-        $character = new Character;
+        $character = Character::firstOrNew(['userId' => $user]);
         $character->userId = $user;
         $character->name = $data['name'];
         $character->player = $data['player'];
@@ -197,9 +183,5 @@ class CharacterController extends Controller
         $character->save();
 
         return $character->id;
-    }
-
-    private function editExistingCharacter( $data ) {
-        
     }
 }

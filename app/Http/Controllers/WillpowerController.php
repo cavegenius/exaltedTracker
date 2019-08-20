@@ -10,7 +10,7 @@ class WillpowerController extends Controller
     /**
      * Saves the willpower for a new character
      */
-    public static function saveNewWillpowerData( $willpowers, $character ) {
+    public function save( $willpowers, $character ) {
         $total = 0;
         $available = 0;
         foreach( $willpowers as $key => $value ) {
@@ -23,7 +23,7 @@ class WillpowerController extends Controller
             }
         }
 
-        $willpower = new Willpower;
+        $willpower = Willpower::firstOrNew(['characterId' => $character]);
         $willpower->characterId = $character;
         $willpower->total = $total;
         $willpower->available = $available;

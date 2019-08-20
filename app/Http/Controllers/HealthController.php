@@ -10,7 +10,7 @@ class HealthController extends Controller
     /**
      * Saves the Health for a new character
      */
-    public static function saveNewHealthData( $healths, $character ) {
+    public function save( $healths, $character ) {
         $saveData = array();
 
         foreach( $healths as $key => $value ) { 
@@ -23,7 +23,7 @@ class HealthController extends Controller
         }
 
         foreach($saveData as $key => $health) {
-            $healthModel = new Health;
+            $healthModel = Health::firstOrNew(['characterId' => $character, 'position' => $key]);
             $healthModel->characterId = $character;
             $healthModel->position  = $key;
             $healthModel->value = $health['text'];

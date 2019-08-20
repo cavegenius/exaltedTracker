@@ -10,8 +10,8 @@ class AuraController extends Controller
     /**
      * Saves the Aura for a new character
      */
-    public static function saveNewAuraData( $aura, $character ) {
-        $auraModel = new Aura;
+    public function save( $aura, $character ) {
+        $auraModel = Aura::firstOrNew(['characterId' => $character]);
         $auraModel->characterId = $character;
         $auraModel->type = $aura['aura'];
         $auraModel->save();
@@ -19,7 +19,6 @@ class AuraController extends Controller
 
     public function retrieve( $character ) {
         $model = new Aura;
-        //$attributes = $model->getAttributesDetails( $character );
         $aura = $model->where('characterId', $character)->get();
         return $aura;
     }

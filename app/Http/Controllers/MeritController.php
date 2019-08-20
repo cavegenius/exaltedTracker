@@ -10,7 +10,7 @@ class MeritController extends Controller
     /**
      * Saves the Merit for a new character
      */
-    public static function saveNewMeritData( $merits, $character ) {
+    public function save( $merits, $character ) {
         $saveData = array();
         foreach( $merits as $key => $value ) {
             if ( is_numeric($key) ) {
@@ -21,7 +21,7 @@ class MeritController extends Controller
         }
 
         foreach($saveData as $merit) {
-            $meritModel = new Merit;
+            $meritModel = Merit::firstOrNew(['characterId' => $character, 'name' => $merit['name']]);
             $meritModel->characterId = $character;
             $meritModel->name = $merit['name'];
             $meritModel->value = $merit['value'];

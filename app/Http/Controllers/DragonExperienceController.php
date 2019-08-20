@@ -10,8 +10,8 @@ class DragonExperienceController extends Controller
     /**
      * Saves the Dragon Experience for a new character
      */
-    public static function saveNewDragonExperienceData( $dragonExperience, $character ) {
-        $dragonExperienceModel = new DragonExperience;
+    public function save( $dragonExperience, $character ) {
+        $dragonExperienceModel = DragonExperience::firstOrNew(['characterId' => $character]);
         $dragonExperienceModel->characterId = $character;
         $dragonExperienceModel->current = $dragonExperience['current'];
         $dragonExperienceModel->total = $dragonExperience['total'];

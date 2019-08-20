@@ -10,9 +10,9 @@ class EssenceController extends Controller
     /**
      * Saves the essence for a new character
      */
-    public static function saveNewEssenceData( $essences, $character ) {
+    public function save( $essences, $character ) {
         $level = 0;
-        $essenceModel = new Essence;
+        $essenceModel = Essence::firstOrNew(['characterId' => $character]);
         $essenceModel->characterId = $character;
         foreach( $essences as $key => $value ) {
             if ( is_numeric($key) ) {

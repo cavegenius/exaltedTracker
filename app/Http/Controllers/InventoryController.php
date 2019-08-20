@@ -10,9 +10,9 @@ class InventoryController extends Controller
     /**
      * Saves the inventory for a new character
      */
-    public static function saveNewInventoryData( $inventoryItems, $character ) {
+    public function save( $inventoryItems, $character ) {
         foreach( $inventoryItems as $item) {
-            $inventoryModel = new Inventory;
+            $inventoryModel = Inventory::firstOrNew(['characterId' => $character, 'item' => $item]);
             $inventoryModel->characterId = $character;
             $inventoryModel->item = $item;
             $inventoryModel->save();

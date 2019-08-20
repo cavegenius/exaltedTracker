@@ -10,7 +10,7 @@ class AbilityController extends Controller
     /**
      * Saves the abilities for a new character
      */
-    public static function saveNewAbilityData( $abilities, $character ) {
+    public function save( $abilities, $character ) {
         $saveData = array();
         foreach( $abilities as $ability => $value ) {
             if (strpos($ability, 'Favored') !== false) {
@@ -24,7 +24,7 @@ class AbilityController extends Controller
             }
         }
 
-        $ability = new Ability;
+        $ability = Ability::firstOrNew(['characterId' => $character]);
         $ability->characterId = $character;
         foreach( $saveData as $key => $value ) {
             $ability->$key = $value;
