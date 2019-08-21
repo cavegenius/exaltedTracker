@@ -171,7 +171,7 @@ select {
 }
 
 .characterSheet input[type="text"], .characterSheet textarea, .characterSheet select {
-  background-color: #eaf0f5 !important;
+  background-color: #eaf0f5;
 }
 
 .width-100 {
@@ -282,4 +282,9 @@ body {
 
 .fixed-top {
   border-bottom: 1px solid #fff;
+}
+
+.disabled {
+  background-color: #999 !important;
+  color: #fff;
 }

@@ -35,11 +35,11 @@
         </nav>-->
 
         <main role="main" class="col-md-9 ml-sm-auto px-4 container">
-            <div class="alert alert-success hide-on-load"></div>
           @yield('content')
         </main>
 
         <nav class="col-md-3 d-none d-md-block sidebar-right">
+        <div class="alert alert-success hide-on-load"></div>
           <div class="sidebar-sticky yes">
               @include('inc.sidebarright')
           </div>

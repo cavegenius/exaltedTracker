@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Experience;
 
 class ExperienceController extends Controller
@@ -22,5 +23,25 @@ class ExperienceController extends Controller
         $model = new Experience;
         $experience = $model->where('characterId', $character)->get();
         return $experience;
+    }
+
+    public function saveLog(Request $request) {
+        if (!Auth::check()) {
+            return redirect('login');
+        }
+        $this->validate($request, [
+            'characterId' => 'required',
+            'experience' => 'required',
+            'dragonExperience' => 'required',
+            'sessionDate' => 'required'
+        ]);
+        
+        $results = $request->post();
+
+        $model = new Experience;
+        $model->saveExperienceLog($results);
+
+        $json = json_encode(['message'=>'The log has been saved']);
+        return $json;
     }
 }

@@ -11,6 +11,7 @@ $(document).ready( function() {
         url: '/character/characterDetails', // This is the url we gave in the route
         success: function(response){ // What to do if we succeed
             if( response == 'No Character') {
+                $( 'sidebar-right' ).html('');
                 $('.alert').append('You have not created your character yet. You will need to fill out the character sheet below');
                 $('.alert').removeClass('hide-on-load');
             } else {
@@ -33,6 +34,7 @@ $(document).ready( function() {
                     populateIntimacyDetails( response.intimacie );
                     populateCharmDetails( response.charm );
                     populateInventoryDetails( response.inventory );
+                    
                 }
             }
         },
@@ -68,6 +70,7 @@ $(document).ready( function() {
     });
 
     function populateCharacterDetails( character ) {
+        $( 'body' ).append('<input type="hidden" id="characterId" value="'+character.id+'"> ');
         $.each(character, function(key,value) {
             $( 'input[name=\'character-'+key+'\'').val(value);
         });
@@ -236,6 +239,34 @@ $(document).ready( function() {
             i++;
         });
     }
+
+    // Saving entry for adding experience gains
+    $( document ).on( "click", "#saveXPLog", function(){
+        let characterId = $( '#characterId' ).val();
+        let experience = $( '#experience' ).val();
+        let dragonExperience = $( '#dragonExperience' ).val();
+        let sessionDate = $( '#sessionDate' ).val();
+
+        data = {characterId: characterId, experience: experience, dragonExperience: dragonExperience, sessionDate: sessionDate};
+        $.ajax({
+            method: 'POST', // Type of response and matches what we said in the route
+            url: '/character/saveExperienceLog', // This is the url we gave in the route
+            data: data,
+            success: function(response){ // What to do if we succeed
+                let newExperienceCurrent = parseInt(experience)+parseInt($('#experience-current').val());
+                let newExperienceTotal = parseInt( experience )+parseInt($('#experience-total').val());
+                $('#experience-current').val(newExperienceCurrent);
+                $('#experience-total').val(newExperienceTotal);
+                $( '#experience' ).val('');
+                $( '#dragonExperience' ).val('');
+                $( '#sessionDate' ).val('');
+            },
+            error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
+                console.log(JSON.stringify(jqXHR));
+                console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+            }
+        });
+    });
 });
 
 if (window.performance && window.performance.navigation.type == window.performance.navigation.TYPE_BACK_FORWARD) {

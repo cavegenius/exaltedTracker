@@ -687,16 +687,16 @@
                     <h2>EXPERIENCE</h2>
                     <div class="form-row">
                         <div class="col-2"><h6>{{Form::label('experience-current', 'Current:')}}</h6></div>
-                        <div class="col-4">{{Form::text('experience-current', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                        <div class="col-4">{{Form::text('experience-current', '', ['class' => 'width-100 disabled', 'placeholder' => '', 'disabled' => true])}}</div>
                         <div class="col-2"><h6>{{Form::label('experience-total', 'Total:')}}</h6></div>
-                        <div class="col-4">{{Form::text('experience-total', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                        <div class="col-4">{{Form::text('experience-total', '', ['class' => 'width-100 disabled', 'placeholder' => '', 'disabled' => true])}}</div>
                     </div>
                     <h2>DRAGON EXPERIENCE</h2>
                     <div class="form-row">
                         <div class="col-2"><h6>{{Form::label('dragonExperience-current', 'Current:')}}</h6></div>
-                        <div class="col-4">{{Form::text('dragonExperience-current', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                        <div class="col-4">{{Form::text('dragonExperience-current', '', ['class' => 'width-100 disabled', 'placeholder' => '', 'disabled' => true])}}</div>
                         <div class="col-2"><h6>{{Form::label('dragonExperience-total', 'Total:')}}</h6></div>
-                        <div class="col-4">{{Form::text('dragonExperience-total', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                        <div class="col-4">{{Form::text('dragonExperience-total', '', ['class' => 'width-100 disabled', 'placeholder' => '', 'disabled' => true])}}</div>
                     </div>
                 </div>
             </div>
