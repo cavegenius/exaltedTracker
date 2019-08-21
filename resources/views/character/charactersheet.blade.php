@@ -1,4 +1,4 @@
-<div class="characterSheet">
+<div class="characterSheet yes">
     {!! Form::open(['url' => 'character/submit']) !!}
     {{ csrf_field() }}
     <div class="row">

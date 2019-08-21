@@ -84,8 +84,6 @@ body {
     padding-top: .75rem;
     padding-bottom: .75rem;
     font-size: 1rem;
-    background-color: rgba(0, 0, 0, .25);
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
   }
   
   .navbar .form-control {
@@ -122,7 +120,8 @@ body {
 
   .sidebar-right {
       padding-top:48px;
-      border-left: .1px inset;
+      border-left: 1px solid #fff;
+      color: #fff;
   }
 
   .characterSheet {
@@ -263,4 +262,24 @@ label {
 
 .hide-on-load {
   display: none;
+}
+
+body {
+  background-color: #444;
+}
+.container {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  margin: 8px auto;
+}
+.no, .yes {
+  height: 100%;
+}
+.yes {
+  overflow: auto;
+}
+
+.fixed-top {
+  border-bottom: 1px solid #fff;
 }
