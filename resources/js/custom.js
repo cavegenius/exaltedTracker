@@ -218,7 +218,8 @@ $(document).ready( function() {
     function populateCharmDetails( charms ) {
         let i=1;
         $.each(charms, function(key,value) {            
-            $( 'input[name=\'charm-name'+i+'\'').parent().prepend('<input type="hidden" name="charm-id'+i+'" value="'+value.id+'" />');
+            //$( 'input[name=\'charm-name'+i+'\'').parent().prepend('<input type="hidden" name="charm-id'+i+'" value="'+value.id+'" />');
+            $( 'input[name=\'charm-id'+i+'\'').val(value.id);
             $( 'input[name=\'charm-name'+i+'\'').val(value.name);
             $( 'input[name=\'charm-type'+i+'\'').val(value.type);
             $( 'input[name=\'charm-duration'+i+'\'').val(value.duration);

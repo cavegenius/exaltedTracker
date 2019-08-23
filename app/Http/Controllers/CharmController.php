@@ -21,30 +21,25 @@ class CharmController extends Controller
             $saveData[$number][$string] = $value;
         }
         
+        
         foreach($saveData as $charm) {
-            if(array_key_exists('id', $charm)) {
-                $charmModel = Charm::firstOrNew(['id' => $charm['id']]);
-            } else {
-                $charmModel = new Charm;
+            $model = new Charm;
+            $hasCharm = $model->where('charmId', $charm['id'])->where('characterId', $character);
+            print_r($hasCharm);
+            if(!$hasCharm) {
+echo 'hi';
+die;
+                $model->saveUserCharms($charm['id'],$character);
             }
-            $charmModel->characterId = $character;
-            $charmModel->name  = $charm['name'];
-            $charmModel->type = $charm['type'];
-            $charmModel->duration = $charm['duration'];
-            $charmModel->cost = $charm['cost'];
-            $charmModel->element = $charm['element'];
-            $charmModel->book = $charm['book'];
-            $charmModel->effect = $charm['effect'];
-            $charmModel->save();
         }
-
+die;
         return true;
     }
 
     public function retrieve( $character ) {
         $model = new Charm;
-        //$attributes = $model->getAttributesDetails( $character );
-        $charm = $model->where('characterId', $character)->get();
+        
+        $charm = $model->retrieveUserCharms($character);
         return $charm;
     }
 }

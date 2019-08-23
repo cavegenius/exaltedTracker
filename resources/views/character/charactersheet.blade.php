@@ -1200,6 +1200,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">Effect</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id1', '') }}
                 <div class="col-3">{{Form::text('charm-name1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1209,6 +1210,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id2', '') }}
                 <div class="col-3">{{Form::text('charm-name2', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type2', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration2', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1218,6 +1220,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect2', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id3', '') }}
                 <div class="col-3">{{Form::text('charm-name3', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type3', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration3', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1227,6 +1230,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect3', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id4', '') }}
                 <div class="col-3">{{Form::text('charm-name4', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type4', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration4', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1236,6 +1240,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect4', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id5', '') }}
                 <div class="col-3">{{Form::text('charm-name5', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type5', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration5', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1245,6 +1250,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect5', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id6', '') }}
                 <div class="col-3">{{Form::text('charm-name6', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type6', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration6', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1254,6 +1260,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect6', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id7', '') }}
                 <div class="col-3">{{Form::text('charm-name7', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type7', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration7', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1263,6 +1270,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect7', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id8', '') }}
                 <div class="col-3">{{Form::text('charm-name8', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type8', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration8', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1272,6 +1280,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect8', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id9', '') }}
                 <div class="col-3">{{Form::text('charm-name9', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type9', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration9', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1281,6 +1290,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect9', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id10', '') }}
                 <div class="col-3">{{Form::text('charm-name10', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type10', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration10', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1290,6 +1300,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect10', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id11', '') }}
                 <div class="col-3">{{Form::text('charm-name11', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type11', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration11', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1299,6 +1310,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect11', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id12', '') }}
                 <div class="col-3">{{Form::text('charm-name12', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type12', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration12', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1308,6 +1320,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect12', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id13', '') }}
                 <div class="col-3">{{Form::text('charm-name13', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type13', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration13', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1317,6 +1330,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect13', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id14', '') }}
                 <div class="col-3">{{Form::text('charm-name14', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type14', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration14', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1326,6 +1340,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect14', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id15', '') }}
                 <div class="col-3">{{Form::text('charm-name15', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type15', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration15', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1335,6 +1350,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect15', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id16', '') }}
                 <div class="col-3">{{Form::text('charm-name16', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type16', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration16', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1344,6 +1360,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect16', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id17', '') }}
                 <div class="col-3">{{Form::text('charm-name17', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type17', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration17', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1353,6 +1370,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect17', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id18', '') }}
                 <div class="col-3">{{Form::text('charm-name18', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type18', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration18', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1362,6 +1380,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect18', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id19', '') }}
                 <div class="col-3">{{Form::text('charm-name19', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type19', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration19', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1371,6 +1390,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect19', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id20', '') }}
                 <div class="col-3">{{Form::text('charm-name20', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type20', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration20', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1380,6 +1400,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect20', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id21', '') }}
                 <div class="col-3">{{Form::text('charm-name21', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type21', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration21', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1389,6 +1410,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect21', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id22', '') }}
                 <div class="col-3">{{Form::text('charm-name22', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type22', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration22', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1398,6 +1420,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect22', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id23', '') }}
                 <div class="col-3">{{Form::text('charm-name23', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type23', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration23', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1407,6 +1430,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect23', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id24', '') }}
                 <div class="col-3">{{Form::text('charm-name24', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type24', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration24', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1416,6 +1440,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect24', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id25', '') }}
                 <div class="col-3">{{Form::text('charm-name25', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type25', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration25', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
@@ -1425,6 +1450,7 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-3">{{Form::text('charm-effect25', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-row">
+                {{ Form::hidden('charm-id26', '') }}
                 <div class="col-3">{{Form::text('charm-name26', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('charm-type26', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-1">{{Form::text('charm-duration26', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>

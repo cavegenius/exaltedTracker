@@ -8,4 +8,25 @@ class Charm extends Model
 {
     public $timestamps = false;
     protected $fillable = ['characterId'];
+
+    public function saveUserCharms($charmId, $characterId) {
+        $this->table = 'user_charms';
+        $this->characterId = $characterId;
+        $this->charmId = $charmId;
+        $this->save();
+    }
+
+    public function retrieveUserCharms($characterId) {
+        $this->table = 'user_charms';
+        $charms = $this->where('characterId', $characterId)->get();
+
+        $this->table = 'charms';
+        $charmData = array();
+
+        foreach($charms as $key => $value) {
+            $id = $value->charmId;
+            $charmData[] = $this->where('id', $id)->first();
+        }
+        return $charmData;
+    }
 }
