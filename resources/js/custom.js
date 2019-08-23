@@ -315,14 +315,15 @@ $(document).ready( function() {
 
     jQuery('.charmTypeAhead').on('typeahead:selected', function (e, datum) {
         let name = $( this ).attr('name');
-        var lastChar = name[name.length -1];
-        $( 'input[name=\'charm-id'+lastChar+'\']' ).val(datum.id);
-        $( 'input[name=\'charm-type'+lastChar+'\']' ).val(datum.type);
-        $( 'input[name=\'charm-duration'+lastChar+'\']' ).val(datum.duration);
-        $( 'input[name=\'charm-cost'+lastChar+'\']' ).val(datum.cost);
-        $( 'input[name=\'charm-element'+lastChar+'\']' ).val(datum.element);
-        $( 'input[name=\'charm-book'+lastChar+'\']' ).val(datum.book);
-        $( 'input[name=\'charm-effect'+lastChar+'\']' ).val(datum.effect);
+        var matches = name.match(/\d+$/);
+        number = matches[0];
+        $( 'input[name=\'charm-id'+number+'\']' ).val(datum.id);
+        $( 'input[name=\'charm-type'+number+'\']' ).val(datum.type);
+        $( 'input[name=\'charm-duration'+number+'\']' ).val(datum.duration);
+        $( 'input[name=\'charm-cost'+number+'\']' ).val(datum.cost);
+        $( 'input[name=\'charm-element'+number+'\']' ).val(datum.element);
+        $( 'input[name=\'charm-book'+number+'\']' ).val(datum.book);
+        $( 'input[name=\'charm-effect'+number+'\']' ).val(datum.effect);
     });
 
 });
