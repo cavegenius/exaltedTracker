@@ -210,7 +210,9 @@ $(document).ready( function() {
             $( 'input[name=\'intimacy-intimacy'+i+'\'').parent().prepend('<input type="hidden" name="intimacy-id'+i+'" value="'+value.id+'" />');
             
             $( 'input[name=\'intimacy-intimacy'+i+'\'').val(value.intimacy);
+            $( 'input[name=\'intimacy-intimacy'+i+'\'').attr('title', value.intimacy);
             $( 'input[name=\'intimacy-intensity'+i+'\'').val(value.intensity);
+            $( 'input[name=\'intimacy-intensity'+i+'\'').attr('title', value.intensity);
             i++;
         });
     }
@@ -218,15 +220,23 @@ $(document).ready( function() {
     function populateCharmDetails( charms ) {
         let i=1;
         $.each(charms, function(key,value) {            
-            //$( 'input[name=\'charm-name'+i+'\'').parent().prepend('<input type="hidden" name="charm-id'+i+'" value="'+value.id+'" />');
             $( 'input[name=\'charm-id'+i+'\'').val(value.id);
             $( 'input[name=\'charm-name'+i+'\'').val(value.name);
+            $( 'input[name=\'charm-name'+i+'\'').attr('title', value.name);
+            $( 'input[name=\'charm-name'+i+'\'').attr('disabled', true);
+            $( 'input[name=\'charm-name'+i+'\'').addClass('disabled');
             $( 'input[name=\'charm-type'+i+'\'').val(value.type);
+            $( 'input[name=\'charm-type'+i+'\'').attr('title', value.type);
             $( 'input[name=\'charm-duration'+i+'\'').val(value.duration);
+            $( 'input[name=\'charm-duration'+i+'\'').attr('title', value.duration);
             $( 'input[name=\'charm-cost'+i+'\'').val(value.cost);
+            $( 'input[name=\'charm-cost'+i+'\'').attr('title', value.cost);
             $( 'input[name=\'charm-element'+i+'\'').val(value.element);
+            $( 'input[name=\'charm-element'+i+'\'').attr('title', value.element);
             $( 'input[name=\'charm-book'+i+'\'').val(value.book);
+            $( 'input[name=\'charm-book'+i+'\'').attr('title', value.book);
             $( 'input[name=\'charm-effect'+i+'\'').val(value.effect);
+            $( 'input[name=\'charm-effect'+i+'\'').attr('title', value.effect);
             i++;
         });
     }
@@ -268,6 +278,53 @@ $(document).ready( function() {
             }
         });
     });
+
+
+    // Charms Typeahead function
+    var bloodhound = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.whitespace,
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        remote: {
+            url: '/charm/find?q=%QUERY%',
+            wildcard: '%QUERY%'
+        },
+    });
+    
+    $('.charmTypeAhead').typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 1
+    }, {
+        name: 'charms',
+        source: bloodhound,
+        display: function(data) {
+            return data.name;  //Input value to be set when you select a suggestion. 
+        },
+        templates: {
+            empty: [
+                '<div class="list-group search-results-dropdown"><div class="list-group-item">Nothing found.</div></div>'
+            ],
+            header: [
+                '<div class="list-group search-results-dropdown">'
+            ],
+            suggestion: function(data) {
+            return '<div style="font-weight:normal; margin-top:-10px ! important;" class="list-group-item">' + data.name + '</div></div>'
+            }
+        }
+    });
+
+    jQuery('.charmTypeAhead').on('typeahead:selected', function (e, datum) {
+        let name = $( this ).attr('name');
+        var lastChar = name[name.length -1];
+        $( 'input[name=\'charm-id'+lastChar+'\']' ).val(datum.id);
+        $( 'input[name=\'charm-type'+lastChar+'\']' ).val(datum.type);
+        $( 'input[name=\'charm-duration'+lastChar+'\']' ).val(datum.duration);
+        $( 'input[name=\'charm-cost'+lastChar+'\']' ).val(datum.cost);
+        $( 'input[name=\'charm-element'+lastChar+'\']' ).val(datum.element);
+        $( 'input[name=\'charm-book'+lastChar+'\']' ).val(datum.book);
+        $( 'input[name=\'charm-effect'+lastChar+'\']' ).val(datum.effect);
+    });
+
 });
 
 if (window.performance && window.performance.navigation.type == window.performance.navigation.TYPE_BACK_FORWARD) {

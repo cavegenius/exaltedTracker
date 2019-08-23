@@ -10943,6 +10943,11 @@ body {
   color: #fff;
 }
 
+.twitter-typeahead {
+  position: unset !important;
+  display: block !important;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

@@ -23,16 +23,16 @@ class CharmController extends Controller
         
         
         foreach($saveData as $charm) {
-            $model = new Charm;
-            $hasCharm = $model->where('charmId', $charm['id'])->where('characterId', $character);
-            print_r($hasCharm);
-            if(!$hasCharm) {
-echo 'hi';
-die;
+            $hasCharm = '';
+            $model = new Charm(array(), 'user_charms');
+
+            $hasCharm = $model->where('charmId', $charm['id'])->where('characterId', $character)->first();
+            
+            if($hasCharm == '') {
                 $model->saveUserCharms($charm['id'],$character);
             }
         }
-die;
+
         return true;
     }
 
@@ -41,5 +41,9 @@ die;
         
         $charm = $model->retrieveUserCharms($character);
         return $charm;
+    }
+
+    public function searchCharms(Request $request) {
+        return Charm::where('name', 'LIKE', '%'.$request->q.'%')->get();
     }
 }

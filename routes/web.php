@@ -19,3 +19,4 @@ Route::get('/character', 'CharacterController@index')->name('character');
 Route::post('/character/characterDetails', 'CharacterController@characterDetails');
 Route::post('/character/saveExperienceLog', 'ExperienceController@saveLog');
 Route::post('/character/submit', 'CharacterController@store');
+Route::get('/charm/find', 'CharmController@searchCharms');

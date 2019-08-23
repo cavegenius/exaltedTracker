@@ -5,6 +5,7 @@
     <title>Exalted Dragon Blooded Character Tracker</title>
     <link rel="stylesheet" href="/css/app.css" />
     <script src="/js/app.js"></script>
+    <script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
   </head>
   <body>

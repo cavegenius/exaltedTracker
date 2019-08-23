@@ -9,6 +9,16 @@ class Charm extends Model
     public $timestamps = false;
     protected $fillable = ['characterId'];
 
+    /**
+     * Create a new model instance.
+     *
+     * @return void
+     */
+    public function __construct($attributes = array(), $table = 'charms' ) {
+        parent::__construct($attributes);
+        $this->table = $table;
+    }
+
     public function saveUserCharms($charmId, $characterId) {
         $this->table = 'user_charms';
         $this->characterId = $characterId;
@@ -29,4 +39,5 @@ class Charm extends Model
         }
         return $charmData;
     }
+
 }

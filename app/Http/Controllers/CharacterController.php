@@ -102,9 +102,6 @@ class CharacterController extends Controller
         // If the character does not exist Save as a new character otherwise edit the existing.
         $user = Auth::id();
         $model = new Character;
-
-        //Check for existing character
-        $character = $model->where('userId', $user);
         
         $this->saveCharacter($results);
         
