@@ -1487,6 +1487,5 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
         </div>
     </div>
     <br>
-    <div class="text-center">{{Form::submit('Submit', ['type' => 'submit', 'class' => 'btn btn-primary'])}}</div>
-    {!! Form::close() !!}
+    
 </div>
