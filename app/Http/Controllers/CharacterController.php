@@ -56,7 +56,7 @@ class CharacterController extends Controller
     public function characterDetails() {
         $return = [];
         $user = Auth::id();
-        $types = ['attribute', 'ability', 'specialization', 'willpower', 'essence', 'merit', 'anima', 'aura', 'experience', 'dragonExperience', 'weapon', 'defense', 'health', 'armor', 'intimacie', 'charm', 'inventory'];
+        $types = ['attribute', 'ability', 'specialization', 'willpower', 'essence', 'merit', 'anima', 'aura', 'experience', 'dragonExperience', 'weapon', 'defense', 'health', 'armor', 'intimacie', 'charm', 'inventory', 'martialArtsCharm', 'evocation', 'spell'];
 
         $character = $this->model->getCharacter($user);
         // If the character does not exist stop here and return
@@ -154,7 +154,11 @@ class CharacterController extends Controller
                    'armor' => 'armor',
                    'intimacie' => 'intimacy',
                    'charm' => 'charm',
-                   'inventory' => 'inventory'];
+                   'inventory' => 'inventory',
+                   'martialArtsCharm' => 'martialArtsCharm',
+                   'evocation' => 'evocation',
+                   'spell' => 'spell'
+                ];
                    
         foreach( $types as $type => $name) {
             $controllerName = 'App\\Http\\Controllers\\'.ucfirst($type).'Controller';

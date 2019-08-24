@@ -49403,6 +49403,9 @@ $(document).ready(function () {
           populateIntimacyDetails(response.intimacie);
           populateCharmDetails(response.charm);
           populateInventoryDetails(response.inventory);
+          populateMartialArtsCharmDetails(response.martialArtsCharm);
+          populateEvocationDetails(response.evocation);
+          populateSpellDetails(response.spell);
         }
       }
     },
@@ -49608,6 +49611,72 @@ $(document).ready(function () {
       $('input[name=\'charm-book' + i + '\'').attr('title', value.book);
       $('input[name=\'charm-effect' + i + '\'').val(value.effect);
       $('input[name=\'charm-effect' + i + '\'').attr('title', value.effect);
+      i++;
+    });
+  }
+
+  function populateMartialArtsCharmDetails(charms) {
+    var i = 1;
+    $.each(charms, function (key, value) {
+      $('input[name=\'martialArtsCharm-id' + i + '\'').val(value.id);
+      $('input[name=\'martialArtsCharm-name' + i + '\'').val(value.name);
+      $('input[name=\'martialArtsCharm-name' + i + '\'').attr('title', value.name);
+      $('input[name=\'martialArtsCharm-type' + i + '\'').val(value.type);
+      $('input[name=\'martialArtsCharm-type' + i + '\'').attr('title', value.type);
+      $('input[name=\'martialArtsCharm-duration' + i + '\'').val(value.duration);
+      $('input[name=\'martialArtsCharm-duration' + i + '\'').attr('title', value.duration);
+      $('input[name=\'martialArtsCharm-cost' + i + '\'').val(value.cost);
+      $('input[name=\'martialArtsCharm-cost' + i + '\'').attr('title', value.cost);
+      $('input[name=\'martialArtsCharm-element' + i + '\'').val(value.element);
+      $('input[name=\'martialArtsCharm-element' + i + '\'').attr('title', value.element);
+      $('input[name=\'martialArtsCharm-book' + i + '\'').val(value.book);
+      $('input[name=\'martialArtsCharm-book' + i + '\'').attr('title', value.book);
+      $('input[name=\'martialArtsCharm-effect' + i + '\'').val(value.effect);
+      $('input[name=\'martialArtsCharm-effect' + i + '\'').attr('title', value.effect);
+      i++;
+    });
+  }
+
+  function populateEvocationDetails(evocations) {
+    var i = 1;
+    $.each(evocations, function (key, value) {
+      $('input[name=\'evocation-id' + i + '\'').val(value.id);
+      $('input[name=\'evocation-name' + i + '\'').val(value.name);
+      $('input[name=\'evocation-name' + i + '\'').attr('title', value.name);
+      $('input[name=\'evocation-type' + i + '\'').val(value.type);
+      $('input[name=\'evocation-type' + i + '\'').attr('title', value.type);
+      $('input[name=\'evocation-duration' + i + '\'').val(value.duration);
+      $('input[name=\'evocation-duration' + i + '\'').attr('title', value.duration);
+      $('input[name=\'evocation-cost' + i + '\'').val(value.cost);
+      $('input[name=\'evocation-cost' + i + '\'').attr('title', value.cost);
+      $('input[name=\'evocation-element' + i + '\'').val(value.element);
+      $('input[name=\'evocation-element' + i + '\'').attr('title', value.element);
+      $('input[name=\'evocation-book' + i + '\'').val(value.book);
+      $('input[name=\'evocation-book' + i + '\'').attr('title', value.book);
+      $('input[name=\'evocation-effect' + i + '\'').val(value.effect);
+      $('input[name=\'evocation-effect' + i + '\'').attr('title', value.effect);
+      $('input[name=\'evocation-artifact' + i + '\'').val(value.artifact);
+      $('input[name=\'evocation-artifact' + i + '\'').attr('title', value.artifact);
+      $('input[name=\'evocation-attunement' + i + '\'').val(value.attunement);
+      $('input[name=\'evocation-attunement' + i + '\'').attr('title', value.attunement);
+      i++;
+    });
+  }
+
+  function populateSpellDetails(spells) {
+    var i = 1;
+    $.each(spells, function (key, value) {
+      $('input[name=\'spell-id' + i + '\'').val(value.id);
+      $('input[name=\'spell-name' + i + '\'').val(value.name);
+      $('input[name=\'spell-name' + i + '\'').attr('title', value.name);
+      $('input[name=\'spell-circle' + i + '\'').val(value.circle);
+      $('input[name=\'spell-circle' + i + '\'').attr('title', value.circle);
+      $('input[name=\'spell-cost' + i + '\'').val(value.cost);
+      $('input[name=\'spell-cost' + i + '\'').attr('title', value.cost);
+      $('input[name=\'spell-duration' + i + '\'').val(value.duration);
+      $('input[name=\'spell-duration' + i + '\'').attr('title', value.duration);
+      $('input[name=\'spell-keywords' + i + '\'').val(value.keywords);
+      $('input[name=\'spell-keywords' + i + '\'').attr('title', value.keywords);
       i++;
     });
   }

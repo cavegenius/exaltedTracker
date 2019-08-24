@@ -1486,6 +1486,78 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
             </div>
         </div>
     </div>
+    <h2>MARTIAL ARTS CHARMS</h2>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-row">
+                <div class="col-3">Name</div>
+                <div class="col-2">Type</div>
+                <div class="col-1">Duration</div>
+                <div class="col-1">Cost</div>
+                <div class="col-1">Element</div>
+                <div class="col-1">Book/Pg</div>
+                <div class="col-3">Effect</div>
+            </div>
+            <div class="form-row">
+                {{ Form::hidden('martialArtsCharm-id1', '') }}
+                <div class="col-3">{{Form::text('martialArtsCharm-name1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-2">{{Form::text('martialArtsCharm-type1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-1">{{Form::text('martialArtsCharm-duration1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-1">{{Form::text('martialArtsCharm-cost1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-1">{{Form::text('martialArtsCharm-element1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-1">{{Form::text('martialArtsCharm-book1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-3">{{Form::text('martialArtsCharm-effect1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+            </div>
+        </div>
+    </div>
+    <h2>EVOCATIONS</h2>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-row">
+                <div class="col-2">Name</div>
+                <div class="col-2">Type</div>
+                <div class="col-1">Duration</div>
+                <div class="col-1">Cost</div>
+                <div class="col-1">Element</div>
+                <div class="col-1">Book/Pg</div>
+                <div class="col-2">Effect</div>
+                <div class="col-1">Artifact</div>
+                <div class="col-1">Attunement</div>
+            </div>
+            <div class="form-row">
+                {{ Form::hidden('evocation-id1', '') }}
+                <div class="col-2">{{Form::text('evocation-name1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-2">{{Form::text('evocation-type1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-1">{{Form::text('evocation-duration1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-1">{{Form::text('evocation-cost1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-1">{{Form::text('evocation-element1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-1">{{Form::text('evocation-book1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-2">{{Form::text('evocation-effect1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-1">{{Form::text('evocation-artifact1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-1">{{Form::text('evocation-attunement1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+            </div>
+        </div>
+    </div>
+    <h2>SPELLS</h2>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-row">
+                <div class="col-3">Name</div>
+                <div class="col-2">Circle</div>
+                <div class="col-2">Cost</div>
+                <div class="col-2">Duration</div>
+                <div class="col-3">Keywords</div>
+            </div>
+            <div class="form-row">
+                {{ Form::hidden('spell-id1', '') }}
+                <div class="col-3">{{Form::text('spell-name1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-2">{{Form::text('spell-circle1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-2">{{Form::text('spell-cost1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-2">{{Form::text('spell-duration1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-3">{{Form::text('spell-keywords1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+            </div>
+        </div>
+    </div>
     <br>
     
 </div>
