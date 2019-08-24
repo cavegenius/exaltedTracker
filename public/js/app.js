@@ -49199,11 +49199,13 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./custom */ "./resources/js/custom.js");
 
+__webpack_require__(/*! ./standardMode */ "./resources/js/standardMode.js");
+
 __webpack_require__(/*! ./trainingMode */ "./resources/js/trainingMode.js");
 
 __webpack_require__(/*! ./xpLogMode */ "./resources/js/xpLogMode.js");
 
-__webpack_require__(/*! ./standardMode */ "./resources/js/standardMode.js");
+__webpack_require__(/*! ./sessionMode.js */ "./resources/js/sessionMode.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
@@ -49617,12 +49619,8 @@ $(document).ready(function () {
       $('input[name=\'inventory-' + i + '\'').val(value.item);
       i++;
     });
-  } // Saving entry for adding experience gains
+  } // Charms Typeahead function
 
-
-  $(document).on("click", "#saveXPLog", function () {
-    saveXPLog();
-  }); // Charms Typeahead function
 
   var bloodhound = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.whitespace,
@@ -49670,6 +49668,72 @@ if (window.performance && window.performance.navigation.type == window.performan
 
 /***/ }),
 
+/***/ "./resources/js/sessionMode.js":
+/*!*************************************!*\
+  !*** ./resources/js/sessionMode.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $(document).on('click', '#mode-session', function () {
+    hideOtherModes();
+    resetForm();
+    disableOtherSections();
+  });
+
+  function hideOtherModes() {
+    if (!$('#xpLog').hasClass('hide-on-load')) {
+      $('#xpLog').addClass('hide-on-load');
+    }
+
+    $('#trainingMode').removeClass('hide-on-load');
+  }
+
+  function disableOtherSections() {
+    var enable = ['willpower', 'essence', 'anima', 'aura', 'health'];
+    $('.characterSheet input').each(function () {
+      if ($(this).attr('readonly')) {
+        return true;
+      }
+
+      if ($(this).hasClass('checkbox-round')) {
+        $(this).attr('disabled', true);
+        return true;
+      }
+
+      var name = $(this).attr('name').split('-')[0];
+
+      if (enable.indexOf(name) <= -1) {
+        $(this).attr('disabled', true);
+        $(this).addClass('disabled');
+      }
+    });
+    $('input[name=\'submit-submit\'').attr('disabled', true);
+    $('input[name=\'submit-submit\'').addClass('disabled');
+  }
+
+  function resetForm() {
+    var disable = ['experience', 'dragonExperience'];
+    $('.characterSheet input').each(function () {
+      if ($(this).attr('readonly')) {
+        return true;
+      }
+
+      var name = $(this).attr('name').split('-')[0];
+
+      if (disable.indexOf(name) <= -1) {
+        $(this).attr('disabled', false);
+        $(this).removeClass('disabled');
+      }
+    });
+    $('input[name=\'submit-submit\'').attr('disabled', false);
+    $('input[name=\'submit-submit\'').removeClass('disabled');
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/standardMode.js":
 /*!**************************************!*\
   !*** ./resources/js/standardMode.js ***!
@@ -49685,6 +49749,10 @@ $(document).ready(function () {
   function resetForm() {
     var disable = ['experience', 'dragonExperience'];
     $('.characterSheet input').each(function () {
+      if ($(this).attr('readonly')) {
+        return true;
+      }
+
       var name = $(this).attr('name').split('-')[0];
 
       if (disable.indexOf(name) <= -1) {
@@ -49708,6 +49776,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $(document).on('click', '#mode-training', function () {
+    resetForm();
     hideOtherModes();
     disableOtherSections();
   });
@@ -49728,8 +49797,6 @@ $(document).ready(function () {
       }
 
       var name = $(this).attr('name').split('-')[0];
-      console.log(this);
-      console.log(name);
 
       if (enable.indexOf(name) <= -1) {
         $(this).attr('disabled', true);
@@ -49738,6 +49805,24 @@ $(document).ready(function () {
     });
     $('input[name=\'submit-submit\'').attr('disabled', true);
     $('input[name=\'submit-submit\'').addClass('disabled');
+  }
+
+  function resetForm() {
+    var disable = ['experience', 'dragonExperience'];
+    $('.characterSheet input').each(function () {
+      if ($(this).attr('readonly')) {
+        return true;
+      }
+
+      var name = $(this).attr('name').split('-')[0];
+
+      if (disable.indexOf(name) <= -1) {
+        $(this).attr('disabled', false);
+        $(this).removeClass('disabled');
+      }
+    });
+    $('input[name=\'submit-submit\'').attr('disabled', false);
+    $('input[name=\'submit-submit\'').removeClass('disabled');
   }
 });
 
@@ -49752,8 +49837,13 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $(document).on('click', '#mode-xpLog', function () {
+    resetForm();
     getXPLogEntries();
     $('#xpLog').removeClass('hide-on-load');
+  }); // Saving entry for adding experience gains
+
+  $(document).on("click", "#saveXPLog", function () {
+    saveXPLog();
   });
   /**
    * Save an XP Log
@@ -49825,6 +49915,24 @@ $(document).ready(function () {
         console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
       }
     });
+  }
+
+  function resetForm() {
+    var disable = ['experience', 'dragonExperience'];
+    $('.characterSheet input').each(function () {
+      if ($(this).attr('readonly')) {
+        return true;
+      }
+
+      var name = $(this).attr('name').split('-')[0];
+
+      if (disable.indexOf(name) <= -1) {
+        $(this).attr('disabled', false);
+        $(this).removeClass('disabled');
+      }
+    });
+    $('input[name=\'submit-submit\'').attr('disabled', false);
+    $('input[name=\'submit-submit\'').removeClass('disabled');
   }
 });
 

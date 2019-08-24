@@ -251,12 +251,6 @@ $(document).ready( function() {
         });
     }
 
-    // Saving entry for adding experience gains
-    $( document ).on( "click", "#saveXPLog", function(){
-        saveXPLog();
-    });
-
-
     // Charms Typeahead function
     var bloodhound = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.whitespace,

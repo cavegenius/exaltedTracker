@@ -1,8 +1,14 @@
 $(document).ready( function() {
 
     $(document).on('click', '#mode-xpLog', function() {
+        resetForm();
         getXPLogEntries();
         $( '#xpLog').removeClass( 'hide-on-load' );
+    });
+
+    // Saving entry for adding experience gains
+    $( document ).on( "click", "#saveXPLog", function(){
+        saveXPLog();
     });
 
     /**
@@ -59,5 +65,22 @@ $(document).ready( function() {
                 console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
             }
         });
+    }
+
+    function resetForm() {
+        let disable = ['experience', 'dragonExperience'];
+        $( '.characterSheet input' ).each(function() {
+            if( $(this).attr('readonly') ) {
+                return true;
+            }
+            let name =  $(this).attr('name').split('-')[0];
+            
+            if(disable.indexOf(name) <= -1) {    
+                $(this).attr( 'disabled', false);
+                $(this).removeClass('disabled');
+            }
+        });
+        $( 'input[name=\'submit-submit\'' ).attr( 'disabled', false);
+        $( 'input[name=\'submit-submit\'' ).removeClass('disabled');
     }
 });

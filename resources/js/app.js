@@ -6,9 +6,10 @@
 
 require('./bootstrap');
 require('./custom');
+require('./standardMode');
 require('./trainingMode');
 require('./xpLogMode');
-require('./standardMode');
+require('./sessionMode.js');
 
 window.Vue = require('vue');
 

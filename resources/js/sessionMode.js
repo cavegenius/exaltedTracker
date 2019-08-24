@@ -1,8 +1,8 @@
 $(document).ready( function() {
 
-    $(document).on('click', '#mode-training', function() {
-        resetForm();
+    $(document).on('click', '#mode-session', function() {
         hideOtherModes();
+        resetForm();
         disableOtherSections();
     });
 
@@ -15,9 +15,14 @@ $(document).ready( function() {
     }
 
     function disableOtherSections() {
-        let enable = ['attributes', 'abilities', 'additionalabilities','specialization', 'merit', 'willpower', 'charm'];
+        let enable = ['willpower', 'essence', 'anima','aura', 'health'];
         $( '.characterSheet input' ).each(function() {
             if( $(this).attr('readonly') ) {
+                return true;
+            }
+
+            if( $(this).hasClass('checkbox-round') ) {
+                $(this).attr( 'disabled', true);
                 return true;
             }
             let name =  $(this).attr('name').split('-')[0];
