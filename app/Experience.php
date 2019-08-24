@@ -32,4 +32,10 @@ class Experience extends Model
     
         return true;
     }
+
+    public function retrieveExperienceLog($characterId) {
+        $this->table = 'experience_logs';
+        $logs = $this->where('characterId', $characterId)->get();
+        return $logs;
+    }
 }

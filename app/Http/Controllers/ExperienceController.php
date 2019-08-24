@@ -44,4 +44,14 @@ class ExperienceController extends Controller
         $json = json_encode(['message'=>'The log has been saved']);
         return $json;
     }
+
+    public function viewLog(Request $request) {
+        $results = $request->post();
+        $characterId = $results['characterId'];
+
+        $model = new Experience;
+        $entries = $model->retrieveExperienceLog($characterId);
+
+        return $entries;
+    }
 }

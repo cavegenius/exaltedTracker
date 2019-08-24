@@ -49615,38 +49615,7 @@ $(document).ready(function () {
 
 
   $(document).on("click", "#saveXPLog", function () {
-    var characterId = $('#characterId').val();
-    var experience = $('#experience').val();
-    var dragonExperience = $('#dragonExperience').val();
-    var sessionDate = $('#sessionDate').val();
-    data = {
-      characterId: characterId,
-      experience: experience,
-      dragonExperience: dragonExperience,
-      sessionDate: sessionDate
-    };
-    $.ajax({
-      method: 'POST',
-      // Type of response and matches what we said in the route
-      url: '/character/saveExperienceLog',
-      // This is the url we gave in the route
-      data: data,
-      success: function success(response) {
-        // What to do if we succeed
-        var newExperienceCurrent = parseInt(experience) + parseInt($('#experience-current').val());
-        var newExperienceTotal = parseInt(experience) + parseInt($('#experience-total').val());
-        $('#experience-current').val(newExperienceCurrent);
-        $('#experience-total').val(newExperienceTotal);
-        $('#experience').val('');
-        $('#dragonExperience').val('');
-        $('#sessionDate').val('');
-      },
-      error: function error(jqXHR, textStatus, errorThrown) {
-        // What to do if we fail
-        console.log(JSON.stringify(jqXHR));
-        console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
-      }
-    });
+    saveXPLog();
   }); // Charms Typeahead function
 
   var bloodhound = new Bloodhound({
@@ -49686,6 +49655,81 @@ $(document).ready(function () {
     $('input[name=\'charm-element' + number + '\']').val(datum.element);
     $('input[name=\'charm-book' + number + '\']').val(datum.book);
     $('input[name=\'charm-effect' + number + '\']').val(datum.effect);
+  });
+  /**
+   * Save an XP Log
+   * 
+   */
+
+  function saveXPLog() {
+    var characterId = $('#characterId').val();
+    var experience = $('#experience').val();
+    var dragonExperience = $('#dragonExperience').val();
+    var sessionDate = $('#sessionDate').val();
+    data = {
+      characterId: characterId,
+      experience: experience,
+      dragonExperience: dragonExperience,
+      sessionDate: sessionDate
+    };
+    $.ajax({
+      method: 'POST',
+      // Type of response and matches what we said in the route
+      url: '/character/saveExperienceLog',
+      // This is the url we gave in the route
+      data: data,
+      success: function success(response) {
+        // What to do if we succeed
+        var newExperienceCurrent = parseInt(experience) + parseInt($('#experience-current').val());
+        var newExperienceTotal = parseInt(experience) + parseInt($('#experience-total').val());
+        $('#experience-current').val(newExperienceCurrent);
+        $('#experience-total').val(newExperienceTotal);
+        $('#experience').val('');
+        $('#dragonExperience').val('');
+        $('#sessionDate').val('');
+      },
+      error: function error(jqXHR, textStatus, errorThrown) {
+        // What to do if we fail
+        console.log(JSON.stringify(jqXHR));
+        console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+      }
+    });
+  }
+  /**
+   * Get the XP log entries
+   */
+
+
+  function getXPLogEntries() {
+    var characterId = $('#characterId').val();
+    data = {
+      characterId: characterId
+    };
+    $.ajax({
+      method: 'POST',
+      // Type of response and matches what we said in the route
+      url: '/character/retrieveExperienceLog',
+      // This is the url we gave in the route
+      data: data,
+      success: function success(response) {
+        // What to do if we succeed
+        console.log(response);
+        $('#xpLog').append('<table id="xpTable" class="width-100"><tr><th class="text-right">Session Date</th><th class="text-right">Experience</th><th class="text-right">Dragon Experience</th></tr>');
+        response.forEach(function (arrayItem) {
+          $('#xpTable').append('<tr><td class="text-right">' + arrayItem.sessionDate + '</td><td class="text-right">' + arrayItem.experience + '</td><td class="text-right">' + arrayItem.dragonExperience + '</td></tr>');
+        });
+      },
+      error: function error(jqXHR, textStatus, errorThrown) {
+        // What to do if we fail
+        console.log(JSON.stringify(jqXHR));
+        console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+      }
+    });
+  }
+
+  $(document).on('click', '#mode-xpLog', function () {
+    getXPLogEntries();
+    $('#xpLog').removeClass('hide-on-load');
   });
 });
 
