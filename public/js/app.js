@@ -49199,6 +49199,12 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./custom */ "./resources/js/custom.js");
 
+__webpack_require__(/*! ./trainingMode */ "./resources/js/trainingMode.js");
+
+__webpack_require__(/*! ./xpLogMode */ "./resources/js/xpLogMode.js");
+
+__webpack_require__(/*! ./standardMode */ "./resources/js/standardMode.js");
+
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
@@ -49656,6 +49662,99 @@ $(document).ready(function () {
     $('input[name=\'charm-book' + number + '\']').val(datum.book);
     $('input[name=\'charm-effect' + number + '\']').val(datum.effect);
   });
+});
+
+if (window.performance && window.performance.navigation.type == window.performance.navigation.TYPE_BACK_FORWARD) {
+  window.location.reload();
+}
+
+/***/ }),
+
+/***/ "./resources/js/standardMode.js":
+/*!**************************************!*\
+  !*** ./resources/js/standardMode.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $(document).on('click', '#mode-standard', function () {
+    resetForm();
+  });
+
+  function resetForm() {
+    var disable = ['experience', 'dragonExperience'];
+    $('.characterSheet input').each(function () {
+      var name = $(this).attr('name').split('-')[0];
+
+      if (disable.indexOf(name) <= -1) {
+        $(this).attr('disabled', false);
+        $(this).removeClass('disabled');
+      }
+    });
+    $('input[name=\'submit-submit\'').attr('disabled', false);
+    $('input[name=\'submit-submit\'').removeClass('disabled');
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/trainingMode.js":
+/*!**************************************!*\
+  !*** ./resources/js/trainingMode.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $(document).on('click', '#mode-training', function () {
+    hideOtherModes();
+    disableOtherSections();
+  });
+
+  function hideOtherModes() {
+    if (!$('#xpLog').hasClass('hide-on-load')) {
+      $('#xpLog').addClass('hide-on-load');
+    }
+
+    $('#trainingMode').removeClass('hide-on-load');
+  }
+
+  function disableOtherSections() {
+    var enable = ['attributes', 'abilities', 'additionalabilities', 'specialization', 'merit', 'willpower', 'charm'];
+    $('.characterSheet input').each(function () {
+      if ($(this).attr('readonly')) {
+        return true;
+      }
+
+      var name = $(this).attr('name').split('-')[0];
+      console.log(this);
+      console.log(name);
+
+      if (enable.indexOf(name) <= -1) {
+        $(this).attr('disabled', true);
+        $(this).addClass('disabled');
+      }
+    });
+    $('input[name=\'submit-submit\'').attr('disabled', true);
+    $('input[name=\'submit-submit\'').addClass('disabled');
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/xpLogMode.js":
+/*!***********************************!*\
+  !*** ./resources/js/xpLogMode.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $(document).on('click', '#mode-xpLog', function () {
+    getXPLogEntries();
+    $('#xpLog').removeClass('hide-on-load');
+  });
   /**
    * Save an XP Log
    * 
@@ -49687,6 +49786,7 @@ $(document).ready(function () {
         $('#experience').val('');
         $('#dragonExperience').val('');
         $('#sessionDate').val('');
+        getXPLogEntries();
       },
       error: function error(jqXHR, textStatus, errorThrown) {
         // What to do if we fail
@@ -49713,8 +49813,8 @@ $(document).ready(function () {
       data: data,
       success: function success(response) {
         // What to do if we succeed
-        console.log(response);
-        $('#xpLog').append('<table id="xpTable" class="width-100"><tr><th class="text-right">Session Date</th><th class="text-right">Experience</th><th class="text-right">Dragon Experience</th></tr>');
+        $('#xpView').html('');
+        $('#xpView').append('<table id="xpTable" class="width-100"><tr><th class="text-right">Session Date</th><th class="text-right">Experience</th><th class="text-right">Dragon Experience</th></tr>');
         response.forEach(function (arrayItem) {
           $('#xpTable').append('<tr><td class="text-right">' + arrayItem.sessionDate + '</td><td class="text-right">' + arrayItem.experience + '</td><td class="text-right">' + arrayItem.dragonExperience + '</td></tr>');
         });
@@ -49726,16 +49826,7 @@ $(document).ready(function () {
       }
     });
   }
-
-  $(document).on('click', '#mode-xpLog', function () {
-    getXPLogEntries();
-    $('#xpLog').removeClass('hide-on-load');
-  });
 });
-
-if (window.performance && window.performance.navigation.type == window.performance.navigation.TYPE_BACK_FORWARD) {
-  window.location.reload();
-}
 
 /***/ }),
 

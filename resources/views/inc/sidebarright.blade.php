@@ -1,6 +1,6 @@
 <div class="row rightTop">
     <div class="col-md-3 text-left">
-        {{Form::submit('Submit', ['type' => 'submit', 'class' => 'btn btn-primary'])}}
+        {{Form::submit('Submit', ['name' => 'submit-submit', 'type' => 'submit', 'class' => 'btn btn-primary'])}}
         {!! Form::close() !!}
     </div>
     
@@ -21,4 +21,5 @@
 </div>
 <div class="rightBottom">
     @include('inc.addexperience')
+    @include('inc.trainingmode')
 </div>

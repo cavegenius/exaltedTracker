@@ -6,6 +6,9 @@
 
 require('./bootstrap');
 require('./custom');
+require('./trainingMode');
+require('./xpLogMode');
+require('./standardMode');
 
 window.Vue = require('vue');
 
