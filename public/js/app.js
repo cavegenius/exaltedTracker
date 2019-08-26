@@ -49859,7 +49859,7 @@ $(document).ready(function () {
   }
 
   function disableOtherSections() {
-    var enable = ['attributes', 'abilities', 'additionalabilities', 'specialization', 'merit', 'willpower', 'charm'];
+    var enable = ['attributes', 'abilities', 'additionalabilities', 'specialization', 'merit', 'willpower', 'charm', 'martialArtsCharm', 'evocation', 'spell'];
     $('.characterSheet input').each(function () {
       if ($(this).attr('readonly')) {
         return true;
