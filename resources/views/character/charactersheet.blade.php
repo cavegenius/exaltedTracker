@@ -1540,7 +1540,10 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
     </div>
     <h2>EVOCATIONS</h2>
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 text-center">
+            <a href="#" class="btn btn-primary addEvocation">Add Evocation</a>
+        </div>
+        <div class="col-12 evocations" data-count="1">
             <div class="form-row">
                 <div class="col-2">Name</div>
                 <div class="col-2">Type</div>
@@ -1568,7 +1571,10 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
     </div>
     <h2>SPELLS</h2>
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 text-center">
+            <a href="#" class="btn btn-primary addSpell">Add Spell</a>
+        </div>
+        <div class="col-12 spells" data-count="1">
             <div class="form-row">
                 <div class="col-3">Name</div>
                 <div class="col-2">Circle</div>

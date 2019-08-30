@@ -270,7 +270,10 @@ $(document).ready( function() {
 
     function populateEvocationDetails( evocations ) {
         let i=1;
-        $.each(evocations, function(key,value) {            
+        $.each(evocations, function(key,value) {
+            if(i>1) {
+                $('.addEvocation').click();
+            }         
             $( 'input[name=\'evocation-id'+i+'\'').val(value.id);
             $( 'input[name=\'evocation-name'+i+'\'').val(value.name);
             $( 'input[name=\'evocation-name'+i+'\'').attr('title', value.name);
@@ -296,7 +299,10 @@ $(document).ready( function() {
 
     function populateSpellDetails( spells ) {
         let i=1;
-        $.each(spells, function(key,value) {            
+        $.each(spells, function(key,value) {
+            if(i>1) {
+                $('.addSpell').click();
+            }           
             $( 'input[name=\'spell-id'+i+'\'').val(value.id);
             $( 'input[name=\'spell-name'+i+'\'').val(value.name);
             $( 'input[name=\'spell-name'+i+'\'').attr('title', value.name);
@@ -374,6 +380,21 @@ $(document).ready( function() {
         $('.martialArtsCharms').data('count', number );
         
         $('.martialArtsCharms').append('<div class="form-row"><input name="martialArtsCharm-id'+number+'" type="hidden" value="'+number+'"><div class="col-3"><input class="width-100" placeholder="" name="martialArtsCharm-name'+number+'" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="martialArtsCharm-type'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100" placeholder="" name="martialArtsCharm-duration'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100" placeholder="" name="martialArtsCharm-cost'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100" placeholder="" name="martialArtsCharm-element'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100" placeholder="" name="martialArtsCharm-book'+number+'" type="text" value=""></div><div class="col-3"><input class="width-100" placeholder="" name="martialArtsCharm-effect'+number+'" type="text" value=""></div></div>');
+    });
+
+    $('.addEvocation').click(function() {
+        let number = parseInt( $('.evocations').data( 'count') );
+        number += 1
+        $('.evocations').data('count', number );
+        
+        $('.evocations').append('<div class="form-row"><input name="evocation-id'+number+'" type="hidden" value="'+number+'"><div class="col-2"><input class="width-100" placeholder="" name="evocation-name'+number+'" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="evocation-type'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100" placeholder="" name="evocation-duration'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100" placeholder="" name="evocation-cost'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100" placeholder="" name="evocation-element'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100" placeholder="" name="evocation-book'+number+'" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="evocation-effect'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100" placeholder="" name="evocation-artifact'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100" placeholder="" name="evocation-attunement'+number+'" type="text" value=""></div></div>');    });
+
+    $('.addSpell').click(function() {
+        let number = parseInt( $('.spells').data( 'count') );
+        number += 1
+        $('.spells').data('count', number );
+        
+        $('.spells').append('<div class="form-row"><input name="spell-id'+number+'" type="hidden" value="'+number+'"><div class="col-3"><input class="width-100" placeholder="" name="spell-name'+number+'" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-circle'+number+'" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-cost'+number+'" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-duration'+number+'" type="text" value=""></div><div class="col-3"><input class="width-100" placeholder="" name="spell-keywords'+number+'" type="text" value=""></div></div>');
     });
 
 });
