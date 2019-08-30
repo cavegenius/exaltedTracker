@@ -1511,11 +1511,6 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
     </div>
     <h2>MARTIAL ARTS CHARMS</h2>
     <div class="row">
-        <div class="col-12 text-center">
-            <a href="#" class="btn btn-primary addMartialArtsCharm">Add Martial Arts Charm</a>
-        </div>
-    </div>
-    <div class="row">
         <div class="col-12 martialArtsCharms" data-count="1">
             <div class="form-row">
                 <div class="col-3">Name</div>
@@ -1538,11 +1533,13 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12 text-left">
+            <a href="#" class="btn addMartialArtsCharm"><i class="fa fa-plus"></i> Add Martial Arts Charm</a>
+        </div>
+    </div>
     <h2>EVOCATIONS</h2>
     <div class="row">
-        <div class="col-12 text-center">
-            <a href="#" class="btn btn-primary addEvocation">Add Evocation</a>
-        </div>
         <div class="col-12 evocations" data-count="1">
             <div class="form-row">
                 <div class="col-2">Name</div>
@@ -1568,12 +1565,12 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-1">{{Form::text('evocation-attunement1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
         </div>
+        <div class="col-12 text-left">
+            <a href="#" class="btn addEvocation"><i class="fa fa-plus"></i> Add Evocation</a>
+        </div>
     </div>
     <h2>SPELLS</h2>
     <div class="row">
-        <div class="col-12 text-center">
-            <a href="#" class="btn btn-primary addSpell">Add Spell</a>
-        </div>
         <div class="col-12 spells" data-count="1">
             <div class="form-row">
                 <div class="col-3">Name</div>
@@ -1590,6 +1587,9 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                 <div class="col-2">{{Form::text('spell-duration1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-3">{{Form::text('spell-keywords1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
+        </div>
+        <div class="col-12 text-left">
+            <a href="#" class="btn addSpell"><i class="fa fa-plus"></i> Add Spell</a>
         </div>
     </div>
     <br>    
