@@ -245,7 +245,10 @@ $(document).ready( function() {
 
     function populateMartialArtsCharmDetails( charms ) {
         let i=1;
-        $.each(charms, function(key,value) {            
+        $.each(charms, function(key,value) {
+            if(i>1) {
+                $('.addMartialArtsCharm').click();
+            }
             $( 'input[name=\'martialArtsCharm-id'+i+'\'').val(value.id);
             $( 'input[name=\'martialArtsCharm-name'+i+'\'').val(value.name);
             $( 'input[name=\'martialArtsCharm-name'+i+'\'').attr('title', value.name);
@@ -363,6 +366,14 @@ $(document).ready( function() {
         $( 'input[name=\'charm-element'+number+'\']' ).val(datum.element);
         $( 'input[name=\'charm-book'+number+'\']' ).val(datum.book);
         $( 'input[name=\'charm-effect'+number+'\']' ).val(datum.effect);
+    });
+
+    $('.addMartialArtsCharm').click(function() {
+        let number = parseInt( $('.martialArtsCharms').data( 'count') );
+        number += 1
+        $('.martialArtsCharms').data('count', number );
+        
+        $('.martialArtsCharms').append('<div class="form-row"><input name="martialArtsCharm-id'+number+'" type="hidden" value="'+number+'"><div class="col-3"><input class="width-100" placeholder="" name="martialArtsCharm-name'+number+'" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="martialArtsCharm-type'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100" placeholder="" name="martialArtsCharm-duration'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100" placeholder="" name="martialArtsCharm-cost'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100" placeholder="" name="martialArtsCharm-element'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100" placeholder="" name="martialArtsCharm-book'+number+'" type="text" value=""></div><div class="col-3"><input class="width-100" placeholder="" name="martialArtsCharm-effect'+number+'" type="text" value=""></div></div>');
     });
 
 });

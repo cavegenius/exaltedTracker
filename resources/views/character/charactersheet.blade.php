@@ -1511,7 +1511,12 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
     </div>
     <h2>MARTIAL ARTS CHARMS</h2>
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 text-center">
+            <a href="#" class="btn btn-primary addMartialArtsCharm">Add Martial Arts Charm</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 martialArtsCharms" data-count="1">
             <div class="form-row">
                 <div class="col-3">Name</div>
                 <div class="col-2">Type</div>
@@ -1581,6 +1586,5 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
             </div>
         </div>
     </div>
-    <br>
-    
+    <br>    
 </div>
