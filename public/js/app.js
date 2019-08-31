@@ -49598,6 +49598,9 @@ $(document).ready(function () {
   function populateCharmDetails(charms) {
     var i = 1;
     $.each(charms, function (key, value) {
+      //if(i>1) {
+      //    $('.addCharm').click();
+      //}
       $('input[name=\'charm-id' + i + '\'').val(value.id);
       $('input[name=\'charm-name' + i + '\'').val(value.name);
       $('input[name=\'charm-name' + i + '\'').attr('title', value.name);
@@ -49615,6 +49618,8 @@ $(document).ready(function () {
       $('input[name=\'charm-book' + i + '\'').attr('title', value.book);
       $('input[name=\'charm-effect' + i + '\'').val(value.effect);
       $('input[name=\'charm-effect' + i + '\'').attr('title', value.effect);
+      $('input[name=\'charm-notes' + i + '\'').val(value.notes);
+      $('input[name=\'charm-notes' + i + '\'').attr('title', value.notes);
       i++;
     });
   }
@@ -49744,7 +49749,18 @@ $(document).ready(function () {
     $('input[name=\'charm-element' + number + '\']').val(datum.element);
     $('input[name=\'charm-book' + number + '\']').val(datum.book);
     $('input[name=\'charm-effect' + number + '\']').val(datum.effect);
+  }); // End Charm Typeahead functions
+  // Add rows to sections
+
+  /*
+  $('.addCharm').click(function() {
+      let number = parseInt( $('.charms').data( 'count') );
+      number += 1
+      $('.charms').data('count', number );
+      $('.charms').append('<div class="form-row"><input name="charm-id'+number+'" type="hidden" value="'+number+'"><div class="col-2"><span class="twitter-typeahead" style="position: relative; display: inline-block;"><input class="width-100 charmTypeAhead tt-hint" type="text" value="" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(234, 240, 245);"><input class="width-100 charmTypeAhead tt-input" placeholder="" name="charm-name'+number+'" type="text" value="" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Nunito, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;"><div class="tt-dataset tt-dataset-charms"></div></div></span></div><div class="col-2"><input class="width-100 disabled" disabled="" placeholder="" name="charm-type'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100 disabled" disabled="" placeholder="" name="charm-duration'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100 disabled" disabled="" placeholder="" name="charm-cost'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100 disabled" disabled="" placeholder="" name="charm-element'+number+'" type="text" value=""></div><div class="col-1"><input class="width-100 disabled" disabled="" placeholder="" name="charm-book'+number+'" type="text" value=""></div><div class="col-2"><input class="width-100 disabled" disabled="" placeholder="" name="charm-effect'+number+'" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="charm-notes'+number+'" type="text" value=""></div></div>');
   });
+  */
+
   $('.addMartialArtsCharm').click(function () {
     var number = parseInt($('.martialArtsCharms').data('count'));
     number += 1;

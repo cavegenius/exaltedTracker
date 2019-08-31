@@ -11006,6 +11006,10 @@ body {
   margin-top: 35px;
 }
 
+.abilities .width-100 {
+  max-height: 22px;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

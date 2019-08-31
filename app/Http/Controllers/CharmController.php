@@ -27,9 +27,11 @@ class CharmController extends Controller
             $model = new Charm(array(), 'user_charms');
 
             $hasCharm = $model->where('charmId', $charm['id'])->where('characterId', $character)->first();
-            
+
             if($hasCharm == '') {
-                $model->saveUserCharms($charm['id'],$character);
+                $model->saveUserCharms($charm['id'],$character, $charm['notes']);
+            } else if(array_key_exists('notes', $charm)) {
+                $model->updateUserCharms($charm['id'],$character, $charm['notes']);
             }
         }
 

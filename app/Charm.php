@@ -19,11 +19,19 @@ class Charm extends Model
         $this->table = $table;
     }
 
-    public function saveUserCharms($charmId, $characterId) {
+    public function saveUserCharms($charmId, $characterId, $notes) {
         $this->table = 'user_charms';
         $this->characterId = $characterId;
         $this->charmId = $charmId;
+        $this->notes = $notes;
         $this->save();
+    }
+
+    public function updateUserCharms($charmId, $characterId, $notes) {
+        $this->table = 'user_charms';
+        $charm = $this->where('charmId', $charmId)->where('characterId', $characterId)->first();
+        $charm->notes = $notes;
+        $charm->save();
     }
 
     public function retrieveUserCharms($characterId) {
@@ -33,9 +41,12 @@ class Charm extends Model
         $this->table = 'charms';
         $charmData = array();
 
+        $i=0;
         foreach($charms as $key => $value) {
             $id = $value->charmId;
-            $charmData[] = $this->where('id', $id)->first();
+            $charmData[$i] = $this->where('id', $id)->first();
+            $charmData[$i]['notes'] = $value->notes;
+            $i++;
         }
         return $charmData;
     }
