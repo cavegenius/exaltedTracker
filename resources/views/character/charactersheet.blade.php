@@ -406,11 +406,11 @@
                 <div class="col-1">{{Form::checkbox('abilities-thrownFavored', 'true', false, ['class' => 'checkbox'])}}</div>
                 <div class="col-2">{{Form::label('abilities-thrown', 'Thrown')}}</div>
                 <div class="col-9 text-right">
-                    {{Form::checkbox('abilities-thrown', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'thrown', 'data-value' => '1'])}}
-                    {{Form::checkbox('abilities-thrown', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'thrown', 'data-value' => '2'])}}
-                    {{Form::checkbox('abilities-thrown', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'thrown', 'data-value' => '3'])}}
-                    {{Form::checkbox('abilities-thrown', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'thrown', 'data-value' => '4'])}}
-                    {{Form::checkbox('abilities-thrown', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'thrown', 'data-value' => '5'])}}
+                    {{Form::checkbox('abilities-thrown1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'thrown', 'data-value' => '1'])}}
+                    {{Form::checkbox('abilities-thrown2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'thrown', 'data-value' => '2'])}}
+                    {{Form::checkbox('abilities-thrown3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'thrown', 'data-value' => '3'])}}
+                    {{Form::checkbox('abilities-thrown4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'thrown', 'data-value' => '4'])}}
+                    {{Form::checkbox('abilities-thrown5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'thrown', 'data-value' => '5'])}}
                 </div>
             </div>
             <div class="form-row">
