@@ -93,6 +93,9 @@ $(document).ready( function() {
                 if(key.includes('Favored') && value == 1) {
                     $( 'input[name=\'abilities-'+key+'\'').click();
                 }
+                if(key.includes('Text')) {
+                    $( 'input[name=\'abilities-'+key+'\'').val(value);
+                }
             });    
         });
     }

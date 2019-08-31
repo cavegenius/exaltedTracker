@@ -15,6 +15,8 @@ class AbilityController extends Controller
         foreach( $abilities as $ability => $value ) {
             if (strpos($ability, 'Favored') !== false) {
                 $saveData[$ability] = true;
+            } else if (strpos($ability, 'Text') !== false) {
+                $saveData[$ability] = $value;
             } else {
                 preg_match('/[^\d]+/', $ability, $textMatch);
                 preg_match('/\d+/', $ability, $numMatch);
