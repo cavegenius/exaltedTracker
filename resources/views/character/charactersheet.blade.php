@@ -927,17 +927,23 @@
     </div>
     <div class="row healthRow">
         <div class="healthBox">
-            {{Form::checkbox('health-box1', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '1'])}}
+                {{Form::checkbox('health-box1', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '1'])}}
+            <!--<span class="healthCheck">&nbsp</span>
+            {{ Form::hidden('health-box1', '0') }}-->
             &nbsp;0
             {{ Form::hidden('health-text1', '0') }}
 
         </div>
         <div class="healthBox">
-            {{Form::checkbox('health-box2', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '2'])}}
+                {{Form::checkbox('health-box2', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '2'])}}
+            <!--<span class="healthCheck">&nbsp</span>
+            {{ Form::hidden('health-box1', '0') }}-->
             {{Form::text('health-text2','', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
-            {{Form::checkbox('health-box3', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '3'])}}
+                {{Form::checkbox('health-box3', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '3'])}}
+            <!--<span class="healthCheck">&nbsp</span>
+            {{ Form::hidden('health-box1', '0') }}-->
             {{Form::text('health-text3', '', ['class' => 'width-50', 'placeholder' => ''])}}
         </div>
         <div class="healthBox">
@@ -1074,31 +1080,31 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit-11', '', ['class' => 'width-100'])}}</div>
                         <div class="col-5 text-right">
-                            {{Form::checkbox('merit-11v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit12', 'data-value' => '1'])}}
-                            {{Form::checkbox('merit-11v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit12', 'data-value' => '2'])}}
-                            {{Form::checkbox('merit-11v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit12', 'data-value' => '3'])}}
-                            {{Form::checkbox('merit-11v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit12', 'data-value' => '4'])}}
-                            {{Form::checkbox('merit-11v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit12', 'data-value' => '5'])}}
+                            {{Form::checkbox('merit-11v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit11', 'data-value' => '1'])}}
+                            {{Form::checkbox('merit-11v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit11', 'data-value' => '2'])}}
+                            {{Form::checkbox('merit-11v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit11', 'data-value' => '3'])}}
+                            {{Form::checkbox('merit-11v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit11', 'data-value' => '4'])}}
+                            {{Form::checkbox('merit-11v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit11', 'data-value' => '5'])}}
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit-13', '', ['class' => 'width-100'])}}</div>
                         <div class="col-5 text-right">
-                            {{Form::checkbox('merit-13v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit14', 'data-value' => '1'])}}
-                            {{Form::checkbox('merit-13v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit14', 'data-value' => '2'])}}
-                            {{Form::checkbox('merit-13v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit14', 'data-value' => '3'])}}
-                            {{Form::checkbox('merit-13v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit14', 'data-value' => '4'])}}
-                            {{Form::checkbox('merit-13v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit14', 'data-value' => '5'])}}
+                            {{Form::checkbox('merit-13v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit13', 'data-value' => '1'])}}
+                            {{Form::checkbox('merit-13v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit13', 'data-value' => '2'])}}
+                            {{Form::checkbox('merit-13v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit13', 'data-value' => '3'])}}
+                            {{Form::checkbox('merit-13v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit13', 'data-value' => '4'])}}
+                            {{Form::checkbox('merit-13v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit13', 'data-value' => '5'])}}
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit-15', '', ['class' => 'width-100'])}}</div>
                         <div class="col-5 text-right">
-                            {{Form::checkbox('merit-15v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit14', 'data-value' => '1'])}}
-                            {{Form::checkbox('merit-15v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit14', 'data-value' => '2'])}}
-                            {{Form::checkbox('merit-15v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit14', 'data-value' => '3'])}}
-                            {{Form::checkbox('merit-15v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit14', 'data-value' => '4'])}}
-                            {{Form::checkbox('merit-15v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit14', 'data-value' => '5'])}}
+                            {{Form::checkbox('merit-15v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit15', 'data-value' => '1'])}}
+                            {{Form::checkbox('merit-15v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit15', 'data-value' => '2'])}}
+                            {{Form::checkbox('merit-15v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit15', 'data-value' => '3'])}}
+                            {{Form::checkbox('merit-15v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit15', 'data-value' => '4'])}}
+                            {{Form::checkbox('merit-15v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit15', 'data-value' => '5'])}}
                         </div>
                     </div>
                 </div>
@@ -1116,11 +1122,11 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit-12', '', ['class' => 'width-100'])}}</div>
                         <div class="col-5 text-right">
-                            {{Form::checkbox('merit-12v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit13', 'data-value' => '1'])}}
-                            {{Form::checkbox('merit-12v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit13', 'data-value' => '2'])}}
-                            {{Form::checkbox('merit-12v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit13', 'data-value' => '3'])}}
-                            {{Form::checkbox('merit-12v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit13', 'data-value' => '4'])}}
-                            {{Form::checkbox('merit-12v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit13', 'data-value' => '5'])}}
+                            {{Form::checkbox('merit-12v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit12', 'data-value' => '1'])}}
+                            {{Form::checkbox('merit-12v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit12', 'data-value' => '2'])}}
+                            {{Form::checkbox('merit-12v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit12', 'data-value' => '3'])}}
+                            {{Form::checkbox('merit-12v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit12', 'data-value' => '4'])}}
+                            {{Form::checkbox('merit-12v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit12', 'data-value' => '5'])}}
                         </div>
                     </div>
                     <div class="form-row">
@@ -1136,11 +1142,11 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
                     <div class="form-row">
                         <div class="col-7">{{Form::text('merit-16', '', ['class' => 'width-100'])}}</div>
                         <div class="col-5 text-right">
-                            {{Form::checkbox('merit-16v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit14', 'data-value' => '1'])}}
-                            {{Form::checkbox('merit-16v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit14', 'data-value' => '2'])}}
-                            {{Form::checkbox('merit-16v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit14', 'data-value' => '3'])}}
-                            {{Form::checkbox('merit-16v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit14', 'data-value' => '4'])}}
-                            {{Form::checkbox('merit-16v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit14', 'data-value' => '5'])}}
+                            {{Form::checkbox('merit-16v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit16', 'data-value' => '1'])}}
+                            {{Form::checkbox('merit-16v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit16', 'data-value' => '2'])}}
+                            {{Form::checkbox('merit-16v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit16', 'data-value' => '3'])}}
+                            {{Form::checkbox('merit-16v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit16', 'data-value' => '4'])}}
+                            {{Form::checkbox('merit-16v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit16', 'data-value' => '5'])}}
                         </div>
                     </div>
                 </div>
@@ -1635,19 +1641,21 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
     <div class="row">
         <div class="col-12 spells" data-count="1">
             <div class="form-row">
-                <div class="col-3">Name</div>
+                <div class="col-2">Name</div>
                 <div class="col-2">Circle</div>
                 <div class="col-2">Cost</div>
                 <div class="col-2">Duration</div>
-                <div class="col-3">Keywords</div>
+                <div class="col-2">Keywords</div>
+                <div class="col-2">Book/pg</div>
             </div>
             <div class="form-row">
                 {{ Form::hidden('spell-id1', '') }}
-                <div class="col-3">{{Form::text('spell-name1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-2">{{Form::text('spell-name1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('spell-circle1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('spell-cost1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
                 <div class="col-2">{{Form::text('spell-duration1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                <div class="col-3">{{Form::text('spell-keywords1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-2">{{Form::text('spell-keywords1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
+                <div class="col-2">{{Form::text('spell-book1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
             </div>
         </div>
         <div class="col-12 text-left">

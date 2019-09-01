@@ -49698,6 +49698,8 @@ $(document).ready(function () {
       $('input[name=\'spell-duration' + i + '\'').attr('title', value.duration);
       $('input[name=\'spell-keywords' + i + '\'').val(value.keywords);
       $('input[name=\'spell-keywords' + i + '\'').attr('title', value.keywords);
+      $('input[name=\'spell-book' + i + '\'').val(value.book);
+      $('input[name=\'spell-book' + i + '\'').attr('title', value.book);
       i++;
     });
   }
@@ -49777,7 +49779,7 @@ $(document).ready(function () {
     var number = parseInt($('.spells').data('count'));
     number += 1;
     $('.spells').data('count', number);
-    $('.spells').append('<div class="form-row"><input name="spell-id' + number + '" type="hidden" value="' + number + '"><div class="col-3"><input class="width-100" placeholder="" name="spell-name' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-circle' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-cost' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-duration' + number + '" type="text" value=""></div><div class="col-3"><input class="width-100" placeholder="" name="spell-keywords' + number + '" type="text" value=""></div></div>');
+    $('.spells').append('<div class="form-row"><input name="spell-id' + number + '" type="hidden" value="' + number + '"><div class="col-2"><input class="width-100" placeholder="" name="spell-name' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-circle' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-cost' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-duration' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-keywords' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-book' + number + '" type="text" value=""></div></div>');
   });
 });
 

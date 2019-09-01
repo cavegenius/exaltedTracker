@@ -11010,6 +11010,13 @@ body {
   max-height: 22px;
 }
 
+.healthCheck {
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border: thin solid #000;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

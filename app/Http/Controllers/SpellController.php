@@ -33,6 +33,7 @@ class SpellController extends Controller
             $spellModel->cost = $spell['cost'];
             $spellModel->duration = $spell['duration'];
             $spellModel->keywords = $spell['keywords'];
+            $spellModel->book = $spell['book'];
             $spellModel->save();
         }
 
