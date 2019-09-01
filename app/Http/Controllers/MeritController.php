@@ -17,7 +17,11 @@ class MeritController extends Controller
             if ( is_numeric($key) ) {
                 $saveData[$key]['name'] = $value;
             } else if($key[0] == 'i') {
-                $saveData[$key[2]]['id'] = $value;
+                if(strlen($key) == 4) {
+                    $saveData[$key[2].$key[3]]['id'] = $value;
+                } else {
+                    $saveData[$key[2]]['id'] = $value;
+                }
             } else {
                 $number = explode ("v", $key);  
                 $saveData[$number[0]]['value'] = substr($key, -1);
