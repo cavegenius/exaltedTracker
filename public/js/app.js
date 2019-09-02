@@ -49619,10 +49619,8 @@ $(document).ready(function () {
       $('input[name=\'charm-effect' + i + '\']').val(value.effect);
       $('input[name=\'charm-effect' + i + '\']').attr('title', value.effect);
       $('input[name=\'charm-notes' + i + '\']').val(value.notes);
-      $('input[name=\'charm-notes' + i + '\']').attr('title', value.notes); // Add the remove option
-
-      $('input[name=\'charm-notes' + i + '\']').removeClass('width-100').addClass('width-95');
-      $('input[name=\'charm-notes' + i + '\']').parent().append('<i class="fa fa-times removeCharm" data-id="' + value.id + '" data-position="' + i + '"></i>');
+      $('input[name=\'charm-notes' + i + '\']').attr('title', value.notes);
+      $('.removeCharm[data-position=\'' + i + '\']').attr('data-id', value.id);
       i++;
     });
   }
@@ -49789,50 +49787,58 @@ $(document).ready(function () {
     var id = $(this).data('id');
     var characterId = $('#characterId').val();
     var i = $(this).data('position');
-    data = {
-      id: id,
-      characterId: characterId
-    };
-    $.ajax({
-      method: 'POST',
-      // Type of response and matches what we said in the route
-      url: '/charm/delete',
-      // This is the url we gave in the route
-      data: data,
-      success: function success(response) {
-        // What to do if we succeed
-        $('.results').addClass('alert-success');
-        $('.results').removeClass('hide-on-load');
-        $('.results').html(response.result);
-        $('input[name=\'charm-id' + i + '\']').val('');
-        $('input[name=\'charm-name' + i + '\']').val('');
-        $('input[name=\'charm-name' + i + '\']').attr('title', '');
-        $('input[name=\'charm-name' + i + '\']').attr('disabled', false);
-        $('input[name=\'charm-name' + i + '\']').removeClass('disabled');
-        $('input[name=\'charm-type' + i + '\']').val('');
-        $('input[name=\'charm-type' + i + '\']').attr('title', '');
-        $('input[name=\'charm-duration' + i + '\']').val('');
-        $('input[name=\'charm-duration' + i + '\']').attr('title', '');
-        $('input[name=\'charm-cost' + i + '\']').val('');
-        $('input[name=\'charm-cost' + i + '\']').attr('title', '');
-        $('input[name=\'charm-element' + i + '\']').val('');
-        $('input[name=\'charm-element' + i + '\']').attr('title', '');
-        $('input[name=\'charm-book' + i + '\']').val('');
-        $('input[name=\'charm-book' + i + '\']').attr('title', '');
-        $('input[name=\'charm-effect' + i + '\']').val('');
-        $('input[name=\'charm-effect' + i + '\']').attr('title', '');
-        $('input[name=\'charm-notes' + i + '\']').val('');
-        $('input[name=\'charm-notes' + i + '\']').attr('title', '');
-        $('input[name=\'charm-notes' + i + '\']').removeClass('width-95').addClass('width-100');
-        $('.removeCharm[data-id=\'' + id + '\']').remove();
-      },
-      error: function error(jqXHR, textStatus, errorThrown) {
-        // What to do if we fail
-        console.log(JSON.stringify(jqXHR));
-        console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
-      }
-    });
+
+    if (id != 0) {
+      data = {
+        id: id,
+        characterId: characterId
+      };
+      $.ajax({
+        method: 'POST',
+        // Type of response and matches what we said in the route
+        url: '/charm/delete',
+        // This is the url we gave in the route
+        data: data,
+        success: function success(response) {
+          // What to do if we succeed
+          $('.results').addClass('alert-success');
+          $('.results').removeClass('hide-on-load');
+          $('.results').html(response.result);
+          clearCharmData(i);
+        },
+        error: function error(jqXHR, textStatus, errorThrown) {
+          // What to do if we fail
+          console.log(JSON.stringify(jqXHR));
+          console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+        }
+      });
+    } else {
+      clearCharmData(i);
+    }
   });
+
+  function clearCharmData(i) {
+    $('input[name=\'charm-id' + i + '\']').val('');
+    $('input[name=\'charm-name' + i + '\']').val('');
+    $('input[name=\'charm-name' + i + '\']').attr('title', '');
+    $('input[name=\'charm-name' + i + '\']').attr('disabled', false);
+    $('input[name=\'charm-name' + i + '\']').removeClass('disabled');
+    $('input[name=\'charm-type' + i + '\']').val('');
+    $('input[name=\'charm-type' + i + '\']').attr('title', '');
+    $('input[name=\'charm-duration' + i + '\']').val('');
+    $('input[name=\'charm-duration' + i + '\']').attr('title', '');
+    $('input[name=\'charm-cost' + i + '\']').val('');
+    $('input[name=\'charm-cost' + i + '\']').attr('title', '');
+    $('input[name=\'charm-element' + i + '\']').val('');
+    $('input[name=\'charm-element' + i + '\']').attr('title', '');
+    $('input[name=\'charm-book' + i + '\']').val('');
+    $('input[name=\'charm-book' + i + '\']').attr('title', '');
+    $('input[name=\'charm-effect' + i + '\']').val('');
+    $('input[name=\'charm-effect' + i + '\']').attr('title', '');
+    $('input[name=\'charm-notes' + i + '\']').val('');
+    $('input[name=\'charm-notes' + i + '\']').attr('title', '');
+    $('.removeCharm[data-position=\'' + i + '\']').data('id', 0);
+  }
 });
 
 if (window.performance && window.performance.navigation.type == window.performance.navigation.TYPE_BACK_FORWARD) {
