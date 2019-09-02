@@ -49381,8 +49381,8 @@ $(document).ready(function () {
       // What to do if we succeed
       if (response == 'No Character') {
         $('sidebar-right').html('');
-        $('.alert').append('You have not created your character yet. You will need to fill out the character sheet below');
-        $('.alert').removeClass('hide-on-load');
+        $('.noCharacter').append('You have not created your character yet. You will need to fill out the character sheet below');
+        $('.noCharacter').removeClass('hide-on-load');
       } else {
         if (!$('#character-name').val()) {
           populateCharacterDetails(response.character);
@@ -49601,25 +49601,28 @@ $(document).ready(function () {
       //if(i>1) {
       //    $('.addCharm').click();
       //}
-      $('input[name=\'charm-id' + i + '\'').val(value.id);
-      $('input[name=\'charm-name' + i + '\'').val(value.name);
-      $('input[name=\'charm-name' + i + '\'').attr('title', value.name);
-      $('input[name=\'charm-name' + i + '\'').attr('disabled', true);
-      $('input[name=\'charm-name' + i + '\'').addClass('disabled');
-      $('input[name=\'charm-type' + i + '\'').val(value.type);
-      $('input[name=\'charm-type' + i + '\'').attr('title', value.type);
-      $('input[name=\'charm-duration' + i + '\'').val(value.duration);
-      $('input[name=\'charm-duration' + i + '\'').attr('title', value.duration);
-      $('input[name=\'charm-cost' + i + '\'').val(value.cost);
-      $('input[name=\'charm-cost' + i + '\'').attr('title', value.cost);
-      $('input[name=\'charm-element' + i + '\'').val(value.element);
-      $('input[name=\'charm-element' + i + '\'').attr('title', value.element);
-      $('input[name=\'charm-book' + i + '\'').val(value.book);
-      $('input[name=\'charm-book' + i + '\'').attr('title', value.book);
-      $('input[name=\'charm-effect' + i + '\'').val(value.effect);
-      $('input[name=\'charm-effect' + i + '\'').attr('title', value.effect);
-      $('input[name=\'charm-notes' + i + '\'').val(value.notes);
-      $('input[name=\'charm-notes' + i + '\'').attr('title', value.notes);
+      $('input[name=\'charm-id' + i + '\']').val(value.id);
+      $('input[name=\'charm-name' + i + '\']').val(value.name);
+      $('input[name=\'charm-name' + i + '\']').attr('title', value.name);
+      $('input[name=\'charm-name' + i + '\']').attr('disabled', true);
+      $('input[name=\'charm-name' + i + '\']').addClass('disabled');
+      $('input[name=\'charm-type' + i + '\']').val(value.type);
+      $('input[name=\'charm-type' + i + '\']').attr('title', value.type);
+      $('input[name=\'charm-duration' + i + '\']').val(value.duration);
+      $('input[name=\'charm-duration' + i + '\']').attr('title', value.duration);
+      $('input[name=\'charm-cost' + i + '\']').val(value.cost);
+      $('input[name=\'charm-cost' + i + '\']').attr('title', value.cost);
+      $('input[name=\'charm-element' + i + '\']').val(value.element);
+      $('input[name=\'charm-element' + i + '\']').attr('title', value.element);
+      $('input[name=\'charm-book' + i + '\']').val(value.book);
+      $('input[name=\'charm-book' + i + '\']').attr('title', value.book);
+      $('input[name=\'charm-effect' + i + '\']').val(value.effect);
+      $('input[name=\'charm-effect' + i + '\']').attr('title', value.effect);
+      $('input[name=\'charm-notes' + i + '\']').val(value.notes);
+      $('input[name=\'charm-notes' + i + '\']').attr('title', value.notes); // Add the remove option
+
+      $('input[name=\'charm-notes' + i + '\']').removeClass('width-100').addClass('width-95');
+      $('input[name=\'charm-notes' + i + '\']').parent().append('<i class="fa fa-times removeCharm" data-id="' + value.id + '" data-position="' + i + '"></i>');
       i++;
     });
   }
@@ -49780,6 +49783,55 @@ $(document).ready(function () {
     number += 1;
     $('.spells').data('count', number);
     $('.spells').append('<div class="form-row"><input name="spell-id' + number + '" type="hidden" value="' + number + '"><div class="col-2"><input class="width-100" placeholder="" name="spell-name' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-circle' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-cost' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-duration' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-keywords' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-book' + number + '" type="text" value=""></div></div>');
+  }); // Begin delete functions
+
+  $(document).on('click', '.removeCharm', function () {
+    var id = $(this).data('id');
+    var characterId = $('#characterId').val();
+    var i = $(this).data('position');
+    data = {
+      id: id,
+      characterId: characterId
+    };
+    $.ajax({
+      method: 'POST',
+      // Type of response and matches what we said in the route
+      url: '/charm/delete',
+      // This is the url we gave in the route
+      data: data,
+      success: function success(response) {
+        // What to do if we succeed
+        $('.results').addClass('alert-success');
+        $('.results').removeClass('hide-on-load');
+        $('.results').html(response.result);
+        $('input[name=\'charm-id' + i + '\']').val('');
+        $('input[name=\'charm-name' + i + '\']').val('');
+        $('input[name=\'charm-name' + i + '\']').attr('title', '');
+        $('input[name=\'charm-name' + i + '\']').attr('disabled', false);
+        $('input[name=\'charm-name' + i + '\']').removeClass('disabled');
+        $('input[name=\'charm-type' + i + '\']').val('');
+        $('input[name=\'charm-type' + i + '\']').attr('title', '');
+        $('input[name=\'charm-duration' + i + '\']').val('');
+        $('input[name=\'charm-duration' + i + '\']').attr('title', '');
+        $('input[name=\'charm-cost' + i + '\']').val('');
+        $('input[name=\'charm-cost' + i + '\']').attr('title', '');
+        $('input[name=\'charm-element' + i + '\']').val('');
+        $('input[name=\'charm-element' + i + '\']').attr('title', '');
+        $('input[name=\'charm-book' + i + '\']').val('');
+        $('input[name=\'charm-book' + i + '\']').attr('title', '');
+        $('input[name=\'charm-effect' + i + '\']').val('');
+        $('input[name=\'charm-effect' + i + '\']').attr('title', '');
+        $('input[name=\'charm-notes' + i + '\']').val('');
+        $('input[name=\'charm-notes' + i + '\']').attr('title', '');
+        $('input[name=\'charm-notes' + i + '\']').removeClass('width-95').addClass('width-100');
+        $('.removeCharm[data-id=\'' + id + '\']').remove();
+      },
+      error: function error(jqXHR, textStatus, errorThrown) {
+        // What to do if we fail
+        console.log(JSON.stringify(jqXHR));
+        console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+      }
+    });
   });
 });
 

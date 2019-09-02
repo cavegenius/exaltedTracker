@@ -40,7 +40,7 @@
         </main>
 
         <nav class="col-md-3 d-none d-md-block sidebar-right">
-        <div class="alert alert-success hide-on-load"></div>
+        <div class="alert alert-success noCharacter hide-on-load"></div>
           <div class="sidebar-sticky yes">
               @include('inc.sidebarright')
           </div>

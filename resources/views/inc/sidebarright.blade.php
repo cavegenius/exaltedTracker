@@ -1,3 +1,6 @@
+<div class="row">
+        <div class="alert results hide-on-load width-100"></div>
+</div>
 <div class="row rightTop">
     <div class="col-md-3 text-left">
         {{Form::submit('Submit', ['name' => 'submit-submit', 'type' => 'submit', 'class' => 'btn btn-primary'])}}

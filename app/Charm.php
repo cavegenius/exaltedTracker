@@ -51,4 +51,11 @@ class Charm extends Model
         return $charmData;
     }
 
+    public function deleteUserCharm($id, $characterId) {
+        $this->table = 'user_charms';
+        $this->where('charmId', $id)->where('characterId', $characterId)->delete();
+
+        return true;
+    }
+
 }

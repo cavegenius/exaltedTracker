@@ -52,4 +52,14 @@ class CharmController extends Controller
     public function searchCharms(Request $request) {
         return Charm::where('name', 'LIKE', '%'.$request->q.'%')->get();
     }
+
+    public function delete(Request $request) {
+        $data = $request->post();
+        $id = $data['id'];
+        $characterId = $data['characterId'];
+        $model = new Charm;
+        $result = $model->deleteUserCharm($id, $characterId) ? 'Success' : 'Error';
+
+        return ['result'=>$result];
+    }
 }
