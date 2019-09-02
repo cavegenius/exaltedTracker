@@ -279,86 +279,21 @@
                 </div>
                 <div class="col-md-6">
                     <h2>MERITS</h2>
-                    <div class="form-row">
-                        <div class="col-7">{{Form::text('merit-1', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-5 text-right">
-                            {{Form::checkbox('merit-1v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit1', 'data-value' => '1'])}}
-                            {{Form::checkbox('merit-1v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit1', 'data-value' => '2'])}}
-                            {{Form::checkbox('merit-1v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit1', 'data-value' => '3'])}}
-                            {{Form::checkbox('merit-1v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit1', 'data-value' => '4'])}}
-                            {{Form::checkbox('merit-1v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit1', 'data-value' => '5'])}}
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-7">{{Form::text('merit-2', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-5 text-right">
-                            {{Form::checkbox('merit-2v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit2', 'data-value' => '1'])}}
-                            {{Form::checkbox('merit-2v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit2', 'data-value' => '2'])}}
-                            {{Form::checkbox('merit-2v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit2', 'data-value' => '3'])}}
-                            {{Form::checkbox('merit-2v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit2', 'data-value' => '4'])}}
-                            {{Form::checkbox('merit-2v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit2', 'data-value' => '5'])}}
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-7">{{Form::text('merit-3', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-5 text-right">
-                            {{Form::checkbox('merit-3v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit3', 'data-value' => '1'])}}
-                            {{Form::checkbox('merit-3v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit3', 'data-value' => '2'])}}
-                            {{Form::checkbox('merit-3v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit3', 'data-value' => '3'])}}
-                            {{Form::checkbox('merit-3v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit3', 'data-value' => '4'])}}
-                            {{Form::checkbox('merit-3v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit3', 'data-value' => '5'])}}
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-7">{{Form::text('merit-4', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-5 text-right">
-                            {{Form::checkbox('merit-4v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit4', 'data-value' => '1'])}}
-                            {{Form::checkbox('merit-4v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit4', 'data-value' => '2'])}}
-                            {{Form::checkbox('merit-4v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit4', 'data-value' => '3'])}}
-                            {{Form::checkbox('merit-4v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit4', 'data-value' => '4'])}}
-                            {{Form::checkbox('merit-4v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit4', 'data-value' => '5'])}}
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-7">{{Form::text('merit-5', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-5 text-right">
-                            {{Form::checkbox('merit-5v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit5', 'data-value' => '1'])}}
-                            {{Form::checkbox('merit-5v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit5', 'data-value' => '2'])}}
-                            {{Form::checkbox('merit-5v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit5', 'data-value' => '3'])}}
-                            {{Form::checkbox('merit-5v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit5', 'data-value' => '4'])}}
-                            {{Form::checkbox('merit-5v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit5', 'data-value' => '5'])}}
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-7">{{Form::text('merit-6', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-5 text-right">
-                            {{Form::checkbox('merit-6v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit6', 'data-value' => '1'])}}
-                            {{Form::checkbox('merit-6v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit6', 'data-value' => '2'])}}
-                            {{Form::checkbox('merit-6v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit6', 'data-value' => '3'])}}
-                            {{Form::checkbox('merit-6v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit6', 'data-value' => '4'])}}
-                            {{Form::checkbox('merit-6v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit6', 'data-value' => '5'])}}
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-7">{{Form::text('merit-7', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-5 text-right">
-                            {{Form::checkbox('merit-7v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit7', 'data-value' => '1'])}}
-                            {{Form::checkbox('merit-7v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit7', 'data-value' => '2'])}}
-                            {{Form::checkbox('merit-7v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit7', 'data-value' => '3'])}}
-                            {{Form::checkbox('merit-7v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit7', 'data-value' => '4'])}}
-                            {{Form::checkbox('merit-7v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit7', 'data-value' => '5'])}}
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-7">{{Form::text('merit-8', '', ['class' => 'width-100'])}}</div>
-                        <div class="col-5 text-right">
-                            {{Form::checkbox('merit-8v1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit8', 'data-value' => '1'])}}
-                            {{Form::checkbox('merit-8v2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit8', 'data-value' => '2'])}}
-                            {{Form::checkbox('merit-8v3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit8', 'data-value' => '3'])}}
-                            {{Form::checkbox('merit-8v4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit8', 'data-value' => '4'])}}
-                            {{Form::checkbox('merit-8v5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'merit8', 'data-value' => '5'])}}
-                        </div>
-                    </div>
+                    <?php
+                        for($i=1; $i<=8; $i++) {
+                            echo '<div class="form-row">';
+                            echo '<div class="col-7"><input class="width-100" name="merit-'.$i.'" type="text" value=""></div>';
+                            echo '<div class="col-5 text-right">';
+                            echo '<input class="checkbox-round" data-type="merit'.$i.'" data-value="1" name="merit-'.$i.'v1" type="checkbox" value="true">';
+                            echo '<input class="checkbox-round" data-type="merit'.$i.'" data-value="2" name="merit-'.$i.'v2" type="checkbox" value="true">';
+                            echo '<input class="checkbox-round" data-type="merit'.$i.'" data-value="3" name="merit-'.$i.'v3" type="checkbox" value="true">';
+                            echo '<input class="checkbox-round" data-type="merit'.$i.'" data-value="4" name="merit-'.$i.'v4" type="checkbox" value="true">';
+                            echo '<input class="checkbox-round" data-type="merit'.$i.'" data-value="5" name="merit-'.$i.'v5" type="checkbox" value="true">';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    ?>
+                    
                     <h2>ANIMA LEVEL</h2>
                     <div class="form-row">
                             <div class="col-3 text-center">{{Form::label('dim', 'Dim')}}<br>{{Form::radio('anima-anima', 'dim', false, ['class' => 'checkbox'])}}</div>
@@ -401,62 +336,18 @@
                     <div class="col-1"><h6>{{Form::label('weapon-rng', 'RNG:')}}</h6></div>
                     <div class="col-5"><h6>{{Form::label('weapon-tags', 'Tags:')}}</h6></div>
                 </div>
-                <div class="form-row">
-                    <div class="col-3">{{Form::text('weapon-name1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-wit1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-dmg1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-dec1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-rng1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-5">{{Form::text('weapon-tags1', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                </div>
-                <div class="form-row">
-                    <div class="col-3">{{Form::text('weapon-name2', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-wit2', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-dmg2', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-dec2', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-rng2', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-5">{{Form::text('weapon-tags2', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                </div>
-                <div class="form-row">
-                    <div class="col-3">{{Form::text('weapon-name3', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-wit3', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-dmg3', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-dec3', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-rng3', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-5">{{Form::text('weapon-tags3', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                </div>
-                <div class="form-row">
-                    <div class="col-3">{{Form::text('weapon-name4', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-wit4', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-dmg4', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-dec4', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-rng4', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-5">{{Form::text('weapon-tags4', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                </div>
-                <div class="form-row">
-                    <div class="col-3">{{Form::text('weapon-name5', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-wit5', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-dmg5', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-dec5', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-rng5', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-5">{{Form::text('weapon-tags5', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                </div>
-                <div class="form-row">
-                    <div class="col-3">{{Form::text('weapon-name6', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-wit6', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-dmg6', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-dec6', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-rng6', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-5">{{Form::text('weapon-tags6', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                </div>
-                <div class="form-row">
-                    <div class="col-3">{{Form::text('weapon-name7', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-wit7', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-dmg7', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-dec7', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-1">{{Form::text('weapon-rng7', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                    <div class="col-5">{{Form::text('weapon-tags7', '', ['class' => 'width-100', 'placeholder' => ''])}}</div>
-                </div>
+                <?php
+                    for($i=1; $i<=7; $i++) {
+                        echo '<div class="form-row">';
+                        echo '<div class="col-3"><input class="width-100" placeholder="" name="weapon-name'.$i.'" type="text" value=""></div>';
+                        echo '<div class="col-1"><input class="width-100" placeholder="" name="weapon-wit'.$i.'" type="text" value=""></div>';
+                        echo '<div class="col-1"><input class="width-100" placeholder="" name="weapon-dmg'.$i.'" type="text" value=""></div>';
+                        echo '<div class="col-1"><input class="width-100" placeholder="" name="weapon-dec'.$i.'" type="text" value=""></div>';
+                        echo '<div class="col-1"><input class="width-100" placeholder="" name="weapon-rng'.$i.'" type="text" value=""></div>';
+                        echo '<div class="col-5"><input class="width-100" placeholder="" name="weapon-tags'.$i.'" type="text" value=""></div>';
+                        echo '</div>';
+                    }
+                ?>
                 <br>
                 <div class="row">
                     <div class="col-6">
