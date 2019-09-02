@@ -395,132 +395,21 @@
     </div>
     <div class="row healthRow">
         <div class="healthBox">
-                {{Form::checkbox('health-box1', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '1'])}}
-            <!--<span class="healthCheck">&nbsp</span>
-            {{ Form::hidden('health-box1', '0') }}-->
+            <span class="healthCheck" data-position="1"></span>
+            <input type="hidden" name="health-box1" value="0">
             &nbsp;0
-            {{ Form::hidden('health-text1', '0') }}
+            <input type="hidden" name="health-text1" value="0">
         </div>
-        <div class="healthBox">
-                {{Form::checkbox('health-box2', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '2'])}}
-            <!--<span class="healthCheck">&nbsp</span>
-            {{ Form::hidden('health-box1', '0') }}-->
-            {{Form::text('health-text2','', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-                {{Form::checkbox('health-box3', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '3'])}}
-            <!--<span class="healthCheck">&nbsp</span>
-            {{ Form::hidden('health-box1', '0') }}-->
-            {{Form::text('health-text3', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box4', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '4'])}}
-            {{Form::text('health-text4', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box5', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '5'])}}
-            {{Form::text('health-text5', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box6', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '6'])}}
-            {{Form::text('health-text6', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box7', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '7'])}}
-            {{Form::text('health-text7', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box8', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '8'])}}
-            {{Form::text('health-text8', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box9', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '9'])}}
-            {{Form::text('health-text9', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box11', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '10'])}}
-            {{Form::text('health-text11', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box12', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '11'])}}
-            {{Form::text('health-text12', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box13', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '12'])}}
-            {{Form::text('health-text13', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box14', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '13'])}}
-            {{Form::text('health-text14', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box15', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '14'])}}
-            {{Form::text('health-text15', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box16', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '15'])}}
-            {{Form::text('health-text16', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box17', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '16'])}}
-            {{Form::text('health-text17', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box18', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '17'])}}
-            {{Form::text('health-text18', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box19', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '18'])}}
-            {{Form::text('health-text19', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box20', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '19'])}}
-            {{Form::text('health-text20', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box21', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '20'])}}
-            {{Form::text('health-text21', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box22', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '21'])}}
-            {{Form::text('health-text22', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box23', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '22'])}}
-            {{Form::text('health-text23', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box24', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '23'])}}
-            {{Form::text('health-text24', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box25', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '24'])}}
-            {{Form::text('health-text25', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box26', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '25'])}}
-            {{Form::text('health-text26', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box27', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '26'])}}
-            {{Form::text('health-text27', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box28', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '27'])}}
-            {{Form::text('health-text28', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box29', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '28'])}}
-            {{Form::text('health-text29', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box30', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '29'])}}
-            {{Form::text('health-text30', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
-        <div class="healthBox">
-            {{Form::checkbox('health-box31', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '30'])}}
-            {{Form::text('health-text31', '', ['class' => 'width-50', 'placeholder' => ''])}}
-        </div>
+        <?php
+        for($i=2;$i<31;$i++) {
+            echo '<div class="healthBox">';
+            echo '<span class="healthCheck" data-position="'.$i.'"></span>';
+            echo '<input name="health-box'.$i.'" type="hidden" value="0">';
+            echo '<input class="width-50" placeholder="" name="health-text'.$i.'" type="text" value="">';
+            echo '</div>';
+        }
+        ?>
+
         <div class="xxsmall">Join Battle: Wits + Awareness (plus 3 successes) • Withering attack pool: Dexterity + (Combat Ability) + weapon’s accuracy • Decisive attack pool: Dexterity + (Combat Ability) • Defense: Higher of Parry or Evasion •
 Parry: ([Dexterity + (Combat Ability] / 2, round up) + weapon’s defense • Evasion: ([Dexterity + Dodge] / 2, round up) - armor’s mobility penalty • Rush: Dexterity + Athletics • Disengage: Dexterity + Dodge •
 Resolve = ([Wits + Integrity + specialty] / 2, round up) • Guile = ([Manipulation + Socialize + specialty] / 2, round up) • Natural Soak = Stamina • Soak = Stamina + Charms + Armor Soak, defends against Withering attacks •

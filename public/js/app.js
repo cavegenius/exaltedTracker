@@ -49570,16 +49570,12 @@ $(document).ready(function () {
   }
 
   function populateHealthDetails(health) {
+    var contents = ['', '/', 'x', '*'];
     $.each(health, function (key, value) {
-      if (key == 'id') {
-        $('input[name=\'health-box' + i + '\'').parent().prepend('<input type="hidden" name="health-' + key + i + '" value="' + value + '" />');
-      }
-
-      if (value.activated == 1) {
-        $('input[name=\'health-box' + value.position + '\'').click();
-      }
-
+      $('input[name=\'health-box' + value.position + '\'').parent().prepend('<input type="hidden" name="health-id' + value.position + '" value="' + value.id + '" />');
+      $('input[name=\'health-box' + value.position + '\'').val(value.activated);
       $('input[name=\'health-text' + value.position + '\'').val(value.value);
+      $('.healthCheck[data-position="' + value.position + '"]').html(contents[value.activated]);
     });
   }
 
@@ -49781,6 +49777,38 @@ $(document).ready(function () {
     number += 1;
     $('.spells').data('count', number);
     $('.spells').append('<div class="form-row"><input name="spell-id' + number + '" type="hidden" value="' + number + '"><div class="col-2"><input class="width-100" placeholder="" name="spell-name' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-circle' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-cost' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-duration' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-keywords' + number + '" type="text" value=""></div><div class="col-2"><input class="width-100" placeholder="" name="spell-book' + number + '" type="text" value=""></div></div>');
+  }); // Health Box Functionality
+
+  $('.healthCheck').click(function () {
+    var position = $(this).attr('data-position');
+    var current = $('input[name="health-box' + position + '"]').val();
+    var newValue = parseInt(current) + 1;
+    var contents = ['', '/', 'x', '*'];
+
+    if (newValue == 4) {
+      newValue = 0;
+      $('.healthCheck').each(function () {
+        var thisPosition = $(this).attr('data-position');
+        var thisValue = $('input[name="health-box' + thisPosition + '"]').val();
+
+        if (parseInt(thisPosition) < parseInt(position)) {
+          $('input[name="health-box' + thisPosition + '"]').val(0);
+          $(this).html(contents[0]);
+        }
+      });
+    }
+
+    $('input[name="health-box' + position + '"]').val(newValue);
+    $(this).html(contents[newValue]); // Next loop through the ones before???
+
+    $('.healthCheck').each(function () {
+      var thisPosition = $(this).attr('data-position');
+      var thisValue = $('input[name="health-box' + thisPosition + '"]').val();
+
+      if (parseInt(thisPosition) < parseInt(position) && parseInt(thisValue) < parseInt(newValue)) {
+        $(this).click();
+      }
+    });
   }); // Begin delete functions
 
   $(document).on('click', '.removeCharm', function () {

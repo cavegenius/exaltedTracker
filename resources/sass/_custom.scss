@@ -363,8 +363,11 @@ body {
 }
 
 .healthCheck {
+  display: block;
   width: 15px;
   height:15px;
   background-color: #fff;
   border: thin solid #000;
+  line-height: normal;
+  font-weight: unset;
 }

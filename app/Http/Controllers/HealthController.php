@@ -30,8 +30,11 @@ class HealthController extends Controller
             }
             $healthModel->characterId = $character;
             $healthModel->position  = $key;
+            if(!array_key_exists('text', $health)) {
+                $health['text'] = '';
+            }
             $healthModel->value = $health['text'];
-            $healthModel->activated = array_key_exists( 'box', $health ) ? true : false;
+            $healthModel->activated = $health['box'];
             $healthModel->save();
         }
 
