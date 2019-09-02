@@ -207,80 +207,20 @@
                     {{Form::checkbox('additionalabilities-additional', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'additional', 'data-value' => '5'])}}
                 </div>
             </div>
-            <div class="form-row">
-                <div class="col-1">{{Form::checkbox('additionalabilities-additionalFavored', 'true', false, ['class' => 'checkbox'])}}</div>
-                <div class="col-2">{{Form::label('additionalabilities-additional', 'Additional')}}</div>
-                <div class="col-6">{{Form::text('additionalabilities-additionalText', '', ['class' => 'width-100'])}}</div>
-                <div class="col-3 text-right">
-                    {{Form::checkbox('additionalabilities-additional', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'additional', 'data-value' => '1'])}}
-                    {{Form::checkbox('additionalabilities-additional', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'additional', 'data-value' => '2'])}}
-                    {{Form::checkbox('additionalabilities-additional', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'additional', 'data-value' => '3'])}}
-                    {{Form::checkbox('additionalabilities-additional', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'additional', 'data-value' => '4'])}}
-                    {{Form::checkbox('additionalabilities-additional', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'additional', 'data-value' => '5'])}}
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-1">{{Form::checkbox('additionalabilities-additionalFavored', 'true', false, ['class' => 'checkbox'])}}</div>
-                <div class="col-2">{{Form::label('additionalabilities-additional', 'Additional')}}</div>
-                <div class="col-6">{{Form::text('additionalabilities-additionalText', '', ['class' => 'width-100'])}}</div>
-                <div class="col-3 text-right">
-                    {{Form::checkbox('additionalabilities-additional', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'additional', 'data-value' => '1'])}}
-                    {{Form::checkbox('additionalabilities-additional', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'additional', 'data-value' => '2'])}}
-                    {{Form::checkbox('additionalabilities-additional', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'additional', 'data-value' => '3'])}}
-                    {{Form::checkbox('additionalabilities-additional', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'additional', 'data-value' => '4'])}}
-                    {{Form::checkbox('additionalabilities-additional', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'additional', 'data-value' => '5'])}}
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-1">{{Form::checkbox('additionalabilities-additionalFavored', 'true', false, ['class' => 'checkbox'])}}</div>
-                <div class="col-2">{{Form::label('additionalabilities-additional', 'Additional')}}</div>
-                <div class="col-6">{{Form::text('additionalabilities-additionalText', '', ['class' => 'width-100'])}}</div>
-                <div class="col-3 text-right">
-                    {{Form::checkbox('additionalabilities-additional', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'additional', 'data-value' => '1'])}}
-                    {{Form::checkbox('additionalabilities-additional', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'additional', 'data-value' => '2'])}}
-                    {{Form::checkbox('additionalabilities-additional', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'additional', 'data-value' => '3'])}}
-                    {{Form::checkbox('additionalabilities-additional', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'additional', 'data-value' => '4'])}}
-                    {{Form::checkbox('additionalabilities-additional', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'additional', 'data-value' => '5'])}}
-                </div>
-            </div>
         </div>
         <div class="col-md-8">
             <div class="row">
                 <div class="col-md-6 border-right">
                     <h2>SPECIALIZATIONS</h2>
-                    <div class="form-row">
-                        <div class="col-12">{{Form::text('specialization-1', '', ['class' => 'width-100'])}}</div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-12">{{Form::text('specialization-2', '', ['class' => 'width-100'])}}</div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-12">{{Form::text('specialization-3', '', ['class' => 'width-100'])}}</div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-12">{{Form::text('specialization-4', '', ['class' => 'width-100'])}}</div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-12">{{Form::text('specialization-5', '', ['class' => 'width-100'])}}</div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-12">{{Form::text('specialization-6', '', ['class' => 'width-100'])}}</div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-12">{{Form::text('specialization-7', '', ['class' => 'width-100'])}}</div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-12">{{Form::text('specialization-8', '', ['class' => 'width-100'])}}</div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-12">{{Form::text('specialization-9', '', ['class' => 'width-100'])}}</div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-12">{{Form::text('specialization-10', '', ['class' => 'width-100'])}}</div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col-12">{{Form::text('specialization-11', '', ['class' => 'width-100'])}}</div>
-                    </div>
+
+                    <?php
+                        for($i=1; $i<=11; $i++) {
+                            echo '<div class="form-row">';
+                            echo '<div class="col-12"><input class="width-100" name="specialization-'.$i.'" type="text" value=""></div>';
+                            echo '</div>';
+                        }
+                    ?>
+
                     <h2>WILLPOWER</h2>
                     <div class="form-row willpower-row">
                         <div class="col-1 willpower">{{Form::checkbox('willpower-1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'willpower', 'data-value' => '1'])}}</div>
