@@ -36,111 +36,32 @@
     </div>
     
     <h2>ATTRIBUTES</h2>
+    
     <div class="row">
         <div class="col-md-4 border-right">
-            <div class="form-row">
-                <div class="col-2"><h6>{{Form::label('attributes-strength', 'Strength')}}</h6></div>
-                <div class="col-10 text-right">
-                    <input type="hidden" value="true" name="attributes-strength0" />
-                    {{Form::checkbox('attributes-strength1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'strength', 'data-value' => '1'])}}
-                    {{Form::checkbox('attributes-strength2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'strength', 'data-value' => '2'])}}
-                    {{Form::checkbox('attributes-strength3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'strength', 'data-value' => '3'])}}
-                    {{Form::checkbox('attributes-strength4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'strength', 'data-value' => '4'])}}
-                    {{Form::checkbox('attributes-strength5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'strength', 'data-value' => '5'])}}
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-2"><h6>{{Form::label('attributes-dexterity', 'Dexterity')}}</h6></div>
-                <div class="col-10 text-right">
-                    <input type="hidden" value="true" name="attributes-dexterity0" />
-                    {{Form::checkbox('attributes-dexterity1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'dexterity', 'data-value' => '1'])}}
-                    {{Form::checkbox('attributes-dexterity2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'dexterity', 'data-value' => '2'])}}
-                    {{Form::checkbox('attributes-dexterity3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'dexterity', 'data-value' => '3'])}}
-                    {{Form::checkbox('attributes-dexterity4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'dexterity', 'data-value' => '4'])}}
-                    {{Form::checkbox('attributes-dexterity5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'dexterity', 'data-value' => '5'])}}
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-2"><h6>{{Form::label('attributes-stamina', 'Stamina')}}</h6></div>
-                <div class="col-10 text-right">
-                    <input type="hidden" value="true" name="attributes-stamina0" />
-                    {{Form::checkbox('attributes-stamina1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'stamina', 'data-value' => '1'])}}
-                    {{Form::checkbox('attributes-stamina2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'stamina', 'data-value' => '2'])}}
-                    {{Form::checkbox('attributes-stamina3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'stamina', 'data-value' => '3'])}}
-                    {{Form::checkbox('attributes-stamina4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'stamina', 'data-value' => '4'])}}
-                    {{Form::checkbox('attributes-stamina5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'stamina', 'data-value' => '5'])}}
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 border-right">
-            <div class="form-row">
-                <div class="col-2"><h6>{{Form::label('attributes-charisma', 'Charisma')}}</h6></div>
-                <div class="col-10 text-right">
-                    <input type="hidden" value="true" name="attributes-charisma0" />
-                    {{Form::checkbox('attributes-charisma1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'charisma', 'data-value' => '1'])}}
-                    {{Form::checkbox('attributes-charisma2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'charisma', 'data-value' => '2'])}}
-                    {{Form::checkbox('attributes-charisma3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'charisma', 'data-value' => '3'])}}
-                    {{Form::checkbox('attributes-charisma4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'charisma', 'data-value' => '4'])}}
-                    {{Form::checkbox('attributes-charisma5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'charisma', 'data-value' => '5'])}}
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-2"><h6>{{Form::label('attributes-manipulation', 'Manipulation')}}</h6></div>
-                <div class="col-10 text-right">
-                    <input type="hidden" value="true" name="attributes-manipulation0" />
-                    {{Form::checkbox('attributes-manipulation1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'manipulation', 'data-value' => '1'])}}
-                    {{Form::checkbox('attributes-manipulation2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'manipulation', 'data-value' => '2'])}}
-                    {{Form::checkbox('attributes-manipulation3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'manipulation', 'data-value' => '3'])}}
-                    {{Form::checkbox('attributes-manipulation4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'manipulation', 'data-value' => '4'])}}
-                    {{Form::checkbox('attributes-manipulation5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'manipulation', 'data-value' => '5'])}}
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-2"><h6>{{Form::label('attributes-appearance', 'Appearance')}}</h6></div>
-                <div class="col-10 text-right">
-                    <input type="hidden" value="true" name="attributes-appearance0" />
-                    {{Form::checkbox('attributes-appearance1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'appearance', 'data-value' => '1'])}}
-                    {{Form::checkbox('attributes-appearance2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'appearance', 'data-value' => '2'])}}
-                    {{Form::checkbox('attributes-appearance3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'appearance', 'data-value' => '3'])}}
-                    {{Form::checkbox('attributes-appearance4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'appearance', 'data-value' => '4'])}}
-                    {{Form::checkbox('attributes-appearance5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'appearance', 'data-value' => '5'])}}
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-row">
-                <div class="col-2"><h6>{{Form::label('attributes-perception', 'Perception')}}</h6></div>
-                <div class="col-10 text-right">
-                    <input type="hidden" value="true" name="attributes-perception0" />
-                    {{Form::checkbox('attributes-perception1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'perception', 'data-value' => '1'])}}
-                    {{Form::checkbox('attributes-perception2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'perception', 'data-value' => '2'])}}
-                    {{Form::checkbox('attributes-perception3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'perception', 'data-value' => '3'])}}
-                    {{Form::checkbox('attributes-perception4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'perception', 'data-value' => '4'])}}
-                    {{Form::checkbox('attributes-perception5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'perception', 'data-value' => '5'])}}
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-2"><h6>{{Form::label('attributes-intelligence', 'Intelligence')}}</h6></div>
-                <div class="col-10 text-right">
-                    <input type="hidden" value="true" name="attributes-intelligence0" />
-                    {{Form::checkbox('attributes-intelligence1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'intelligence', 'data-value' => '1'])}}
-                    {{Form::checkbox('attributes-intelligence2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'intelligence', 'data-value' => '2'])}}
-                    {{Form::checkbox('attributes-intelligence3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'intelligence', 'data-value' => '3'])}}
-                    {{Form::checkbox('attributes-intelligence4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'intelligence', 'data-value' => '4'])}}
-                    {{Form::checkbox('attributes-intelligence5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'intelligence', 'data-value' => '5'])}}
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col-2"><h6>{{Form::label('attributes-wits', 'Wits')}}</h6></div>
-                <div class="col-10 text-right">
-                    <input type="hidden" value="true" name="attributes-wits0" />
-                    {{Form::checkbox('attributes-wits1', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'wits', 'data-value' => '1'])}}
-                    {{Form::checkbox('attributes-wits2', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'wits', 'data-value' => '2'])}}
-                    {{Form::checkbox('attributes-wits3', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'wits', 'data-value' => '3'])}}
-                    {{Form::checkbox('attributes-wits4', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'wits', 'data-value' => '4'])}}
-                    {{Form::checkbox('attributes-wits5', 'true', false, ['class' => 'checkbox-round', 'data-type' => 'wits', 'data-value' => '5'])}}
-                </div>
-            </div>
+        <?php
+            $attributes = ['strength', 'dexterity', 'stamina', 'charisma', 'manipulation', 'appearance', 'perception', 'intelligence', 'wits'];
+    
+            foreach($attributes as $key => $value) {
+                echo '<div class="form-row">';
+                echo '<div class="col-2"><h6><label for="attributes-'.$value.'">'.ucfirst($value).'</label></h6></div>';
+                echo '<div class="col-10 text-right">';
+                echo '<input type="hidden" value="true" name="attributes-'.$value.'0">';
+                echo '<input class="checkbox-round" data-type="'.$value.'" data-value="1" name="attributes-'.$value.'1" type="checkbox" value="true">';
+                echo '<input class="checkbox-round" data-type="'.$value.'" data-value="2" name="attributes-'.$value.'2" type="checkbox" value="true">';
+                echo '<input class="checkbox-round" data-type="'.$value.'" data-value="3" name="attributes-'.$value.'3" type="checkbox" value="true">';
+                echo '<input class="checkbox-round" data-type="'.$value.'" data-value="4" name="attributes-'.$value.'4" type="checkbox" value="true">';
+                echo '<input class="checkbox-round" data-type="'.$value.'" data-value="5" name="attributes-'.$value.'5" type="checkbox" value="true">';
+                echo '</div>';
+                echo '</div>';
+
+                if($value == 'stamina') {
+                    echo '</div><div class="col-md-4 border-right">';
+                } else if ($value == 'appearance') {
+                    echo '</div><div class="col-md-4">';
+                }
+            }
+        ?>
         </div>
     </div>
 
@@ -479,7 +400,6 @@
             {{ Form::hidden('health-box1', '0') }}-->
             &nbsp;0
             {{ Form::hidden('health-text1', '0') }}
-
         </div>
         <div class="healthBox">
                 {{Form::checkbox('health-box2', 'true', false, ['class' => 'checkbox width-100', 'data-type' => 'health', 'data-value' => '2'])}}
