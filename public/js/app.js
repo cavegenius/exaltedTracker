@@ -49790,75 +49790,48 @@ $(document).ready(function () {
     var current = $('input[name="health-box' + position + '"]').val();
     var newValue = parseInt(current) + 1;
     var contents = ['', '/', 'x', '*'];
-    clicks = 1;
-    leftSideClicks = {};
-    rightSideClicks = {};
+    var track = $('.healthRow').attr('data-track');
+    var currentValues = [];
+    clicks = 1; // Maybe I wont let you clear the value unless you switch to healing mode
 
-    if (newValue == 4) {
-      newValue = 0;
+    if (newValue == 4) {} else {
       $('.healthCheck').each(function () {
         var thisPosition = $(this).attr('data-position');
         var thisValue = $('input[name="health-box' + thisPosition + '"]').val();
 
-        if (parseInt(thisPosition) < parseInt(position)) {
-          $('input[name="health-box' + thisPosition + '"]').val(0);
-          $(this).html(contents[0]);
+        if (parseInt(thisPosition) < parseInt(position) && parseInt(thisValue) < parseInt(newValue)) {
+          // This would tell me how many other points of damage I need
+          clicks++;
         }
+
+        if (parseInt(thisPosition) <= parseInt(track)) {
+          currentValues.push(parseInt(thisValue));
+        }
+
+        $(this).html();
       });
-    }
 
-    $('input[name="health-box' + position + '"]').val(newValue);
-    $(this).html(contents[newValue]); // Next loop through the ones before???
-
-    $('.healthCheck').each(function () {
-      var track = $('.healthRow').attr('data-track');
-      var thisPosition = $(this).attr('data-position');
-      var thisValue = $('input[name="health-box' + thisPosition + '"]').val();
-
-      if (parseInt(thisPosition) < parseInt(position) && parseInt(thisValue) < parseInt(newValue)) {
-        clicks++;
-        leftSideClicks[thisPosition] = thisValue;
-      } else if (parseInt(thisPosition) > parseInt(position) && parseInt(thisPosition) <= parseInt(track) && parseInt(newValue) > 1) {
-        rightSideClicks[thisPosition] = thisValue;
+      for (i = 1; i <= clicks; i++) {
+        currentValues.push(newValue);
       }
-    }); // Start Clicking the left
 
-    var sortableLeft = [];
+      currentValues.sort(function (a, b) {
+        return b - a;
+      });
+      var i = 0;
+      $('.healthCheck').each(function () {
+        var thisPosition = $(this).attr('data-position');
 
-    for (var val1 in leftSideClicks) {
-      sortableLeft.push([val1, leftSideClicks[val1]]);
-    }
+        if (i < track) {
+          $('input[name="health-box' + thisPosition + '"]').val(currentValues[i]);
+          $(this).html(contents[currentValues[i]]);
+        }
 
-    sortableLeft.sort(function (a, b) {
-      return a[1] - b[1];
-    });
+        i++;
+      });
+    } // I think I need to check if the value of current track size is over 0
+    // also dont think I am supporting knowing how many pieces of damage
 
-    for (i = 0; i < clicks; i++) {
-      var updatedValue = parseInt(sortableLeft[i][1]) + 1;
-      $('input[name="health-box' + sortableLeft[i][0] + '"]').val(updatedValue);
-      $('.healthCheck[data-position="' + sortableLeft[i][0] + '"]').html(contents[updatedValue]);
-    }
-
-    z = true; // Start clicking the right side
-
-    var sortable = [];
-
-    for (var val in rightSideClicks) {
-      sortable.push([val, rightSideClicks[val]]);
-    }
-
-    sortable.sort(function (a, b) {
-      return a[1] - b[1];
-    });
-
-    for (i = 0; i < clicks; i++) {
-      var _updatedValue = parseInt(sortable[i][1]) + 1;
-
-      $('input[name="health-box' + sortable[i][0] + '"]').val(_updatedValue);
-      $('.healthCheck[data-position="' + sortable[i][0] + '"]').html(contents[_updatedValue]);
-    }
-
-    z = true;
   }); // Begin delete functions
 
   $(document).on('click', '.removeCharm', function () {
@@ -50213,8 +50186,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/wyattmorgan/Documents/repos/exaltedTracker/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/wyattmorgan/Documents/repos/exaltedTracker/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/matthewmorgan/Documents/myStuff/exaltedtracker/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/matthewmorgan/Documents/myStuff/exaltedtracker/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

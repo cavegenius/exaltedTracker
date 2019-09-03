@@ -429,71 +429,46 @@ $(document).ready( function() {
         let current = $( 'input[name="health-box'+position+'"]' ).val();
         let newValue = parseInt(current)+1;
         let contents = ['','/','x','*'];
-        clicks = 1;
-        leftSideClicks = {};
-        rightSideClicks = {};
+        let track = $( '.healthRow' ).attr('data-track');
+        let currentValues = [];
+        clicks=1;
 
+        // Maybe I wont let you clear the value unless you switch to healing mode
         if (newValue == 4) {
-            newValue = 0;
+           
+        } else {
+
             $( '.healthCheck').each(function() {
                 let thisPosition = $( this ).attr('data-position');
-                let thisValue = $( 'input[name="health-box'+thisPosition+'"]' ).val()
-                if(parseInt(thisPosition) < parseInt(position)) {
-                    $( 'input[name="health-box'+thisPosition+'"]').val(0);
-                    $( this ).html(contents[0]);
+                let thisValue = $( 'input[name="health-box'+thisPosition+'"]' ).val();
+                if(parseInt(thisPosition) < parseInt(position) && parseInt(thisValue) < parseInt(newValue)) {
+                    // This would tell me how many other points of damage I need
+                    clicks++;
                 }
+                if(parseInt( thisPosition ) <= parseInt(track)) {
+                    currentValues.push(parseInt(thisValue));
+                }
+                $( this ).html();
+            });
+
+            for(i=1;i<=clicks;i++) {
+                currentValues.push(newValue);
+            }
+            
+            currentValues.sort(function(a, b){return b-a});
+
+            let i=0;
+            $( '.healthCheck').each(function() {
+                let thisPosition = $( this ).attr('data-position');
+                if(i<track) {
+                    $( 'input[name="health-box'+thisPosition+'"]').val(currentValues[i]);
+                    $( this ).html(contents[currentValues[i]]);
+                }
+                i++;
             });
         }
-        $( 'input[name="health-box'+position+'"]').val(newValue);
-        $( this ).html(contents[newValue]);
-
-        // Next loop through the ones before???
-        $( '.healthCheck').each(function() {
-            let track = $( '.healthRow' ).attr('data-track');
-            let thisPosition = $( this ).attr('data-position');
-            let thisValue = $( 'input[name="health-box'+thisPosition+'"]' ).val()
-            if(parseInt(thisPosition) < parseInt(position) && parseInt(thisValue) < parseInt(newValue)) {
-                clicks++;
-                leftSideClicks[thisPosition] = thisValue;
-            } else if (parseInt(thisPosition) > parseInt(position) && parseInt(thisPosition) <= parseInt(track) && parseInt(newValue) > 1) {
-                rightSideClicks[thisPosition] = thisValue;
-            }
-        });
-
-        // Start Clicking the left
-        var sortableLeft = [];
-        for (var val1 in leftSideClicks) {
-            sortableLeft.push([val1, leftSideClicks[val1]]);
-        }
-        sortableLeft.sort(function(a, b) {
-            return a[1] - b[1];
-        });
-        for (i=0;i<clicks;i++) {
-            let updatedValue = parseInt(sortableLeft[i][1])+1;
-
-            $( 'input[name="health-box'+sortableLeft[i][0]+'"]').val(updatedValue);
-            $( '.healthCheck[data-position="'+sortableLeft[i][0]+'"]').html(contents[updatedValue]);
-        }
-        z=true;
-
-        // Start clicking the right side
-        var sortable = [];
-        for (var val in rightSideClicks) {
-            sortable.push([val, rightSideClicks[val]]);
-        }
-
-        sortable.sort(function(a, b) {
-            return a[1] - b[1];
-        });
-
-        for (i=0;i<clicks;i++) {
-            let updatedValue = parseInt(sortable[i][1])+1;
-
-            $( 'input[name="health-box'+sortable[i][0]+'"]').val(updatedValue);
-            $( '.healthCheck[data-position="'+sortable[i][0]+'"]').html(contents[updatedValue]);
-        }
-        z=true;
-
+        // I think I need to check if the value of current track size is over 0
+        // also dont think I am supporting knowing how many pieces of damage
     });
 
     // Begin delete functions
