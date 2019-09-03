@@ -393,6 +393,7 @@
     <div class="row ">
         <div class="col-12 text-center"><h3 class="padding-top-5">Health Levels</h3></div>
     </div>
+    <a href="#" class="clearHealth">Clear All</a>
     <div class="row healthRow" data-track="0">
         <div class="healthBox">
             <span class="healthCheck" data-position="1"></span>

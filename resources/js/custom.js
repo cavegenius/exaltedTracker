@@ -471,6 +471,15 @@ $(document).ready( function() {
         // also dont think I am supporting knowing how many pieces of damage
     });
 
+    // Clear All Damage
+    $( '.clearHealth' ).click(function() {
+        $( '.healthCheck').each(function() {
+            let thisPosition = $( this ).attr('data-position');
+            $( 'input[name="health-box'+thisPosition+'"]').val(0);
+            $( this ).html( '' );
+        });
+    });
+
     // Begin delete functions
     $( document ).on('click', '.removeCharm', function() {
         let id = $( this ).data('id');

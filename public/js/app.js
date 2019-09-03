@@ -49832,6 +49832,14 @@ $(document).ready(function () {
     } // I think I need to check if the value of current track size is over 0
     // also dont think I am supporting knowing how many pieces of damage
 
+  }); // Clear All Damage
+
+  $('.clearHealth').click(function () {
+    $('.healthCheck').each(function () {
+      var thisPosition = $(this).attr('data-position');
+      $('input[name="health-box' + thisPosition + '"]').val(0);
+      $(this).html('');
+    });
   }); // Begin delete functions
 
   $(document).on('click', '.removeCharm', function () {
@@ -50186,8 +50194,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/matthewmorgan/Documents/myStuff/exaltedtracker/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/matthewmorgan/Documents/myStuff/exaltedtracker/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/wyattmorgan/Documents/repos/exaltedTracker/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/wyattmorgan/Documents/repos/exaltedTracker/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
