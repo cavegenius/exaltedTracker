@@ -425,6 +425,21 @@ $(document).ready( function() {
 
     // Health Box Functionality
     $( '.healthCheck').click(function() {
+        var position = $(this).attr('data-position');
+        var current = $('input[name="health-box' + position + '"]').val();
+        var newValue = parseInt(current) + 1;
+        var contents = ['', '/', 'x', '*'];
+
+        if (newValue == 4) {
+            newValue = 0;
+        }
+
+        $('input[name="health-box' + position + '"]').val(newValue);
+        $(this).html(contents[newValue]); 
+    });
+
+    /* Saving this code in case I make this work as drop down menues in the future
+    $( '.healthCheck2').click(function() {
         let position = $( this ).attr('data-position');
         let current = $( 'input[name="health-box'+position+'"]' ).val();
         let newValue = parseInt(current)+1;
@@ -469,7 +484,7 @@ $(document).ready( function() {
         }
         // I think I need to check if the value of current track size is over 0
         // also dont think I am supporting knowing how many pieces of damage
-    });
+    }); */
 
     // Clear All Damage
     $( '.clearHealth' ).click(function() {
