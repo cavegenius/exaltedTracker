@@ -393,7 +393,7 @@
     <div class="row ">
         <div class="col-12 text-center"><h3 class="padding-top-5">Health Levels</h3></div>
     </div>
-    <div class="row healthRow">
+    <div class="row healthRow" data-track="0">
         <div class="healthBox">
             <span class="healthCheck" data-position="1"></span>
             <input type="hidden" name="health-box1" value="0">

@@ -49571,12 +49571,18 @@ $(document).ready(function () {
 
   function populateHealthDetails(health) {
     var contents = ['', '/', 'x', '*'];
+    track = 0;
     $.each(health, function (key, value) {
       $('input[name=\'health-box' + value.position + '\'').parent().prepend('<input type="hidden" name="health-id' + value.position + '" value="' + value.id + '" />');
       $('input[name=\'health-box' + value.position + '\'').val(value.activated);
       $('input[name=\'health-text' + value.position + '\'').val(value.value);
       $('.healthCheck[data-position="' + value.position + '"]').html(contents[value.activated]);
+
+      if (value.value != '') {
+        track++;
+      }
     });
+    $('.healthRow').attr('data-track', track);
   }
 
   function populateIntimacyDetails(intimacies) {
@@ -49784,6 +49790,9 @@ $(document).ready(function () {
     var current = $('input[name="health-box' + position + '"]').val();
     var newValue = parseInt(current) + 1;
     var contents = ['', '/', 'x', '*'];
+    clicks = 1;
+    leftSideClicks = {};
+    rightSideClicks = {};
 
     if (newValue == 4) {
       newValue = 0;
@@ -49802,13 +49811,54 @@ $(document).ready(function () {
     $(this).html(contents[newValue]); // Next loop through the ones before???
 
     $('.healthCheck').each(function () {
+      var track = $('.healthRow').attr('data-track');
       var thisPosition = $(this).attr('data-position');
       var thisValue = $('input[name="health-box' + thisPosition + '"]').val();
 
       if (parseInt(thisPosition) < parseInt(position) && parseInt(thisValue) < parseInt(newValue)) {
-        $(this).click();
+        clicks++;
+        leftSideClicks[thisPosition] = thisValue;
+      } else if (parseInt(thisPosition) > parseInt(position) && parseInt(thisPosition) <= parseInt(track)) {
+        rightSideClicks[thisPosition] = thisValue;
       }
+    }); // Start clicking the right side
+
+    var sortable = [];
+
+    for (var val in rightSideClicks) {
+      sortable.push([val, rightSideClicks[val]]);
+    }
+
+    sortable.sort(function (a, b) {
+      return a[1] - b[1];
     });
+
+    for (i = 0; i < clicks; i++) {
+      var updatedValue = parseInt(sortable[i][1]) + 1;
+      $('input[name="health-box' + sortable[i][0] + '"]').val(updatedValue);
+      $('.healthCheck[data-position="' + sortable[i][0] + '"]').html(contents[updatedValue]);
+    }
+
+    z = true; // Start Clicking the left
+
+    var sortableLeft = [];
+
+    for (var val1 in leftSideClicks) {
+      sortableLeft.push([val1, leftSideClicks[val1]]);
+    }
+
+    sortableLeft.sort(function (a, b) {
+      return a[1] - b[1];
+    });
+
+    for (i = 0; i < clicks; i++) {
+      var _updatedValue = parseInt(sortableLeft[i][1]) + 1;
+
+      $('input[name="health-box' + sortableLeft[i][0] + '"]').val(_updatedValue);
+      $('.healthCheck[data-position="' + sortableLeft[i][0] + '"]').html(contents[_updatedValue]);
+    }
+
+    z = true;
   }); // Begin delete functions
 
   $(document).on('click', '.removeCharm', function () {
