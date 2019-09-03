@@ -455,10 +455,26 @@ $(document).ready( function() {
             if(parseInt(thisPosition) < parseInt(position) && parseInt(thisValue) < parseInt(newValue)) {
                 clicks++;
                 leftSideClicks[thisPosition] = thisValue;
-            } else if (parseInt(thisPosition) > parseInt(position) && parseInt(thisPosition) <= parseInt(track)) {
+            } else if (parseInt(thisPosition) > parseInt(position) && parseInt(thisPosition) <= parseInt(track) && parseInt(newValue) > 1) {
                 rightSideClicks[thisPosition] = thisValue;
             }
         });
+
+        // Start Clicking the left
+        var sortableLeft = [];
+        for (var val1 in leftSideClicks) {
+            sortableLeft.push([val1, leftSideClicks[val1]]);
+        }
+        sortableLeft.sort(function(a, b) {
+            return a[1] - b[1];
+        });
+        for (i=0;i<clicks;i++) {
+            let updatedValue = parseInt(sortableLeft[i][1])+1;
+
+            $( 'input[name="health-box'+sortableLeft[i][0]+'"]').val(updatedValue);
+            $( '.healthCheck[data-position="'+sortableLeft[i][0]+'"]').html(contents[updatedValue]);
+        }
+        z=true;
 
         // Start clicking the right side
         var sortable = [];
@@ -475,22 +491,6 @@ $(document).ready( function() {
 
             $( 'input[name="health-box'+sortable[i][0]+'"]').val(updatedValue);
             $( '.healthCheck[data-position="'+sortable[i][0]+'"]').html(contents[updatedValue]);
-        }
-        z=true;
-
-        // Start Clicking the left
-        var sortableLeft = [];
-        for (var val1 in leftSideClicks) {
-            sortableLeft.push([val1, leftSideClicks[val1]]);
-        }
-        sortableLeft.sort(function(a, b) {
-            return a[1] - b[1];
-        });
-        for (i=0;i<clicks;i++) {
-            let updatedValue = parseInt(sortableLeft[i][1])+1;
-
-            $( 'input[name="health-box'+sortableLeft[i][0]+'"]').val(updatedValue);
-            $( '.healthCheck[data-position="'+sortableLeft[i][0]+'"]').html(contents[updatedValue]);
         }
         z=true;
 

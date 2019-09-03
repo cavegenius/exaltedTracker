@@ -49818,28 +49818,10 @@ $(document).ready(function () {
       if (parseInt(thisPosition) < parseInt(position) && parseInt(thisValue) < parseInt(newValue)) {
         clicks++;
         leftSideClicks[thisPosition] = thisValue;
-      } else if (parseInt(thisPosition) > parseInt(position) && parseInt(thisPosition) <= parseInt(track)) {
+      } else if (parseInt(thisPosition) > parseInt(position) && parseInt(thisPosition) <= parseInt(track) && parseInt(newValue) > 1) {
         rightSideClicks[thisPosition] = thisValue;
       }
-    }); // Start clicking the right side
-
-    var sortable = [];
-
-    for (var val in rightSideClicks) {
-      sortable.push([val, rightSideClicks[val]]);
-    }
-
-    sortable.sort(function (a, b) {
-      return a[1] - b[1];
-    });
-
-    for (i = 0; i < clicks; i++) {
-      var updatedValue = parseInt(sortable[i][1]) + 1;
-      $('input[name="health-box' + sortable[i][0] + '"]').val(updatedValue);
-      $('.healthCheck[data-position="' + sortable[i][0] + '"]').html(contents[updatedValue]);
-    }
-
-    z = true; // Start Clicking the left
+    }); // Start Clicking the left
 
     var sortableLeft = [];
 
@@ -49852,10 +49834,28 @@ $(document).ready(function () {
     });
 
     for (i = 0; i < clicks; i++) {
-      var _updatedValue = parseInt(sortableLeft[i][1]) + 1;
+      var updatedValue = parseInt(sortableLeft[i][1]) + 1;
+      $('input[name="health-box' + sortableLeft[i][0] + '"]').val(updatedValue);
+      $('.healthCheck[data-position="' + sortableLeft[i][0] + '"]').html(contents[updatedValue]);
+    }
 
-      $('input[name="health-box' + sortableLeft[i][0] + '"]').val(_updatedValue);
-      $('.healthCheck[data-position="' + sortableLeft[i][0] + '"]').html(contents[_updatedValue]);
+    z = true; // Start clicking the right side
+
+    var sortable = [];
+
+    for (var val in rightSideClicks) {
+      sortable.push([val, rightSideClicks[val]]);
+    }
+
+    sortable.sort(function (a, b) {
+      return a[1] - b[1];
+    });
+
+    for (i = 0; i < clicks; i++) {
+      var _updatedValue = parseInt(sortable[i][1]) + 1;
+
+      $('input[name="health-box' + sortable[i][0] + '"]').val(_updatedValue);
+      $('.healthCheck[data-position="' + sortable[i][0] + '"]').html(contents[_updatedValue]);
     }
 
     z = true;
