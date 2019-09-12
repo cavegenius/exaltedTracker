@@ -50071,6 +50071,12 @@ $(document).ready(function () {
     $('input[name=\'submit-submit\'').attr('disabled', false);
     $('input[name=\'submit-submit\'').removeClass('disabled');
   }
+
+  $(document).change(function (event) {
+    if ($('input[name="mode"]:checked').val() == 'training') {
+      console.log(event.target);
+    }
+  });
 });
 
 /***/ }),
@@ -50203,8 +50209,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/wyattmorgan/Documents/repos/exaltedTracker/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/wyattmorgan/Documents/repos/exaltedTracker/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/matthewmorgan/Documents/myStuff/exaltedtracker/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/matthewmorgan/Documents/myStuff/exaltedtracker/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

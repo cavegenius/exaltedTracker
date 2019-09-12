@@ -48,4 +48,10 @@ $(document).ready( function() {
         $( 'input[name=\'submit-submit\'' ).removeClass('disabled');
     }
 
+    $( document ).change(function( event ) {
+        if ($( 'input[name="mode"]:checked').val() == 'training' ) {
+            console.log( event.target );
+        }
+    });
+
 });
