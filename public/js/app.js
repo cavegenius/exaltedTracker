@@ -49607,6 +49607,7 @@ $(document).ready(function () {
       $('input[name=\'charm-name' + i + '\']').val(value.name);
       $('input[name=\'charm-name' + i + '\']').attr('title', value.name);
       $('input[name=\'charm-name' + i + '\']').attr('disabled', true);
+      $('input[name=\'charm-name' + i + '\']').attr('readonly', true);
       $('input[name=\'charm-name' + i + '\']').addClass('disabled');
       $('input[name=\'charm-type' + i + '\']').val(value.type);
       $('input[name=\'charm-type' + i + '\']').attr('title', value.type);
@@ -50049,6 +50050,14 @@ $(document).ready(function () {
         $(this).attr('disabled', true);
         $(this).addClass('disabled');
       }
+
+      if (/abilities-[a-zA-Z]*Favored/.test($(this).attr('name')) || /abilities-[a-zA-Z]*Text/.test($(this).attr('name'))) {
+        $(this).attr('disabled', true);
+        $(this).addClass('disabled');
+      } else if (/merit-[0-9]{1,2}$/.test($(this).attr('name')) && $(this).val() != '') {
+        $(this).attr('disabled', true);
+        $(this).addClass('disabled');
+      }
     });
     $('input[name=\'submit-submit\'').attr('disabled', true);
     $('input[name=\'submit-submit\'').addClass('disabled');
@@ -50058,6 +50067,11 @@ $(document).ready(function () {
     var disable = ['experience', 'dragonExperience'];
     $('.characterSheet input').each(function () {
       if ($(this).attr('readonly')) {
+        if (!$(this).hasClass('disabled') && !$(this).hasClass('charmTypeAhead')) {
+          $(this).attr('disabled', true);
+          $(this).addClass('disabled');
+        }
+
         return true;
       }
 

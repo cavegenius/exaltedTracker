@@ -624,12 +624,12 @@ Hardness = Best hardness value from Charm or Armor, if higher than a Decisive at
             <div class="form-row">
                 <input name="charm-id<?= $i; ?>" type="hidden" value="">
                 <div class="col-2"><input type="text" class="width-100 charmTypeAhead" name="charm-name<?= $i; ?>" /></div>
-                <div class="col-2"><input class="width-100 disabled" disabled="" placeholder="" name="charm-type<?= $i; ?>" type="text" value=""></div>
-                <div class="col-1"><input class="width-100 disabled" disabled="" placeholder="" name="charm-duration<?= $i; ?>" type="text" value=""></div>
-                <div class="col-1"><input class="width-100 disabled" disabled="" placeholder="" name="charm-cost<?= $i; ?>" type="text" value=""></div>
-                <div class="col-1"><input class="width-100 disabled" disabled="" placeholder="" name="charm-element<?= $i; ?>" type="text" value=""></div>
-                <div class="col-1"><input class="width-100 disabled" disabled="" placeholder="" name="charm-book<?= $i; ?>" type="text" value=""></div>
-                <div class="col-2"><input class="width-100 disabled" disabled="" placeholder="" name="charm-effect<?= $i; ?>" type="text" value=""></div>
+                <div class="col-2"><input class="width-100 disabled" disabled="" placeholder="" name="charm-type<?= $i; ?>" type="text" value="" readonly="true"></div>
+                <div class="col-1"><input class="width-100 disabled" disabled="" placeholder="" name="charm-duration<?= $i; ?>" type="text" value="" readonly="true"></div>
+                <div class="col-1"><input class="width-100 disabled" disabled="" placeholder="" name="charm-cost<?= $i; ?>" type="text" value="" readonly="true"></div>
+                <div class="col-1"><input class="width-100 disabled" disabled="" placeholder="" name="charm-element<?= $i; ?>" type="text" value="" readonly="true"></div>
+                <div class="col-1"><input class="width-100 disabled" disabled="" placeholder="" name="charm-book<?= $i; ?>" type="text" value="" readonly="true"></div>
+                <div class="col-2"><input class="width-100 disabled" disabled="" placeholder="" name="charm-effect<?= $i; ?>" type="text" value="" readonly="true"></div>
                 <div class="col-2"><input class="width-95" placeholder="" name="charm-notes<?= $i; ?>" type="text" value=""><i class="fa fa-times removeCharm" data-id="0" data-position="<?= $i; ?>"></i></div>
             </div>
             <?php } ?>

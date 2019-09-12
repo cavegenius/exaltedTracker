@@ -25,6 +25,12 @@ $(document).ready( function() {
             if(enable.indexOf(name) <= -1) {
                 $(this).attr( 'disabled', true);
                 $(this).addClass('disabled');
+            } if( /abilities-[a-zA-Z]*Favored/.test( $( this ).attr( 'name' ) ) || /abilities-[a-zA-Z]*Text/.test( $( this ).attr( 'name' ) ) ) {
+                $(this).attr( 'disabled', true);
+                $(this).addClass('disabled');
+            } else if( /merit-[0-9]{1,2}$/.test( $( this ).attr( 'name' ) ) && $( this ).val() != '' ) {
+                $(this).attr( 'disabled', true);
+                $(this).addClass('disabled');
             }
         });
         $( 'input[name=\'submit-submit\'' ).attr( 'disabled', true);
@@ -35,6 +41,10 @@ $(document).ready( function() {
         let disable = ['experience', 'dragonExperience'];
         $( '.characterSheet input' ).each(function() {
             if( $(this).attr('readonly') ) {
+                if(!$(this).hasClass('disabled') && !$(this).hasClass('charmTypeAhead') ) {
+                    $(this).attr( 'disabled', true);
+                    $(this).addClass('disabled');
+                }
                 return true;
             }
             let name =  $(this).attr('name').split('-')[0];

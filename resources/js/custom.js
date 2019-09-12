@@ -235,6 +235,7 @@ $(document).ready( function() {
             $( 'input[name=\'charm-name'+i+'\']').val(value.name);
             $( 'input[name=\'charm-name'+i+'\']').attr('title', value.name);
             $( 'input[name=\'charm-name'+i+'\']').attr('disabled', true);
+            $( 'input[name=\'charm-name'+i+'\']').attr('readonly', true);
             $( 'input[name=\'charm-name'+i+'\']').addClass('disabled');
             $( 'input[name=\'charm-type'+i+'\']').val(value.type);
             $( 'input[name=\'charm-type'+i+'\']').attr('title', value.type);
