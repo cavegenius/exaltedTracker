@@ -49604,6 +49604,8 @@ $(document).ready(function () {
       //    $('.addCharm').click();
       //}
       $('input[name=\'charm-id' + i + '\']').val(value.id);
+      $('input[name=\'charm-id' + i + '\']').parent().addClass('getCharmDetails');
+      $('input[name=\'charm-id' + i + '\']').parent().attr('data-id', value.id);
       $('input[name=\'charm-name' + i + '\']').val(value.name);
       $('input[name=\'charm-name' + i + '\']').attr('title', value.name);
       $('input[name=\'charm-name' + i + '\']').attr('disabled', true);
@@ -49928,6 +49930,7 @@ $(document).ready(function () {
     hideOtherModes();
     resetForm();
     disableOtherSections();
+    $('#sessionMode').removeClass('hide-on-load');
   });
 
   function hideOtherModes() {
@@ -49956,9 +49959,8 @@ $(document).ready(function () {
         $(this).attr('disabled', true);
         $(this).addClass('disabled');
       }
-    });
-    $('input[name=\'submit-submit\'').attr('disabled', true);
-    $('input[name=\'submit-submit\'').addClass('disabled');
+    }); //$( 'input[name=\'submit-submit\'' ).attr( 'disabled', true);
+    //$( 'input[name=\'submit-submit\'' ).addClass('disabled');
   }
 
   function resetForm() {
@@ -49978,6 +49980,53 @@ $(document).ready(function () {
     $('input[name=\'submit-submit\'').attr('disabled', false);
     $('input[name=\'submit-submit\'').removeClass('disabled');
   }
+
+  $(document).on('click', '.getCharmDetails', function () {
+    var id = $(this).attr('data-id');
+
+    if (id != 0) {
+      data = {
+        id: id
+      };
+      $.ajax({
+        method: 'POST',
+        // Type of response and matches what we said in the route
+        url: '/charm/getDetails',
+        // This is the url we gave in the route
+        data: data,
+        success: function success(response) {
+          // What to do if we succeed
+          showCharm(response);
+        },
+        error: function error(jqXHR, textStatus, errorThrown) {
+          // What to do if we fail
+          console.log(JSON.stringify(jqXHR));
+          console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+        }
+      });
+    }
+  });
+
+  function showCharm(response) {
+    console.log(response);
+    $('#charmDetails').html('');
+    $('#charmDetails').append('ID: ' + response.id + '<br>');
+    $('#charmDetails').append('Name: ' + response.name + '<br>');
+    $('#charmDetails').append('Mins: ' + response.mins + '<br>');
+    $('#charmDetails').append('Type: ' + response.type + '<br>');
+    $('#charmDetails').append('Duration: ' + response.duration + '<br>');
+    $('#charmDetails').append('Cost: ' + response.cost + '<br>');
+    $('#charmDetails').append('Element: ' + response.element + '<br>');
+    $('#charmDetails').append('Book: ' + response.book + '<br>');
+    $('#charmDetails').append('Effect: ' + response.effect + '<br>');
+    $('#charmDetails').append('Prerequisite: ' + response.prerequisite + '<br>');
+    $('#charmDetails').append('Description: ' + response.description + '<br>');
+  }
+
+  $(document).change(function (event) {
+    if ($('input[name="mode"]:checked').val() == 'training') {// Add Auto Save here.
+    }
+  });
 });
 
 /***/ }),
@@ -50223,8 +50272,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/matthewmorgan/Documents/myStuff/exaltedtracker/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/matthewmorgan/Documents/myStuff/exaltedtracker/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/wyattmorgan/Documents/repos/exaltedTracker/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/wyattmorgan/Documents/repos/exaltedTracker/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

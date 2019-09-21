@@ -25,4 +25,5 @@
 <div class="rightBottom">
     @include('inc.addexperience')
     @include('inc.trainingmode')
+    @include('inc.sessionmode')
 </div>

@@ -232,6 +232,8 @@ $(document).ready( function() {
             //    $('.addCharm').click();
             //}
             $( 'input[name=\'charm-id'+i+'\']').val(value.id);
+            $( 'input[name=\'charm-id'+i+'\']').parent().addClass('getCharmDetails');
+            $( 'input[name=\'charm-id'+i+'\']').parent().attr('data-id', value.id);
             $( 'input[name=\'charm-name'+i+'\']').val(value.name);
             $( 'input[name=\'charm-name'+i+'\']').attr('title', value.name);
             $( 'input[name=\'charm-name'+i+'\']').attr('disabled', true);

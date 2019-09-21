@@ -62,4 +62,13 @@ class CharmController extends Controller
 
         return ['result'=>$result];
     }
+
+    public function getDetails(Request $request) {
+        $data = $request->post();
+        $id = $data['id'];
+        $model = new Charm;
+        $charm = $model->getDetails($id);
+
+        return $charm;
+    }
 }
