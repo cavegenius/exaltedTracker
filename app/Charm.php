@@ -58,4 +58,10 @@ class Charm extends Model
         return true;
     }
 
+    public function getDetails($id) {
+        $charm = $this->where('id', $id)->first();
+
+        return $charm;
+    }
+
 }
