@@ -50057,6 +50057,9 @@ $(document).ready(function () {
       } else if (/merit-[0-9]{1,2}$/.test($(this).attr('name')) && $(this).val() != '') {
         $(this).attr('disabled', true);
         $(this).addClass('disabled');
+      } else if ($(this).attr('type') == 'checkbox' && $(this).prop('checked') == true) {
+        $(this).attr('disabled', true);
+        $(this).addClass('disabled');
       }
     });
     $('input[name=\'submit-submit\'').attr('disabled', true);
@@ -50087,7 +50090,7 @@ $(document).ready(function () {
   }
 
   $(document).change(function (event) {
-    if ($('input[name="mode"]:checked').val() == 'training') {
+    if ($('input[name="mode"]:checked').val() == 'training' && $(event.target).val() != 'training') {
       console.log(event.target);
     }
   });

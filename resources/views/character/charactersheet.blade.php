@@ -2,8 +2,8 @@
     {!! Form::open(['url' => 'character/submit']) !!}
     {{ csrf_field() }}
     <div class="row">
-        <div class="col-md-4">
-            <img class="width-100" src="img/exaltedLogo.png" />
+        <div class="col-md-4 text-center">
+            <img class="width-50" src="img/exaltedLogo.png" />
         </div>
         <div class="characterDetails col-md-4">
             <div class="form-row">
@@ -417,8 +417,8 @@ Resolve = ([Wits + Integrity + specialty] / 2, round up) • Guile = ([Manipulat
 Hardness = Best hardness value from Charm or Armor, if higher than a Decisive attack dice pool, the attack fails. • Every time an opponent attacks a character, that character suffers a cumulative -1 Defense penalty until his next turn.</div>
     </div>
     <div class="row">
-        <div class="col-md-4">
-            <img class="width-100" src="img/exaltedLogo.png" />
+        <div class="col-md-4 text-center">
+            <img class="width-50" src="img/exaltedLogo.png" />
         </div>
         <div class="col-8">
             <h2 class="width-100">ADDITIONAL MERITS</h2>
